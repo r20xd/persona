@@ -1,0 +1,565 @@
+{
+  "generated_at": "2026-11-06T07:40:59.305811+00:00",
+  "source": "uv.lock + installed distribution metadata and license file hashes",
+  "notes": [
+    "Runtime graph includes declared extras such as psycopg[binary]. Marker-specific packages are retained as conditional in inventory; this is not proof all platforms installed.",
+    "No service configuration or credentials read. Native/container software is documented separately."
+  ],
+  "packages": [
+    {
+      "name": "argon2-cffi",
+      "locked_version": "25.1.0",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/argon2-cffi/25.1.0/",
+      "installed_version": "25.1.0",
+      "license_expression": "MIT",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "argon2_cffi-25.1.0.dist-info/licenses/LICENSE",
+          "sha256": "b6944d386e87ccf49d9632da083685a4b7624733e686a7fe283dd2d428341d77"
+        }
+      ]
+    },
+    {
+      "name": "argon2-cffi-bindings",
+      "locked_version": "26.1.0",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/argon2-cffi-bindings/26.1.0/",
+      "installed_version": "26.1.0",
+      "license_expression": "MIT",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "argon2_cffi_bindings-26.1.0.dist-info/licenses/LICENSE",
+          "sha256": "88707653d5414f2242d597302a769565107ac139817b8ca321b3928cc1346c50"
+        }
+      ],
+      "bundled_license_note": "extras/libargon2/LICENSE: CC0-1.0 OR Apache-2.0; original retained in docs/third-party/libargon2-LICENSE.txt"
+    },
+    {
+      "name": "asgiref",
+      "locked_version": "3.13.0",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/asgiref/3.13.0/",
+      "installed_version": "3.13.0",
+      "license_expression": null,
+      "license_metadata": "BSD-3-Clause",
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "asgiref-3.13.0.dist-info/licenses/LICENSE",
+          "sha256": "b846415d1b514e9c1dff14a22deb906d794bc546ca6129f950a18cd091e2a669"
+        }
+      ]
+    },
+    {
+      "name": "cffi",
+      "locked_version": "2.1.1",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/cffi/2.1.1/",
+      "installed_version": "2.1.1",
+      "license_expression": "MIT-0",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "cffi-2.1.1.dist-info/licenses/LICENSE",
+          "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
+        }
+      ]
+    },
+    {
+      "name": "colorama",
+      "locked_version": "0.4.6",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/colorama/0.4.6/",
+      "installed": false,
+      "reason": "platform-conditional package absent from Linux environment",
+      "verified_license": "BSD-3-Clause",
+      "verification": "SHA256-verified locked sdist LICENSE.txt; see license-source-check.json"
+    },
+    {
+      "name": "django",
+      "locked_version": "5.2.19",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/django/5.2.19/",
+      "installed_version": "5.2.19",
+      "license_expression": "BSD-3-Clause",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "django-5.2.19.dist-info/licenses/AUTHORS",
+          "sha256": "cd00119a418a78ef201aae1fbda4747658568a264bb145ebc1deb41521212629"
+        },
+        {
+          "path_in_distribution": "django-5.2.19.dist-info/licenses/LICENSE",
+          "sha256": "b846415d1b514e9c1dff14a22deb906d794bc546ca6129f950a18cd091e2a669"
+        },
+        {
+          "path_in_distribution": "django-5.2.19.dist-info/licenses/LICENSE.python",
+          "sha256": "765e2b1e339fef8d3e9f12892e7e072a8be309996a0be43ffc5796398ec4e7d4"
+        },
+        {
+          "path_in_distribution": "django/contrib/admin/static/admin/css/vendor/select2/LICENSE-SELECT2.md",
+          "sha256": "4ee0cbc51370afde358652a0f977972053729ed578b6a42f5e2a037d114f0b39"
+        },
+        {
+          "path_in_distribution": "django/contrib/admin/static/admin/img/LICENSE",
+          "sha256": "d114faff3488c16c319b3235dc41f90239d3d63d9853733033d8f7535f5c0004"
+        },
+        {
+          "path_in_distribution": "django/contrib/admin/static/admin/js/vendor/jquery/LICENSE.txt",
+          "sha256": "d4db9ebe6f29f5168eac45ad713f055623ac5d0dcd5ba92da23d650ae012020d"
+        },
+        {
+          "path_in_distribution": "django/contrib/admin/static/admin/js/vendor/select2/LICENSE.md",
+          "sha256": "4ee0cbc51370afde358652a0f977972053729ed578b6a42f5e2a037d114f0b39"
+        },
+        {
+          "path_in_distribution": "django/contrib/admin/static/admin/js/vendor/xregexp/LICENSE.txt",
+          "sha256": "73af2949bff9296cb0f816c3be19a4da4e95adc94c1f924796e8bad3f03f2f29"
+        },
+        {
+          "path_in_distribution": "django/contrib/gis/gdal/LICENSE",
+          "sha256": "570a045a8372b6cd6a00e30ebafe8e3e8dfc0a7fe3d4ef2cc5f16d419eb63aeb"
+        },
+        {
+          "path_in_distribution": "django/contrib/gis/geos/LICENSE",
+          "sha256": "08bf24b7551238ae325295245425b1caeb9ad0f42f9e2d303c7b353502632045"
+        },
+        {
+          "path_in_distribution": "django/dispatch/license.txt",
+          "sha256": "54004c4b606964ebc163af16d04607c16e428f8a78a026fecb53f70c09f4a94f"
+        }
+      ]
+    },
+    {
+      "name": "django-axes",
+      "locked_version": "9.0.0",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/django-axes/9.0.0/",
+      "installed_version": "9.0.0",
+      "license_expression": null,
+      "license_metadata": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "path_in_distribution": "django_axes-9.0.0.dist-info/licenses/LICENSE",
+          "sha256": "ed090fd5cda6e203a5c3b90a64e56ff2efdf83c550f381c89fb1b2eec7fe93b1"
+        }
+      ]
+    },
+    {
+      "name": "greenlet",
+      "locked_version": "3.5.6",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/greenlet/3.5.6/",
+      "installed_version": "3.5.6",
+      "license_expression": "MIT AND PSF-2.0",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "greenlet-3.5.6.dist-info/licenses/LICENSE",
+          "sha256": "769831d6e5dfaf2c20802faccff1fafb4c2025dd8f6253dfa47fcad59d4d0979"
+        },
+        {
+          "path_in_distribution": "greenlet-3.5.6.dist-info/licenses/LICENSE.PSF",
+          "sha256": "e5ff3c23c110e494cd7d736c10fd96d462457bafeca310840db6527298c7d46b"
+        }
+      ]
+    },
+    {
+      "name": "gunicorn",
+      "locked_version": "23.0.0",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/gunicorn/23.0.0/",
+      "installed_version": "23.0.0",
+      "license_expression": null,
+      "license_metadata": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "path_in_distribution": "gunicorn-23.0.0.dist-info/LICENSE",
+          "sha256": "6646cdbba2e99e3421dd18c22173579a1fde347e831dae6adee80eefe331e951"
+        }
+      ]
+    },
+    {
+      "name": "iniconfig",
+      "locked_version": "2.3.1",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/iniconfig/2.3.1/",
+      "installed_version": "2.3.1",
+      "license_expression": "MIT",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "iniconfig-2.3.1.dist-info/licenses/LICENSE",
+          "sha256": "3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4"
+        }
+      ]
+    },
+    {
+      "name": "packaging",
+      "locked_version": "26.3",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/packaging/26.3/",
+      "installed_version": "26.3",
+      "license_expression": "Apache-2.0 OR BSD-2-Clause",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "packaging-26.3.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "path_in_distribution": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path_in_distribution": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "path_in_distribution": "packaging/licenses/__init__.py",
+          "sha256": "590d12eee73ddbec53b4e9ee5bfc64d9cb3aacb4940e8ebcba260757ce56740b"
+        },
+        {
+          "path_in_distribution": "packaging/licenses/_spdx.py",
+          "sha256": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314"
+        }
+      ]
+    },
+    {
+      "name": "playwright",
+      "locked_version": "1.64.1",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/playwright/1.64.1/",
+      "installed_version": "1.64.1",
+      "license_expression": "Apache-2.0",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "playwright-1.64.1.dist-info/licenses/LICENSE",
+          "sha256": "7fab1461b41970ff376f1c9303a637076bfaaeb71cd12dd3a1c44aaf59a1a2b9"
+        },
+        {
+          "path_in_distribution": "playwright/driver/LICENSE",
+          "sha256": "5888dbb9a1d2b18f2c3e6c5f6af1b39de658372b402a0577b002777f14c62ace"
+        },
+        {
+          "path_in_distribution": "playwright/driver/package/LICENSE",
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "path_in_distribution": "playwright/driver/package/NOTICE",
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        },
+        {
+          "path_in_distribution": "playwright/driver/package/ThirdPartyNotices.txt",
+          "sha256": "a549d329bad8806fe279f0ecae0fc0270dec7e7c2dc8ec10f90e394f7c32b144"
+        },
+        {
+          "path_in_distribution": "playwright/driver/package/lib/serverRegistry.js.LICENSE",
+          "sha256": "3098a6efcbc11752cbdf6075fa65480f5470f78c8d981fab9c0796dc9a41cefe"
+        },
+        {
+          "path_in_distribution": "playwright/driver/package/lib/utilsBundle.js.LICENSE",
+          "sha256": "1362b7f413c08083af537384162ab69a323d019fe26e0a2cd78536fafd6b9cbf"
+        },
+        {
+          "path_in_distribution": "playwright/driver/package/lib/webp_codec.LICENSE",
+          "sha256": "995c7ee35aceb7666829b7a501ca89c0864e12b493c1174b155774ab1e03d831"
+        }
+      ]
+    },
+    {
+      "name": "pluggy",
+      "locked_version": "1.7.0",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/pluggy/1.7.0/",
+      "installed_version": "1.7.0",
+      "license_expression": null,
+      "license_metadata": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "path_in_distribution": "pluggy-1.7.0.dist-info/licenses/LICENSE",
+          "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+        }
+      ]
+    },
+    {
+      "name": "psycopg",
+      "locked_version": "3.3.8",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/psycopg/3.3.8/",
+      "installed_version": "3.3.8",
+      "license_expression": "LGPL-3.0-only",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "psycopg-3.3.8.dist-info/licenses/LICENSE.txt",
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+        }
+      ]
+    },
+    {
+      "name": "psycopg-binary",
+      "locked_version": "3.3.8",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/psycopg-binary/3.3.8/",
+      "installed_version": "3.3.8",
+      "license_expression": "LGPL-3.0-only",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "psycopg_binary-3.3.8.dist-info/licenses/LICENSE.txt",
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+        }
+      ]
+    },
+    {
+      "name": "pycparser",
+      "locked_version": "3.12",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/pycparser/3.12/",
+      "installed_version": "3.12",
+      "license_expression": "BSD-3-Clause",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "pycparser-3.12.dist-info/licenses/LICENSE",
+          "sha256": "0a9e78156ae8b96caf1b4f11ac2df424b83de29736f9e757630548a6272fdf90"
+        }
+      ]
+    },
+    {
+      "name": "pyee",
+      "locked_version": "14.0.0",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/pyee/14.0.0/",
+      "installed_version": "14.0.0",
+      "license_expression": null,
+      "license_metadata": "MIT",
+      "license_classifiers": [
+        "License :: OSI Approved :: MIT License"
+      ],
+      "license_files": [
+        {
+          "path_in_distribution": "pyee-14.0.0.dist-info/licenses/LICENSE",
+          "sha256": "1ff556ca206b107f10e1c562ae454d3292e0296c3510eb90eb7f114caee32a66"
+        }
+      ]
+    },
+    {
+      "name": "pygments",
+      "locked_version": "2.21.0",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/pygments/2.21.0/",
+      "installed_version": "2.21.0",
+      "license_expression": "BSD-2-Clause",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "pygments-2.21.0.dist-info/licenses/AUTHORS",
+          "sha256": "71a83872ad82f57be692cf827e048e2cd51d45169cfa1ea3f28706d97a872c0f"
+        },
+        {
+          "path_in_distribution": "pygments-2.21.0.dist-info/licenses/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        }
+      ]
+    },
+    {
+      "name": "pytest",
+      "locked_version": "9.2.0",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/pytest/9.2.0/",
+      "installed_version": "9.2.0",
+      "license_expression": "MIT",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "pytest-9.2.0.dist-info/licenses/LICENSE",
+          "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b"
+        }
+      ]
+    },
+    {
+      "name": "pytest-django",
+      "locked_version": "4.14.0",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/pytest-django/4.14.0/",
+      "installed_version": "4.14.0",
+      "license_expression": null,
+      "license_metadata": "pytest-django is released under the BSD (3-clause) license\n----------------------------------------------------------\nCopyright (c) 2015-2018, pytest-django authors (see AUTHORS file)\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n * Redistributions of source code must retain the above copyright notice, this\n   list of conditions and the following disclaimer.\n * Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n * The names of its contributors may not be used to endorse or promote products\n   derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\nThis version of pytest-django is a fork of pytest_django created by Ben Firshman.\n---------------------------------------------------------------------------------\nCopyright (c) 2009, Ben Firshman\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n * Redistributions of source code must retain the above copyright notice, this\n   list of conditions and the following disclaimer.\n * Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n * The names of its contributors may not be used to endorse or promote products\n   derived from this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n",
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_files": [
+        {
+          "path_in_distribution": "pytest_django-4.14.0.dist-info/licenses/AUTHORS",
+          "sha256": "dc6d05a5ec2c94858993f761d50c5b75c51eda558168718a00d130cac89d0b72"
+        },
+        {
+          "path_in_distribution": "pytest_django-4.14.0.dist-info/licenses/LICENSE",
+          "sha256": "ded3c069e77cad4777cb8d6accd06a95560cfb167537316058011eb521fb30a1"
+        }
+      ]
+    },
+    {
+      "name": "pytest-playwright",
+      "locked_version": "0.10.0",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/pytest-playwright/0.10.0/",
+      "installed_version": "0.10.0",
+      "license_expression": null,
+      "license_metadata": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Portions Copyright (c) Microsoft Corporation.\n   Portions Copyright 2017 Google Inc.\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n",
+      "license_classifiers": [
+        "License :: OSI Approved :: Apache Software License"
+      ],
+      "license_files": [
+        {
+          "path_in_distribution": "pytest_playwright-0.10.0.dist-info/LICENSE",
+          "sha256": "7fab1461b41970ff376f1c9303a637076bfaaeb71cd12dd3a1c44aaf59a1a2b9"
+        }
+      ]
+    },
+    {
+      "name": "python-slugify",
+      "locked_version": "9.1.3",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/python-slugify/9.1.3/",
+      "installed_version": "9.1.3",
+      "license_expression": "MIT",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "python_slugify-9.1.3.dist-info/licenses/LICENSE",
+          "sha256": "30ba4dc69a9f4dce132dd703937c7a93b573e2524604d2d5f92c5066514c0d4f"
+        }
+      ]
+    },
+    {
+      "name": "ruff",
+      "locked_version": "0.17.3",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/ruff/0.17.3/",
+      "installed_version": "0.17.3",
+      "license_expression": "MIT",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "ruff-0.17.3.dist-info/licenses/LICENSE",
+          "sha256": "2597d854122b77ddc71971564ca2350a37608575ce324adc5650a2b2051c8f18"
+        }
+      ]
+    },
+    {
+      "name": "sqlparse",
+      "locked_version": "0.6.1",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/sqlparse/0.6.1/",
+      "installed_version": "0.6.1",
+      "license_expression": null,
+      "license_metadata": null,
+      "license_classifiers": [
+        "License :: OSI Approved :: BSD License"
+      ],
+      "license_files": [
+        {
+          "path_in_distribution": "sqlparse-0.6.1.dist-info/licenses/AUTHORS",
+          "sha256": "fee330a5b516ad49a8453b0ea6813c89cb8ec4e0f34007946f6efabd0271e399"
+        },
+        {
+          "path_in_distribution": "sqlparse-0.6.1.dist-info/licenses/LICENSE",
+          "sha256": "c1938235b80d39e93138eae89edc3af67e18ecbc40d266529fa57b2dce426310"
+        }
+      ]
+    },
+    {
+      "name": "text-unidecode",
+      "locked_version": "1.3",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/text-unidecode/1.3/",
+      "installed_version": "1.3",
+      "license_expression": null,
+      "license_metadata": "Artistic License",
+      "license_classifiers": [
+        "License :: OSI Approved :: Artistic License",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
+        "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)"
+      ],
+      "license_files": [
+        {
+          "path_in_distribution": "text_unidecode-1.3.dist-info/LICENSE.txt",
+          "sha256": "3938e7535c3e4ef7e6363de9b693fe3bafe3c4a5e5f4925cd48375096fe7afd5"
+        }
+      ]
+    },
+    {
+      "name": "typing-extensions",
+      "locked_version": "4.16.0",
+      "scope": "dev_only",
+      "upstream_pypi": "https://pypi.org/project/typing-extensions/4.16.0/",
+      "installed_version": "4.16.0",
+      "license_expression": "PSF-2.0",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ]
+    },
+    {
+      "name": "tzdata",
+      "locked_version": "2026.6",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/tzdata/2026.6/",
+      "installed": false,
+      "reason": "platform-conditional package absent from Linux environment",
+      "verified_license": "Apache-2.0",
+      "verification": "SHA256-verified locked sdist LICENSE + licenses/LICENSE_APACHE; see license-source-check.json"
+    },
+    {
+      "name": "whitenoise",
+      "locked_version": "6.12.0",
+      "scope": "runtime_or_platform_conditional",
+      "upstream_pypi": "https://pypi.org/project/whitenoise/6.12.0/",
+      "installed_version": "6.12.0",
+      "license_expression": "MIT",
+      "license_metadata": null,
+      "license_classifiers": [],
+      "license_files": [
+        {
+          "path_in_distribution": "whitenoise-6.12.0.dist-info/licenses/LICENSE",
+          "sha256": "ebfd469b4fb6b5adada547747e1e8da725ecf20595d54aced043275d4f4a3600"
+        }
+      ]
+    }
+  ]
+}

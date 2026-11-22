@@ -1,0 +1,97 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block title %}Расписание · persōna{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/schedule.css' %}">
+
+<main id="main" tabindex="-1" class="account-main schedule-main">
+
+  <p class="overline">УЧЁБА · {{ profile.group.code }}</p>
+  <h1>Расписание</h1>
+  <p class="account-intro">{{ profile.full_name }} · Только ваши учебные курсы</p>
+  {% include 'schedule/tabs.html' %}
+  <div class="schedule-toolbar">
+    <h2>{% if view == 'week' %}{{ start|date:'j E' }} — {{ last|date:'j E Y' }}{% else %}{{ day|date:'l, j E Y' }}{% endif %}</h2>
+    <nav aria-label="Выбор даты">
+      <a href="?date={{ previous|date:'Y-m-d' }}&view={{ view }}" aria-label="Предыдущий период">←</a>
+      <a href="?date={{ today|date:'Y-m-d' }}&view={{ view }}">Сегодня</a>
+      <a href="?date={{ following|date:'Y-m-d' }}&view={{ view }}" aria-label="Следующий период">→</a>
+    </nav>
+  </div>
+  <form class="schedule-filter" method="get" data-auto-filter>
+    <label for="date">Перейти к дате</label>
+    <input id="date" type="date" name="date" value="{{ day|date:'Y-m-d' }}" required>
+    <input type="hidden" name="view" value="{{ view }}">
+    <noscript><button class="button" type="submit" data-filter-submit>Показать</button></noscript>
+  </form>
+  <div class="schedule-list">
+    {% for schedule_day in days %}
+    <section class="schedule-day{% if view == 'day' %} schedule-day-single{% endif %}" aria-labelledby="day-{{ schedule_day.date|date:'Y-m-d' }}" data-date="{{ schedule_day.date|date:'Y-m-d' }}">
+      <h3 id="day-{{ schedule_day.date|date:'Y-m-d' }}">{{ schedule_day.date|date:'l, j E' }}</h3>
+      {% for entry in schedule_day.entries %}
+      {% if entry.kind == 'lesson' %}
+        {% with lesson=entry.lesson %}
+        <article class="lesson {% if lesson.status == 'cancelled' %}lesson-cancelled{% endif %}" data-date="{{ entry.at|date:'Y-m-d' }}">
+          <div class="lesson-time">
+            <strong>{{ lesson.starts_at|date:'H:i' }}–{{ lesson.ends_at|date:'H:i' }}</strong>
+          </div>
+          <div class="lesson-content">
+            <p class="overline">{% if lesson.status == 'cancelled' %}Отменено{% elif lesson.version > 1 %}Изменено{% else %}Занятие{% endif %}</p>
+            <h4>{{ lesson.offering.subject.name }}</h4>
+            <p>{{ lesson.room.building }} · аудитория {{ lesson.room.number }}</p>
+            <p>{{ lesson.teacher.full_name }}</p>
+            {% if lesson.version > 1 %}
+            <details>
+              <summary>История изменений</summary>
+              {% for change in lesson.changes.all %}
+              <p class="lesson-history">
+                {{ change.old_starts_at|date:'j E H:i' }} → {{ change.new_starts_at|date:'j E H:i' }}<br>
+                Аудитория: {{ change.old_room_label }} → {{ change.new_room_label }}<br>
+                Преподаватель: {{ change.old_teacher_label }} → {{ change.new_teacher_label }}<br>
+                {{ change.get_old_status_display }} → {{ change.get_new_status_display }}. {{ change.reason }}
+              </p>
+              {% endfor %}
+            </details>
+            {% endif %}
+          </div>
+        </article>
+        {% endwith %}
+      {% else %}
+        {% with move=entry.move %}
+        <article class="lesson lesson-moved" data-date="{{ entry.at|date:'Y-m-d' }}">
+          <div class="lesson-time">
+            <strong>{{ move.old_starts_at|date:'H:i' }}</strong>
+          </div>
+          <div class="lesson-content">
+            <p class="overline">Перенесено · история</p>
+            <h4>{{ move.lesson.offering.subject.name }}</h4>
+            <p>{{ move.reason }}</p>
+            <p>Этот перенос: {{ move.old_starts_at|date:'j E H:i' }} → {{ move.new_starts_at|date:'j E H:i' }}</p>
+            <a href="?date={{ move.lesson.starts_at|date:'Y-m-d' }}&view={{ view }}">Актуальное занятие: {{ move.lesson.starts_at|date:'j E H:i' }}</a>
+          </div>
+        </article>
+        {% endwith %}
+      {% endif %}
+      {% endfor %}
+    </section>
+    {% empty %}
+      <section class="schedule-empty">
+        <h3>Занятий на этот период нет</h3>
+        {% if next_lesson_day %}
+        <p>Ближайшее занятие — {{ next_lesson_day|date:'j E' }}. Можно перейти к нему или выбрать другую дату.</p>
+        {% else %}
+        <p>Следующих занятий пока нет. Выберите другую дату в календаре выше.</p>
+        {% endif %}
+        {% if view == 'day' or next_lesson_day %}
+        <div class="schedule-empty-actions">
+          {% if view == 'day' %}<a class="button" href="?date={{ day|date:'Y-m-d' }}&view=week">Открыть неделю</a>{% endif %}
+          {% if next_lesson_day %}<a class="button button-primary" href="?date={{ next_lesson_day|date:'Y-m-d' }}&view=day">Ближайшее занятие</a>{% endif %}
+        </div>
+        {% endif %}
+      </section>
+    {% endfor %}
+  </div>
+
+</main>
+
+{% endblock %}

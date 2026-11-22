@@ -1,0 +1,32 @@
+{% extends 'accounts/base.html' %}{% load static %}{% block title %}persōna · Вход
+{% endblock %}
+
+{% block body %}
+
+<main id="main" tabindex="-1" class="login-layout">
+<section class="login-story">
+<div class="login-persona-art" aria-hidden="true"><img src="{% static 'icons/persona-mark.png' %}" alt=""><img src="{% static 'icons/persona-mark.png' %}" alt=""></div>
+{% include 'accounts/brand.html' %}
+<div><p class="overline">Личный кабинет студента</p><h1>Учёба и деканат.<br>В одном кабинете.</h1><p class="login-story-copy">Расписание, результаты и документы — всё, что нужно для вашего учебного дня.</p></div>
+<div class="login-features">
+<div class="login-feature">{% include 'accounts/icon.html' with name='calendar' %}<div><strong>Знайте, что впереди</strong><p>Занятия, сессия и заметные изменения расписания.</p></div></div>
+<div class="login-feature">{% include 'accounts/icon.html' with name='book' %}<div><strong>Следите за результатами</strong><p>Оценки и зачёты по вашим дисциплинам.</p></div></div>
+<div class="login-feature">{% include 'accounts/icon.html' with name='document' %}<div><strong>Обращайтесь без очереди</strong><p>Заявки в деканат и история их подготовки.</p></div></div>
+</div><p class="story-fine">Университет Северного города</p>
+</section>
+<section class="login-panel" aria-labelledby="login-title">
+<div class="login-card">
+
+<h2 id="login-title">С возвращением</h2>
+<p class="login-copy">Войдите с демонстрационным аккаунтом.<br>Не используйте настоящие учётные данные.</p>
+<form method="post" action="{% url 'login' %}" class="login-fields">{% csrf_token %}{% if form.errors %}<div class="login-alert" id="login-errors" data-error-summary tabindex="-1" role="alert">Не удалось войти. Проверьте логин и пароль.</div>{% endif %}<label for="id_username">Логин</label>
+<input id="id_username" {% if form.errors %}aria-invalid="true" aria-describedby="login-errors"{% endif %} name="username" autocomplete="username" maxlength="150" required value="{{ form.username.value|default:'' }}">
+<label for="id_password">Пароль</label>
+<input id="id_password" {% if form.errors %}aria-invalid="true" aria-describedby="login-errors"{% endif %} name="password" type="password" autocomplete="current-password" required>
+<input type="hidden" name="next" value="{{ next }}">
+<button class="button button-primary" type="submit">Войти в кабинет →</button>
+</form>
+</div>
+</section>
+</main>
+{% endblock %}

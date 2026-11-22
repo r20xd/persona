@@ -1,0 +1,89 @@
+gate: checking index.html (software); this takes a few minutes on a CPU Chrome
+gate: rounds used up; 28 FAIL open
+  FAIL hero-fill        main#main > div.assistant-layout > aside.assistant-companion "Начнём с вопроса"  [1440, 390]
+       the next section shows on the first screen: it starts at 257px on a 900px screen (the hero ends at 193px)
+       fix: let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load
+  FAIL flush            div.assistant-layout > aside.assistant-companion > div.assistant-about > p.assistant-priva  [1440]
+       its last line sits -579px above the rule on top of section.assistant-chat
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  FAIL button-styles    (one screen)  [1440, 390]
+       3 button styles on one screen: soft, fill #ffffff, outline #c8d9e6 ("Составить план"); soft, fill #567c8d ("Помощник"); soft, fill #2f4156, outline #2f4156 ("Отправить вопрос"); the odd one out: "Отправить вопрос"
+       fix: one primary and one secondary button: one shape, one height per size, one label size
+  FAIL button-styles    (the page)  [1440, 390]
+       3 button styles on the page: soft, fill #567c8d x1 ("Помощник"); soft, fill #ffffff, outline #c8d9e6 x3 ("Составить план"); soft, fill #2f4156, outline #2f4156 x1 ("Отправить вопрос")
+       fix: one primary and one secondary button: one shape, one height per size, one label size
+  FAIL cta              main#main > h1  [1440]
+       the hero has no button (the nav's does not count)
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  FAIL copy-fact        main#main > h1 "Помощник"  [1440]
+       the first screen holds no number, price, date, place, platform or genre
+       fix: put one hard fact from the brief on the first screen: a number, a price, a date, the place, the platforms it runs on or a game's genre; take it from the brief or remove the claim
+  FAIL focus-ring       main:focus  [1440]
+       "main:focus" in workspace.9ca2a91d3db7.css removes the focus outline and sets nothing in its place
+       fix: keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it
+  FAIL moment-none      (the page)  [1440]
+       a software page (--type) deals no moment: every kind carries one, two on a long page (moments.md)
+       fix: deal one (moments.mjs pick --page software) and mount it in its own section
+  FAIL hero-screen      main#main > p.overline "ЕЩЁ ОДНА ТОЧКА ОПОРЫ"  [1440]
+       the hero ends at 137px on a 900px screen, 764px above the fold: it ends at the fold, 1px either way (SR-1)
+       fix: make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter
+  FAIL hero-screen      main#main > h1 "Помощник"  [1440]
+       754px of the next section shows on the first screen (from 147px on a 900px screen): nothing below the hero shows at load (SR-1)
+       fix: end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)
+  FAIL section-height   main#main > p.account-intro "Разобраться в теме, составить план или п"  [1440]
+       the section is 24px tall (0 screens), 876px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)
+       fix: set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit
+  FAIL section-air      main#main > h1 "Помощник"  [1440]
+       the section shows no content: its content fills 0% of its 46px (55% or more) (SR-3)
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  FAIL section-air      main#main > p.account-intro "Разобраться в теме, составить план или п"  [1440]
+       the section shows no content: its content fills 0% of its 24px (55% or more) (SR-3)
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  FAIL one-section      main#main > h1 "Помощник"  [1440]
+       the screen at scroll 0px (stride 0) shows 46px of section 2 beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)
+       fix: make each section exactly one screen or two, so a screen shows one section and no neighbour peeks
+  FAIL one-heading      h2#chat-title "Ваш диалог"  [1440]
+       the section holds 2 h2 headings: one per section, first in its .wrap (SR-5)
+       fix: give each section one h2, first in its .wrap, and the hero only its h1
+  FAIL container-edges  header.account-header "persōnaЦифровой деканат Мой профиль Выйт"  [1440]
+       the nav's content runs 1114px from the left and 84px from the right (read from its outermost blocks: no .wrap): the page's container starts at 316px; 1114 and 84px are not one margin; the margin is 64-120px at 1440px (on
+       fix: use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone
+  FAIL container-edges  main#main > div.assistant-layout "ⅡНА ВАШЕЙ СТОРОНЕНачнём с вопросаЗдесь м"  [1440]
+       the content of section 4 runs 316px from the left and 84px from the right (read from its outermost blocks: no .wrap): 316 and 84px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px e
+       fix: use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone
+  FAIL container-edges  a.skip-link "К содержимому"  [1440]
+       a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges  aside.workspace-sidebar "persōnaЦифровой деканат Ваше пространств"  [1440]
+       a <aside> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges  p#chat-limits "До 2000 символов. Храним последние 12 со"  [1440]
+       2 text blocks start on a left line at x 710, 394px from the container's left: text starts on the container's left, or on one split line (x 759, 848, 937) (also "Ответы ИИ могут содержать ошибки") (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL container-edges  h2#chat-title "Ваш диалог"  [1440]
+       the h2 starts 394px right of the container's left: every h1 and h2 starts on it, 2px either way (and 1 more like it: "Начнём с вопроса") (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL container-edges  main#main > div.assistant-layout > section.assistant-chat "Ваш диалогИИ пока не подключёнО  [1440]
+       a box over half the container wide runs 685-1356px, not on the container's lines at 316-1356px (SR-6)
+       fix: run the picture or box from the container's left line to its right line, or put it in a row or a split
+  FAIL flush            main#main > div.assistant-layout > aside.assistant-companion > div.assistant-avatar "Ⅱ"  [390]
+       its last line sits 1px above the lower edge of aside.assistant-companion, where the ground changes to section.assistant-chat
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  FAIL nav              header.account-header > div.header-inner > div.mobile-brand > a.brand "persōna Цифровой де  [390]
+       nav link wraps to a second line
+       fix: make the nav one bar from the content's left edge to its right edge, with every link and action inside it
+  FAIL no-visual        main#main > div.assistant-layout > section.assistant-chat "Ваш диалог"  [390]
+       no picture, effect or mock in this section; a feature section needs a visual
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL cta              main#main > p.account-intro  [390]
+       the hero has no button (the nav's does not count)
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  FAIL hero-fill        main#main > div.assistant-layout > section.assistant-chat "Ваш диалог"  [1152]
+       the next section shows on the first screen: it starts at 250px on a 864px screen (the hero ends at 834px) (also at 1024, 896, 768)
+       fix: let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load
+  FAIL container        page  [1440, 390]
+       no .wrap
+       fix: put the content in one .wrap
+  23 WARN (not blocking), first: copy-headline main#main > h1 "Помощник"; off-grid h2#assistant-about "Начнём с вопроса"; off-grid h2#chat-title "Ваш диалог"; body-size main#main > div.assistant-layout > secti; section-gaps main#main > div.assistant-layout > aside
+Stop fixing: put these open FAILs and the waivers in your report, then finish.
+GATE: OPEN 28 (rounds used up)

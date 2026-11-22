@@ -1,0 +1,6 @@
+gate: checking rendered-cat.html (gaming); this takes a few minutes on a CPU Chrome
+gate: no FAIL in what ran, but not everything ran
+  1 WARN (not blocking), first: copy-em-dash (the copy)
+  not checked: consistency.mjs gave no report (exit 2: The page is not inside --root /tmp/cat07-snapshot: /private/tmp/cat07-snapshot/rendered-cat.html); check.mjs could not run (exit 2: check: the page is not inside --root /tmp/cat07-snapshot: /private/tmp/cat07-snapshot/rendered-cat.html)
+Do not rerun it: put the GATE line and what was not checked in your report, then finish.
+GATE: ERROR (consistency.mjs gave no report (exit 2: The page is not inside --root /tmp/cat07-snapshot: /private/tmp/cat07-snapshot/rendered-cat.html); check.mjs could not run (exit 2: check: the page is not inside --root /tmp/cat07-snapshot: /private/tmp/cat07-snapshot/rendered-cat.html))

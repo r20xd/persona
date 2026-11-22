@@ -1,0 +1,16 @@
+{
+  "timestamp_utc": "2026-11-06T07:44:34.136088+00:00",
+  "tool": "PyPA pip-audit",
+  "version": "2.10.1",
+  "source": "PyPI JSON advisory API; default pypi service",
+  "request_status": "completed",
+  "runtime_linux_packages": 13,
+  "runtime_plus_dev_linux_packages": 26,
+  "findings": 0,
+  "scope": "uv.lock frozen complete closure, Linux CPython3.13; Windows-only tzdata/colorama markers excluded",
+  "exit_codes": {
+    "runtime": 0,
+    "dev": 0
+  },
+  "lock_changed": false
+}

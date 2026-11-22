@@ -1,0 +1,2 @@
+saved docs/evidence/U13/taste-cat-360.png (360x3072, 4 screens)
+tiles mobile: 3 sections, 3.94 screens, navH 0, tiles 5; heights 0.06 1.73 1.55

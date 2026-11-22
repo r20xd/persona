@@ -1,0 +1,32 @@
+[
+  {
+    "width": 360,
+    "page": "login",
+    "brand": {
+      "x": 24,
+      "y": 24,
+      "width": 312,
+      "height": 47.4375
+    }
+  },
+  {
+    "width": 360,
+    "page": "home",
+    "brand": {
+      "x": 16,
+      "y": 15.828125,
+      "width": 145.640625,
+      "height": 43.34375
+    }
+  },
+  {
+    "width": 1440,
+    "page": "login",
+    "brand": {
+      "x": 72,
+      "y": 48,
+      "width": 610.28125,
+      "height": 49.53125
+    }
+  }
+]

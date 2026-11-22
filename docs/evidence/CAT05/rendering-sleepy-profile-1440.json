@@ -1,0 +1,7 @@
+{
+  "before_inner_image_rendering": "pixelated",
+  "after_inner_image_rendering": "pixelated",
+  "before": "prior CSS/original source with current clip geometry",
+  "before_source": "/static/images/pixel-duo-sheet.bc1c07833a45.png",
+  "after_source": "/static/images/pixel-duo-clean.b4f56635290c.png"
+}

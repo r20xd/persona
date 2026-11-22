@@ -1,0 +1,67 @@
+name: deanery-production
+services:
+  db:
+    image: ${POSTGRES_IMAGE:?Set reviewed PostgreSQL config image}
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?Set independent bootstrap role}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set independent bootstrap password}
+      POSTGRES_DB: postgres
+      DB_NAME: ${DB_NAME:?Set application database}
+      DB_USER: ${DB_USER:?Set application role}
+      DB_PASSWORD: ${DB_PASSWORD:?Set application password}
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks: [backend]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -h 127.0.0.1 -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    restart: unless-stopped
+  app:
+    image: ${APP_IMAGE:?Set a reviewed immutable application image}
+    environment:
+      DJANGO_SETTINGS_MODULE: config.settings.production
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY:?Set independent production secret}
+      DJANGO_ALLOWED_HOSTS: ${DJANGO_ALLOWED_HOSTS:?Set explicit hosts}
+      DJANGO_CSRF_TRUSTED_ORIGINS: ${DJANGO_CSRF_TRUSTED_ORIGINS:?Set exact HTTPS origins}
+      DJANGO_TRUSTED_PROXY_CIDRS: ${DJANGO_TRUSTED_PROXY_CIDRS:?Set dedicated proxy subnet}
+      DB_NAME: ${DB_NAME:?Set application database}
+      DB_USER: ${DB_USER:?Set application role}
+      DB_PASSWORD: ${DB_PASSWORD:?Set application password}
+      DB_HOST: db
+      DB_PORT: '5432'
+    read_only: true
+    tmpfs: ['/tmp:rw,noexec,nosuid,size=64m,uid=10001,gid=10001']
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    networks: [backend, frontend]
+    depends_on:
+      db:
+        condition: service_healthy
+    stop_grace_period: 35s
+    restart: unless-stopped
+  caddy:
+    image: ${CADDY_IMAGE:?Set reviewed Caddy config image}
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN:?Set the production domain}
+    ports: ['80:80', '443:443']
+    volumes:
+      - caddy-data:/data
+      - caddy-config:/config
+    networks: [frontend, edge]
+    restart: unless-stopped
+networks:
+  backend:
+    internal: true
+  frontend:
+    internal: true
+    ipam:
+      config:
+        - subnet: ${DJANGO_TRUSTED_PROXY_CIDRS:?Set the dedicated private frontend subnet}
+  edge: {}
+volumes:
+  postgres-data: {}
+  caddy-data: {}
+  caddy-config: {}

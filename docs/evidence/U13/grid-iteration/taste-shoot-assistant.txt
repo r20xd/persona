@@ -1,0 +1,2 @@
+saved docs/evidence/U13/taste-assistant-1440.png (1440x1179, 2 screens)
+tiles desktop: 2 sections, 1.31 screens, navH 0, tiles 2; heights 0.05 0.92

@@ -1,0 +1,11 @@
+{
+  "runner": "root independent",
+  "utc": "2026-11-08T13:22:19.915408+00:00",
+  "returncode": 0,
+  "seconds": 218.73,
+  "summary": "    fixturefunc = resolve_fixture_function(fixturedef, request)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n377 passed, 1 warning in 218.21s (0:03:38)",
+  "preflight": "SELECT 1 passed",
+  "postgres": "17.11-trixie own QA",
+  "inputs_unchanged": true,
+  "cleanup": "separate owned DB cleanup after verification"
+}

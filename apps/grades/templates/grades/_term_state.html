@@ -1,0 +1,1 @@
+{% if term_state == "past" %}<p class="account-note">Прошедший семестр завершился {{ term.ends_on|date:'j E Y' }}.</p>{% elif term_state == "future" %}<p class="account-note">Будущий семестр начнётся {{ term.starts_on|date:'j E Y' }}.</p>{% endif %}

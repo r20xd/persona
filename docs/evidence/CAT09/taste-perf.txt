@@ -1,0 +1,52 @@
+
+perf tmp/cat09-snapshot/rendered-cat.html @ 1440px
+  PASS  host CPU load (before/after)               13/11 %
+  PASS  total transfer                             53.6 KiB       html 5.5K  css 6.3K  js 10.5K  img 13.7K  other 17.6K
+  PASS  requests                                   18             17 by load
+  PASS  images bytes                               13.7 KiB       6 files
+  PASS  largest image                              10.3 KiB       icons/persona-mark-small.png
+  PASS  JS parsed                                  26 KiB         5 files, 10.5K gz
+  PASS  CSS                                        6.3 KiB        2 files
+  PASS  font families                              0
+  PASS  font files                                 0              0K
+  PASS  images without width+height                0
+  WARN  below-fold images not lazy                 1              persona-mark-small.png
+  PASS  oversized images (natural > 2.2x shown)    0
+  PASS  WebGL live at load                         0
+  PASS  WebGL live at bottom                       0
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        60 ms          runs 3, 48..60
+  PASS  LCP (CPU, relative)                        60 ms          runs 3, 48..80, p.cat-game-help
+  PASS  layout shift                               0.000          runs 3, 0.000..0.003; at load 0.000
+  PASS  modules loaded, never mounted              0
+  PASS  broken requests                            0
+  PASS  page height                                2.1 screens    DOM 297 nodes
+
+perf tmp/cat09-snapshot/rendered-cat.html @ 390px
+  PASS  host CPU load (before/after)               13/11 %
+  PASS  total transfer                             42.4 KiB       html 5.5K  css 6.3K  js 10.5K  img 13.7K  other 6.4K
+  PASS  requests                                   16             15 by load
+  PASS  images bytes                               13.7 KiB       6 files
+  PASS  largest image                              10.3 KiB       icons/persona-mark-small.png
+  PASS  JS parsed                                  26 KiB         5 files, 10.5K gz
+  PASS  CSS                                        6.3 KiB        2 files
+  PASS  font families                              0
+  PASS  font files                                 0              0K
+  PASS  images without width+height                0
+  WARN  below-fold images not lazy                 2              persona-mark-small.png, chaos.png
+  PASS  oversized images (natural > 2.2x shown)    0
+  PASS  WebGL live at load                         0
+  PASS  WebGL live at bottom                       0
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        56 ms          runs 3, 52..56
+  PASS  LCP (CPU, relative)                        56 ms          runs 3, 52..56, p.account-intro
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0
+  PASS  broken requests                            0
+  PASS  page height                                3.5 screens    DOM 297 nodes
+
+SUMMARY tmp/cat09-snapshot/rendered-cat.html: 0 FAIL, 2 WARN  -> WARN

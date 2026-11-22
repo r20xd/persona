@@ -1,0 +1,48 @@
+{% extends 'core/preview/base.html' %}{% load static %}
+{% block title %}persōna · Макет входа{% endblock %}
+{% block body %}
+  <main id="main" class="login-layout" tabindex="-1">
+    <section class="login-story">
+<div class="login-persona-art" aria-hidden="true"><img src="{% static 'icons/persona-mark.png' %}" alt=""><img src="{% static 'icons/persona-mark.png' %}" alt=""></div>
+      <a class="brand" href="{% url 'preview-dashboard' %}">
+        <span class="brand-mark">
+          <img src="{% static 'icons/persona-mark.png' %}" alt="" width="44" height="44">
+        </span>
+        <span>persōna<span class="brand-caption">Цифровой деканат</span>
+        </span>
+      </a>
+      <div>
+        <p class="overline">ТВОЙ УЧЕБНЫЙ ДЕНЬ — В ОДНОМ МЕСТЕ</p>
+        <h1>Меньше поиска.<br>Больше ясности<span class="title-dot">.</span>
+        </h1>
+        <p>Расписание, учёба и связь с деканатом.<br>Всё важное всегда под рукой.</p>
+        <div class="story-motif" aria-hidden="true">
+          <span>
+          </span>
+          <span>
+          </span>
+          <span>
+          </span>
+        </div>
+      </div>
+      <p class="story-fine">Университет Северного города</p>
+    </section>
+    <section class="login-panel" aria-labelledby="login-title">
+      <div class="login-card">
+        <span class="preview-tag">ПРЕДПРОСМОТР</span>
+        <h2 id="login-title">С возвращением</h2>
+        <p class="login-copy">Так будет выглядеть вход в кабинет.<br>Сейчас это визуальный макет.</p>
+        <div class="login-alert">Вход ещё не подключён. Не вводите настоящие логины и пароли: поля отключены.</div>
+        <div class="login-fields">
+          <label for="demo-login">Логин</label>
+          <input id="demo-login" type="text" placeholder="Демонстрационный логин" disabled>
+          <label for="demo-password">Пароль</label>
+          <input id="demo-password" type="password" placeholder="Поле отключено" disabled>
+        </div>
+        <a class="button button-primary" href="{% url 'preview-dashboard' %}">Перейти к обзору {% include 'core/preview/icon.html' with name='arrow' %}
+        </a>
+
+      </div>
+    </section>
+  </main>
+{% endblock %}

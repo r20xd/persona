@@ -1,0 +1,355 @@
+(safe_operational_format) {
+	# Pinned Caddy/certmagic field audit: never encode free-text messages.
+	# Logger + level + status retain operational/TLS failure signals.
+	format filter {
+		wrap json {
+			message_key ""
+		}
+		fields {
+			"msg" delete
+			"aborted" delete
+			"account" delete
+			"account_contact" delete
+			"account_id" delete
+			"actual_address" delete
+			"adapter" delete
+			"addr" delete
+			"address" delete
+			"addresses" delete
+			"after" delete
+			"age" delete
+			"allow_wildcard_names" delete
+			"arch" delete
+			"ari_cert_id" delete
+			"ari_unique_id" delete
+			"asset_key" delete
+			"attempt" delete
+			"autosave_file" delete
+			"backend_upgrade" delete
+			"backoff" delete
+			"backup_path" delete
+			"base_name" delete
+			"blind" delete
+			"body" delete
+			"bytes_read" delete
+			"ca" delete
+			"cache" delete
+			"cache_capacity" delete
+			"cache_size" delete
+			"cert_cache_fill" delete
+			"cert_expiry" delete
+			"cert_hash" delete
+			"cert_id" delete
+			"cert_key" delete
+			"cert_manager" delete
+			"cert_manager_idx" delete
+			"certificate_file" delete
+			"chain" delete
+			"chain_url" delete
+			"challenge" delete
+			"cipher_suites" delete
+			"cname_value" delete
+			"common_name" delete
+			"config_file" delete
+			"config_id" delete
+			"config_ids" delete
+			"contact" delete
+			"content_length" delete
+			"count" delete
+			"created" delete
+			"current_path" delete
+			"data" delete
+			"db_key" delete
+			"delay" delete
+			"delay_duration" delete
+			"descriptor" delete
+			"destination" delete
+			"dial" delete
+			"dir" delete
+			"dir_path" delete
+			"distributed" delete
+			"dns_name" delete
+			"docs" delete
+			"domain" delete
+			"domains" delete
+			"elapsed" delete
+			"email" delete
+			"enforce_origin" delete
+			"entry" delete
+			"env" delete
+			"ephemeral_selected_time" delete
+			"err_trace" delete
+			"error" delete
+			"executable" delete
+			"exit_code" delete
+			"expected_data" delete
+			"expiration" delete
+			"expired" delete
+			"expired_for" delete
+			"explanation_url" delete
+			"extra_extensions" delete
+			"file" delete
+			"file_validation_url" delete
+			"filename" delete
+			"files_to_hide" delete
+			"final_value" delete
+			"first_error" delete
+			"fqdn" delete
+			"from" delete
+			"from_path" delete
+			"fs" delete
+			"grace_period" delete
+			"handler" delete
+			"hash" delete
+			"header" delete
+			"headers" delete
+			"hint" delete
+			"host" delete
+			"http" delete
+			"http3" delete
+			"http_port" delete
+			"http_version" delete
+			"https_port" delete
+			"id" delete
+			"identifier" delete
+			"identifiers" delete
+			"import_chain" delete
+			"index_filenames" delete
+			"initial_value" delete
+			"input_address" delete
+			"inserting_hash" delete
+			"inserting_subjects" delete
+			"instance" delete
+			"ip" delete
+			"issuer" delete
+			"issuer_key" delete
+			"key" delete
+			"key_id" delete
+			"key_location" delete
+			"lifetime" delete
+			"line" delete
+			"linked" delete
+			"load_delay" delete
+			"load_or_obtain_if_necessary" delete
+			"location" delete
+			"lockKey" delete
+			"lock_key" delete
+			"log_filename" delete
+			"managed" delete
+			"max_duration" delete
+			"method" delete
+			"method_trunc" delete
+			"module" delete
+			"n" delete
+			"name" delete
+			"names" delete
+			"network" delete
+			"new_expiration" delete
+			"new_id" delete
+			"next_ari_update" delete
+			"next_end" delete
+			"next_refresh" delete
+			"next_selected_time" delete
+			"next_start" delete
+			"next_update" delete
+			"not_after" delete
+			"not_before" delete
+			"num_choices" delete
+			"number of configs" delete
+			"ocsp_status" delete
+			"old_id" delete
+			"on_demand" delete
+			"orig_lifetime" delete
+			"origin" delete
+			"original" delete
+			"original_path" delete
+			"origins" delete
+			"os" delete
+			"packages" delete
+			"path" delete
+			"pattern" delete
+			"pidfile" delete
+			"policy" delete
+			"port" delete
+			"preference" delete
+			"prev_end" delete
+			"prev_selected_time" delete
+			"prev_start" delete
+			"priority" delete
+			"problem" delete
+			"proto" delete
+			"protocols" delete
+			"provider" delete
+			"public_name" delete
+			"publisher" delete
+			"push_headers" delete
+			"push_method" delete
+			"push_target" delete
+			"read" delete
+			"record_data" delete
+			"record_name" delete
+			"record_ttl" delete
+			"record_type" delete
+			"related_asset" delete
+			"relative_name" delete
+			"reload_err" delete
+			"remaining" delete
+			"remote" delete
+			"remote_addr" delete
+			"remote_ip" delete
+			"remote_port" delete
+			"removing_hash" delete
+			"removing_subjects" delete
+			"renew_check_interval" delete
+			"renewal_cutoff" delete
+			"renewal_time" delete
+			"request" delete
+			"request_path" delete
+			"requested_upgrade" delete
+			"resolvers" delete
+			"resp_headers" delete
+			"result" delete
+			"retrying_in" delete
+			"revoked" delete
+			"revoked_at" delete
+			"root" delete
+			"rotation_interval" delete
+			"san_dns_names" delete
+			"san_emails" delete
+			"sans" delete
+			"secure" delete
+			"selected_time" delete
+			"serial" delete
+			"server" delete
+			"server_id" delete
+			"server_name" delete
+			"service" delete
+			"signal" delete
+			"site_key" delete
+			"site_root" delete
+			"size" delete
+			"sni" delete
+			"source" delete
+			"source_idx" delete
+			"spanID" delete
+			"stack" delete
+			"status_code" delete
+			"storage" delete
+			"storage_key" delete
+			"storage_path" delete
+			"subject" delete
+			"subjects" delete
+			"subscribed_to" delete
+			"surplus_bytes" delete
+			"tags" delete
+			"target" delete
+			"this_update" delete
+			"time" delete
+			"time_remaining" delete
+			"timeout" delete
+			"tls" delete
+			"to" delete
+			"to_path" delete
+			"total_upstreams" delete
+			"traceID" delete
+			"transformed" delete
+			"try_again" delete
+			"try_again_in" delete
+			"type" delete
+			"upstream" delete
+			"uri" delete
+			"url" delete
+			"user_agent" delete
+			"user_id" delete
+			"uuid" delete
+			"validation_path" delete
+			"verification_method" delete
+			"verified_chains" delete
+			"version" delete
+			"weight" delete
+			"window_end" delete
+			"window_start" delete
+			"working_dir" delete
+			"write_error" delete
+			"written" delete
+			"written_total" delete
+			"zone" delete
+
+		}
+	}
+}
+{
+	admin off
+	# Unselected modules stay silent; only audited operational scopes below emit.
+	log default {
+		output stdout
+		exclude * .
+		import safe_operational_format
+	}
+	log tls_events {
+		output stdout
+		level INFO
+		include tls.cache.maintenance tls.obtain
+		import safe_operational_format
+	}
+	# Handled reverse-proxy faults are DEBUG in Caddy; no global debug mode.
+	log handled_faults {
+		output stdout
+		level DEBUG
+		include http.log.error
+		import safe_operational_format
+	}
+	servers {
+		timeouts {
+			read_header 10s
+			read_body 30s
+			write 120s
+			idle 60s
+		}
+		max_header_size 16KB
+	}
+}
+{$SITE_DOMAIN} {
+	request_body {
+		max_size 64KiB
+	}
+	header {
+		Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'"
+		X-Content-Type-Options nosniff
+		Referrer-Policy same-origin
+		X-Frame-Options DENY
+		-Server
+	}
+	reverse_proxy app:8000 {
+		header_up -Forwarded
+		header_up -X-Forwarded-For
+		header_up X-Forwarded-Proto {scheme}
+		header_up X-Real-IP {remote_host}
+		transport http {
+			dial_timeout 3s
+			response_header_timeout 110s
+			read_timeout 110s
+			write_timeout 30s
+		}
+	}
+	handle_errors {
+		header Cache-Control no-store
+		@health path /health/live/ /health/ready/
+		handle @health {
+			header Content-Type application/json
+			respond `{"status":"unavailable"}` {err.status_code}
+		}
+		handle {
+			header Content-Type "text/html; charset=utf-8"
+			respond <<HTML
+			<!doctype html>
+			<html lang="ru">
+			<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Сервис временно недоступен · persōna</title></head>
+			<body>
+			<main><p>persōna</p><h1>Сервис временно недоступен</h1><p>Попробуйте вернуться в кабинет немного позже.</p><p><a href="/">Вернуться в кабинет</a></p></main>
+			<footer><p>Конкурсный концепт · Неофициальный сервис</p></footer>
+			</body></html>
+			HTML {err.status_code}
+		}
+	}
+}

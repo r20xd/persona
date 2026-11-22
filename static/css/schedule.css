@@ -1,0 +1,309 @@
+.schedule-main {
+  max-width: var(--content);
+}
+
+.schedule-tabs,.schedule-toolbar nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.schedule-tabs {
+  width: fit-content;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin: 28px 0;
+  background: var(--surface-soft);
+}
+
+.schedule-tabs a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.schedule-tabs a:hover {
+  text-decoration: none;
+  background: var(--surface);
+}
+
+.schedule-tabs [aria-current] {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.schedule-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.schedule-toolbar h2 {
+  font-size: 24px;
+  letter-spacing: -.6px;
+}
+
+.schedule-toolbar nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+.schedule-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0 28px;
+  padding: 16px 20px;
+  background: var(--surface-soft);
+  border-radius: 12px;
+}
+
+.schedule-filter label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.schedule-filter input {
+  border-color: var(--control-border);
+}
+
+.schedule-list {
+  display: grid;
+  gap: 14px;
+}
+
+/* The live timetable groups plain lesson rows into one surface per Moscow day. */
+.schedule-list .schedule-day {
+  position: relative;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow-wrap: anywhere;
+}
+
+.schedule-list .schedule-day > h3 {
+  margin: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  font-size: 18px;
+  letter-spacing: -.3px;
+}
+
+.schedule-list .schedule-day-single > h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.schedule-list .lesson + .lesson {
+  border-top: 1px solid var(--line);
+}
+
+.schedule-list .lesson summary {
+  min-height: 44px;
+  padding-block: 10px;
+  cursor: pointer;
+}
+
+.schedule-list :is(a, summary):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+
+.schedule-list .lesson {
+  display: grid;
+  grid-template-columns: 180px minmax(0,1fr);
+  gap: 28px;
+  position: relative;
+  padding: 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow-wrap: anywhere;
+}
+
+.lesson-time {
+  color: var(--muted);
+  font-size: 12px;
+  padding-right: 24px;
+  border-right: 1px solid var(--line);
+}
+
+.lesson-time strong {
+  display: block;
+  color: var(--ink);
+  margin-top: 0;
+  font-size: 23px;
+  line-height: 1.3;
+  letter-spacing: -.7px;
+}
+
+.schedule-list .lesson h4 {
+  font-size: 21px;
+  margin: 6px 0 12px;
+  letter-spacing: -.4px;
+}
+
+.lesson p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 5px 0;
+}
+
+.lesson .overline {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.lesson-content {
+  min-width: 0;
+}
+
+.schedule-list .lesson-cancelled .lesson-content {
+  border-left: 3px solid var(--warning);
+  padding-left: 16px;
+}
+
+.schedule-list .lesson-moved .lesson-content {
+  border-left: 3px dashed var(--warning);
+  padding-left: 16px;
+}
+
+.lesson-cancelled .overline,.lesson-moved .overline {
+  color: var(--warning);
+}
+
+.lesson-history {
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px!important;
+  line-height: 1.7;
+}
+
+.lesson details {
+  margin-top: 8px;
+}
+
+.lesson-moved a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.schedule-empty {
+  padding: 40px 28px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 18px;
+}
+
+.schedule-empty h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.schedule-empty p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.schedule-empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+@media(max-width:600px) {
+  .schedule-list .schedule-day:not(.schedule-day-single) > h3 {
+    padding: 18px 20px;
+    font-size: 17px;
+  }
+  .schedule-tabs {
+    margin: 24px 0;
+  }
+  .schedule-tabs a {
+    padding-inline: 18px;
+    font-size: 13px;
+  }
+  .schedule-toolbar h2 {
+    font-size: 22px;
+  }
+  .schedule-toolbar {
+    gap: 16px;
+  }
+  .schedule-filter {
+    padding: 16px;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .schedule-filter label {
+    width: 100%;
+  }
+  .schedule-filter input {
+    flex: 1;
+    min-width: 0;
+  }
+  .schedule-list .lesson {
+    display: block;
+    padding: 20px;
+  }
+  .lesson-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    padding: 0;
+    margin-bottom: 12px;
+    border-right: 0;
+    font-size: 11px;
+  }
+  .lesson-time strong {
+    display: block;
+    margin: 0;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  .schedule-list .lesson h4 {
+    font-size: 21px;
+  }
+  .lesson p {
+    font-size: 13px;
+  }
+  .schedule-empty {
+    padding: 28px 22px;
+  }
+  .schedule-empty-actions .button {
+    width: 100%;
+  }
+}

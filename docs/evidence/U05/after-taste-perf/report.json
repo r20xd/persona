@@ -1,0 +1,280 @@
+{
+ "page": "/tmp/deanery-u05-b9qb89so/public-after/home.html",
+ "partial": false,
+ "results": [
+  {
+   "w": 1440,
+   "rows": [
+    {
+     "name": "host CPU load (before/after)",
+     "value": "2/2 %",
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "total transfer",
+     "value": "15.5 KiB",
+     "verdict": "PASS",
+     "note": "html 3.3K  css 5.3K  js 2.4K  other 4.5K"
+    },
+    {
+     "name": "requests",
+     "value": 9,
+     "verdict": "PASS",
+     "note": "8 by load"
+    },
+    {
+     "name": "images bytes",
+     "value": "0 KiB",
+     "verdict": "PASS",
+     "note": "0 files"
+    },
+    {
+     "name": "JS parsed",
+     "value": "3.4 KiB",
+     "verdict": "PASS",
+     "note": "3 files, 2.4K gz"
+    },
+    {
+     "name": "CSS",
+     "value": "5.3 KiB",
+     "verdict": "PASS",
+     "note": "2 files"
+    },
+    {
+     "name": "font families",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "font files",
+     "value": 0,
+     "verdict": "PASS",
+     "note": "0K"
+    },
+    {
+     "name": "images without width+height",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "below-fold images not lazy",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "oversized images (natural > 2.2x shown)",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "WebGL live at load",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "WebGL live at bottom",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "WebGL peak live",
+     "value": 0,
+     "verdict": "PASS",
+     "note": "0 contexts made in all"
+    },
+    {
+     "name": "long tasks",
+     "value": 0,
+     "verdict": "PASS",
+     "note": "runs 3, 0..0, max 0ms"
+    },
+    {
+     "name": "blocking time",
+     "value": "0 ms",
+     "verdict": "PASS",
+     "note": "runs 3, 0..0 ms; at load 0ms"
+    },
+    {
+     "name": "FCP (CPU, relative)",
+     "value": "44 ms",
+     "verdict": "PASS",
+     "note": "runs 3, 40..108"
+    },
+    {
+     "name": "LCP (CPU, relative)",
+     "value": "44 ms",
+     "verdict": "PASS",
+     "note": "runs 3, 40..108, p"
+    },
+    {
+     "name": "layout shift",
+     "value": "0.000",
+     "verdict": "PASS",
+     "note": "runs 3, 0.000..0.000; at load 0.000"
+    },
+    {
+     "name": "modules loaded, never mounted",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "broken requests",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "page height",
+     "value": "2.5 screens",
+     "verdict": "PASS",
+     "note": "DOM 165 nodes"
+    }
+   ]
+  },
+  {
+   "w": 360,
+   "rows": [
+    {
+     "name": "host CPU load (before/after)",
+     "value": "2/2 %",
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "total transfer",
+     "value": "15.1 KiB",
+     "verdict": "PASS",
+     "note": "html 3.3K  css 5.3K  js 2.4K  other 4.1K"
+    },
+    {
+     "name": "requests",
+     "value": 8,
+     "verdict": "PASS",
+     "note": "7 by load"
+    },
+    {
+     "name": "images bytes",
+     "value": "0 KiB",
+     "verdict": "PASS",
+     "note": "0 files"
+    },
+    {
+     "name": "JS parsed",
+     "value": "3.4 KiB",
+     "verdict": "PASS",
+     "note": "3 files, 2.4K gz"
+    },
+    {
+     "name": "CSS",
+     "value": "5.3 KiB",
+     "verdict": "PASS",
+     "note": "2 files"
+    },
+    {
+     "name": "font families",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "font files",
+     "value": 0,
+     "verdict": "PASS",
+     "note": "0K"
+    },
+    {
+     "name": "images without width+height",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "below-fold images not lazy",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "oversized images (natural > 2.2x shown)",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "WebGL live at load",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "WebGL live at bottom",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "WebGL peak live",
+     "value": 0,
+     "verdict": "PASS",
+     "note": "0 contexts made in all"
+    },
+    {
+     "name": "long tasks",
+     "value": 0,
+     "verdict": "PASS",
+     "note": "runs 3, 0..0, max 0ms"
+    },
+    {
+     "name": "blocking time",
+     "value": "0 ms",
+     "verdict": "PASS",
+     "note": "runs 3, 0..0 ms; at load 0ms"
+    },
+    {
+     "name": "FCP (CPU, relative)",
+     "value": "36 ms",
+     "verdict": "PASS",
+     "note": "runs 3, 36..40"
+    },
+    {
+     "name": "LCP (CPU, relative)",
+     "value": "36 ms",
+     "verdict": "PASS",
+     "note": "runs 3, 36..40, p"
+    },
+    {
+     "name": "layout shift",
+     "value": "0.000",
+     "verdict": "PASS",
+     "note": "runs 3, 0.000..0.000; at load 0.000"
+    },
+    {
+     "name": "modules loaded, never mounted",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "broken requests",
+     "value": 0,
+     "verdict": "PASS",
+     "note": ""
+    },
+    {
+     "name": "page height",
+     "value": "3.8 screens",
+     "verdict": "PASS",
+     "note": "DOM 165 nodes"
+    }
+   ]
+  }
+ ]
+}

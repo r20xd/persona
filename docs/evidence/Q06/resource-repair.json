@@ -1,0 +1,73 @@
+{
+  "reason": "Initial QA runner omitted explicit PGDATA mount, causing anonymous volumes. Fixed to tmpfs. No prune.",
+  "removed_owned_volumes": [
+    {
+      "volume": "505c34af145e0faadaa618d55fd3026a5eaf20c04209ea348d93722668d6ec3c",
+      "container": "deanery-q05-ac7f566266f248f287fe8e2b84605619",
+      "owner": "ac7f566266f248f287fe8e2b84605619",
+      "container_id": "a271a7a5db1a6dd6b68bd0e3d58b489001b65e7c85b57b7439fc5ebce056db7d",
+      "mounts": [
+        {
+          "container_id": "a271a7a5db1a6dd6b68bd0e3d58b489001b65e7c85b57b7439fc5ebce056db7d",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ],
+      "removed": true
+    },
+    {
+      "volume": "8751f60f0779a3c5895301eec3a5ad57fded4713dc4b22ab5a472b4e587cc2ce",
+      "container": "deanery-q05-c75f1043cb51494b9a8893ccfd660f34",
+      "owner": "c75f1043cb51494b9a8893ccfd660f34",
+      "container_id": "ec70bf1dfb45a3b2e9e8657940460892c2537a501769b5debfbd04473696b1cb",
+      "mounts": [
+        {
+          "container_id": "ec70bf1dfb45a3b2e9e8657940460892c2537a501769b5debfbd04473696b1cb",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ],
+      "removed": true
+    },
+    {
+      "volume": "ce24ca1026b57b276a548b8c6841461a875968a663875fec6d43d46050d770c3",
+      "container": "deanery-q05-b6b0799fd99b4b8081bbe75b85a3e254",
+      "owner": "b6b0799fd99b4b8081bbe75b85a3e254",
+      "container_id": "3affb261f83c1571505b8ee957b4a056040789b587bd185c0ce0a80cf409fac0",
+      "mounts": [
+        {
+          "container_id": "3affb261f83c1571505b8ee957b4a056040789b587bd185c0ce0a80cf409fac0",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ],
+      "removed": true
+    },
+    {
+      "volume": "b1af369df791af64073267bc53165c87d6cb3cc76ba73fbdabc34e57885a3985",
+      "container": "deanery-q05-f89171366d1249fba2da785fcf8b9181",
+      "owner": "f89171366d1249fba2da785fcf8b9181",
+      "container_id": "d568047739e484b59831f76b662bd67a362cc00c08ae4fcc9ab9611abeb9de5f",
+      "mounts": [
+        {
+          "container_id": "d568047739e484b59831f76b662bd67a362cc00c08ae4fcc9ab9611abeb9de5f",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ],
+      "removed": true
+    },
+    {
+      "volume": "0a7fd764d793c94ea6669d43547d486612cd9003a5aa5330293292c9b811b0a9",
+      "container": "deanery-q05-aff3c0c35068404ab60a426796435211",
+      "owner": "aff3c0c35068404ab60a426796435211",
+      "container_id": "b5fc8938cce1ef06922c846bc78b467a55ac0eec7514a3ce35da13daae32bee8",
+      "mounts": [
+        {
+          "container_id": "b5fc8938cce1ef06922c846bc78b467a55ac0eec7514a3ce35da13daae32bee8",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ],
+      "removed": true
+    }
+  ],
+  "suite_volume_retained": "f4e6b14364a98f6fa3d3a071be6d259309964d93095efa3c648e41428d321325",
+  "evidence_kind": "reconstructed ownership evidence from retained mount records with container IDs and previous worker report; not raw Docker create events",
+  "removal_status_source": "Previous worker report; removals were not repeated during recovery."
+}

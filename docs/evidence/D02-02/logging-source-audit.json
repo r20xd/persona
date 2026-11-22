@@ -1,0 +1,1063 @@
+{
+  "sources": [
+    "https://github.com/caddyserver/caddy/tree/v2.11.9",
+    "https://github.com/caddyserver/certmagic/tree/v0.25.6"
+  ],
+  "scope": "Conservative union of all literal zap fields; narrow configured loggers only; fundamental message suppressed by JSON encoder; msg deletion also removes structured error-handler msg fields (separate from fundamental MessageKey omission)",
+  "deleted_fields": [
+    "aborted",
+    "account",
+    "account_contact",
+    "account_id",
+    "actual_address",
+    "adapter",
+    "addr",
+    "address",
+    "addresses",
+    "after",
+    "age",
+    "allow_wildcard_names",
+    "arch",
+    "ari_cert_id",
+    "ari_unique_id",
+    "asset_key",
+    "attempt",
+    "autosave_file",
+    "backend_upgrade",
+    "backoff",
+    "backup_path",
+    "base_name",
+    "blind",
+    "body",
+    "bytes_read",
+    "ca",
+    "cache",
+    "cache_capacity",
+    "cache_size",
+    "cert_cache_fill",
+    "cert_expiry",
+    "cert_hash",
+    "cert_id",
+    "cert_key",
+    "cert_manager",
+    "cert_manager_idx",
+    "certificate_file",
+    "chain",
+    "chain_url",
+    "challenge",
+    "cipher_suites",
+    "cname_value",
+    "common_name",
+    "config_file",
+    "config_id",
+    "config_ids",
+    "contact",
+    "content_length",
+    "count",
+    "created",
+    "current_path",
+    "data",
+    "db_key",
+    "delay",
+    "delay_duration",
+    "descriptor",
+    "destination",
+    "dial",
+    "dir",
+    "dir_path",
+    "distributed",
+    "dns_name",
+    "docs",
+    "domain",
+    "domains",
+    "elapsed",
+    "email",
+    "enforce_origin",
+    "entry",
+    "env",
+    "ephemeral_selected_time",
+    "err_trace",
+    "error",
+    "executable",
+    "exit_code",
+    "expected_data",
+    "expiration",
+    "expired",
+    "expired_for",
+    "explanation_url",
+    "extra_extensions",
+    "file",
+    "file_validation_url",
+    "filename",
+    "files_to_hide",
+    "final_value",
+    "first_error",
+    "fqdn",
+    "from",
+    "from_path",
+    "fs",
+    "grace_period",
+    "handler",
+    "hash",
+    "header",
+    "headers",
+    "hint",
+    "host",
+    "http",
+    "http3",
+    "http_port",
+    "http_version",
+    "https_port",
+    "id",
+    "identifier",
+    "identifiers",
+    "import_chain",
+    "index_filenames",
+    "initial_value",
+    "input_address",
+    "inserting_hash",
+    "inserting_subjects",
+    "instance",
+    "ip",
+    "issuer",
+    "issuer_key",
+    "key",
+    "key_id",
+    "key_location",
+    "lifetime",
+    "line",
+    "linked",
+    "load_delay",
+    "load_or_obtain_if_necessary",
+    "location",
+    "lockKey",
+    "lock_key",
+    "log_filename",
+    "managed",
+    "max_duration",
+    "method",
+    "method_trunc",
+    "module",
+    "msg",
+    "n",
+    "name",
+    "names",
+    "network",
+    "new_expiration",
+    "new_id",
+    "next_ari_update",
+    "next_end",
+    "next_refresh",
+    "next_selected_time",
+    "next_start",
+    "next_update",
+    "not_after",
+    "not_before",
+    "num_choices",
+    "number of configs",
+    "ocsp_status",
+    "old_id",
+    "on_demand",
+    "orig_lifetime",
+    "origin",
+    "original",
+    "original_path",
+    "origins",
+    "os",
+    "packages",
+    "path",
+    "pattern",
+    "pidfile",
+    "policy",
+    "port",
+    "preference",
+    "prev_end",
+    "prev_selected_time",
+    "prev_start",
+    "priority",
+    "problem",
+    "proto",
+    "protocols",
+    "provider",
+    "public_name",
+    "publisher",
+    "push_headers",
+    "push_method",
+    "push_target",
+    "read",
+    "record_data",
+    "record_name",
+    "record_ttl",
+    "record_type",
+    "related_asset",
+    "relative_name",
+    "reload_err",
+    "remaining",
+    "remote",
+    "remote_addr",
+    "remote_ip",
+    "remote_port",
+    "removing_hash",
+    "removing_subjects",
+    "renew_check_interval",
+    "renewal_cutoff",
+    "renewal_time",
+    "request",
+    "request_path",
+    "requested_upgrade",
+    "resolvers",
+    "resp_headers",
+    "result",
+    "retrying_in",
+    "revoked",
+    "revoked_at",
+    "root",
+    "rotation_interval",
+    "san_dns_names",
+    "san_emails",
+    "sans",
+    "secure",
+    "selected_time",
+    "serial",
+    "server",
+    "server_id",
+    "server_name",
+    "service",
+    "signal",
+    "site_key",
+    "site_root",
+    "size",
+    "sni",
+    "source",
+    "source_idx",
+    "spanID",
+    "stack",
+    "status_code",
+    "storage",
+    "storage_key",
+    "storage_path",
+    "subject",
+    "subjects",
+    "subscribed_to",
+    "surplus_bytes",
+    "tags",
+    "target",
+    "this_update",
+    "time",
+    "time_remaining",
+    "timeout",
+    "tls",
+    "to",
+    "to_path",
+    "total_upstreams",
+    "traceID",
+    "transformed",
+    "try_again",
+    "try_again_in",
+    "type",
+    "upstream",
+    "uri",
+    "url",
+    "user_agent",
+    "user_id",
+    "uuid",
+    "validation_path",
+    "verification_method",
+    "verified_chains",
+    "version",
+    "weight",
+    "window_end",
+    "window_start",
+    "working_dir",
+    "write_error",
+    "written",
+    "written_total",
+    "zone"
+  ],
+  "retained_fields": [
+    "duration",
+    "err_id",
+    "status"
+  ],
+  "files": {
+    "caddy-2.11.9/sigtrap_posix.go": {
+      "sha256": "3836bf47e87478c59889995b1fa9fdfcd5898292a0ac15feff42c420c8d7f7b8",
+      "field_keys": [
+        "adapter",
+        "file",
+        "signal"
+      ]
+    },
+    "caddy-2.11.9/sigtrap.go": {
+      "sha256": "afd3ffe632417075dcac65c2e8bb0ccf85bd792824b2d1cd6f01bd13f356a224",
+      "field_keys": [
+        "signal"
+      ]
+    },
+    "caddy-2.11.9/replacer.go": {
+      "sha256": "7a491b6f54688e4209a9e69c25b7b9d4002d2ae035244a96128766d11e4c7a47",
+      "field_keys": [
+        "file",
+        "working_dir"
+      ]
+    },
+    "caddy-2.11.9/logging.go": {
+      "sha256": "2816d1dd415815f1af4db1e4d21d24d761267c07c9157027c90a07bcdfc337b8",
+      "field_keys": [
+        "from",
+        "module",
+        "to"
+      ]
+    },
+    "caddy-2.11.9/listeners.go": {
+      "sha256": "e624dccbf45292525254dadb53bcd004a5bb77da7f6cc02dbbb4eca8f4f125a8",
+      "field_keys": [
+        "network",
+        "number of configs"
+      ]
+    },
+    "caddy-2.11.9/listen_unix.go": {
+      "sha256": "f8f969700571d7a6357c4f54507b40d8d5ba8a2faf9aa6bc38d5877ed03027fb",
+      "field_keys": [
+        "address",
+        "descriptor",
+        "network"
+      ]
+    },
+    "caddy-2.11.9/listen.go": {
+      "sha256": "be70db7ad5c0c548fe9d6cad83828fc9d85ef366829b3ad9c13e3fc11e078eda",
+      "field_keys": [
+        "server"
+      ]
+    },
+    "caddy-2.11.9/caddy.go": {
+      "sha256": "f8237bcd634522b158045eb7cffc30f76e4db038e480ae3fbac9d53b3c0ba748",
+      "field_keys": [
+        "dir",
+        "exit_code",
+        "file",
+        "load_delay",
+        "module",
+        "pidfile",
+        "reload_err"
+      ]
+    },
+    "caddy-2.11.9/admin_test.go": {
+      "sha256": "3d79457d9c6bcd7a96b1694756767b88c7f7ae094b76282bcd09780ccf96f5cd",
+      "field_keys": [
+        "uri"
+      ]
+    },
+    "caddy-2.11.9/admin.go": {
+      "sha256": "39399eccb023698a165e3943ca5d7ba84f3471faf044e6f02925d57cf1e58ce8",
+      "field_keys": [
+        "address",
+        "enforce_origin",
+        "headers",
+        "host",
+        "method",
+        "origins",
+        "remote_ip",
+        "remote_port",
+        "secure",
+        "status_code",
+        "uri",
+        "verified_chains"
+      ]
+    },
+    "caddy-2.11.9/cmd/packagesfuncs.go": {
+      "sha256": "054b1de0fd0fa94e4123685a200c0f69793ec296def37253ef4ada124eedc1a9",
+      "field_keys": [
+        "arch",
+        "backup_path",
+        "current_path",
+        "destination",
+        "executable",
+        "location",
+        "original_path",
+        "os",
+        "packages",
+        "path",
+        "source",
+        "target"
+      ]
+    },
+    "caddy-2.11.9/cmd/main.go": {
+      "sha256": "6a5e69bfbf007a4be091d83470475f4d3573e085c62033787117636f0684bf46",
+      "field_keys": [
+        "adapter",
+        "config_file",
+        "file",
+        "line"
+      ]
+    },
+    "caddy-2.11.9/cmd/commandfuncs.go": {
+      "sha256": "7131edc4e2efce8bd5b6149c761311b2abc7bf357a3d8b6f7c1f7e3ecf910158",
+      "field_keys": [
+        "autosave_file",
+        "file",
+        "line",
+        "pidfile"
+      ]
+    },
+    "caddy-2.11.9/caddyconfig/httpcaddyfile/httptype.go": {
+      "sha256": "3935304dff111faf341166d1b3348b7e1c6ab6068da963a2c6f6f75969316c46",
+      "field_keys": [
+        "address"
+      ]
+    },
+    "caddy-2.11.9/caddyconfig/caddyfile/parse.go": {
+      "sha256": "878646a0d64cb6ba73d375b2efe86a008d2d9f635c655240b28a32f150b6b48c",
+      "field_keys": [
+        "file",
+        "pattern"
+      ]
+    },
+    "caddy-2.11.9/caddyconfig/caddyfile/importargs.go": {
+      "sha256": "b79d8e92a5f0ea2762cc90ecc56b31d871fdcbb88443fa4c5ad6cbfc202d67a1",
+      "field_keys": [
+        "file",
+        "import_chain"
+      ]
+    },
+    "caddy-2.11.9/caddytest/integration/acme_test.go": {
+      "sha256": "dc4d17cf7331737c9c4301e56e60b75da94299f6cf00e250764f009e8daa510c",
+      "field_keys": [
+        "challenge",
+        "identifier",
+        "path",
+        "remote"
+      ]
+    },
+    "caddy-2.11.9/modules/caddytls/tls.go": {
+      "sha256": "d63bb6f20bf51628617982ccb40b76bd56849feecb58a11a0a2414b367592ff8",
+      "field_keys": [
+        "docs",
+        "subjects"
+      ]
+    },
+    "caddy-2.11.9/modules/caddytls/ondemand.go": {
+      "sha256": "c3b9d8626b7a03618ead1f2bf90d678badebedb054b58f1d847aa5c8d8be7336",
+      "field_keys": [
+        "domain",
+        "remote",
+        "status",
+        "url"
+      ]
+    },
+    "caddy-2.11.9/modules/caddytls/matchers.go": {
+      "sha256": "b7c64cd560874b364cca5d0ad0ff274cc89eeb97e5ae753d0646075ad31e0f0a",
+      "field_keys": [
+        "ip"
+      ]
+    },
+    "caddy-2.11.9/modules/caddytls/internalissuer.go": {
+      "sha256": "1b2a8198520e3f1adf7a8f4fecc04e0fd0a16077292e960f56cd0212c0b2da87",
+      "field_keys": [
+        "lifetime",
+        "not_after",
+        "orig_lifetime"
+      ]
+    },
+    "caddy-2.11.9/modules/caddytls/ech.go": {
+      "sha256": "9ce43cdb9617e56615787a972dde41d81e7c85621a0000d96dbe9b8e9251d912",
+      "field_keys": [
+        "age",
+        "cname_value",
+        "config_id",
+        "config_ids",
+        "created",
+        "domain",
+        "domains",
+        "id",
+        "new_id",
+        "old_id",
+        "public_name",
+        "publisher",
+        "relative_name",
+        "rotation_interval",
+        "zone"
+      ]
+    },
+    "caddy-2.11.9/modules/caddytls/connpolicy.go": {
+      "sha256": "acc8dd9cab4562a9f3360de1a02e821b783f08fb91f8e57f5eba7df4d70caa66",
+      "field_keys": [
+        "log_filename"
+      ]
+    },
+    "caddy-2.11.9/modules/caddytls/automation.go": {
+      "sha256": "fe8605bdac9aef2f8658b45afeabcd69b4b98dfcda535d89a9e411512729224e",
+      "field_keys": [
+        "domain",
+        "remote_ip"
+      ]
+    },
+    "caddy-2.11.9/modules/caddytls/acmeissuer.go": {
+      "sha256": "822ce2322698534fdbf2dc0e5c59412ed6beb3a5d632d3ee40b31eca05151191",
+      "field_keys": [
+        "key_id"
+      ]
+    },
+    "caddy-2.11.9/modules/caddypki/pki.go": {
+      "sha256": "bf6a672d7bdc6ffdfff2bf4742d9d5e03d4f93436efa4983f97fde5ab16076b9",
+      "field_keys": [
+        "certificate_file",
+        "path"
+      ]
+    },
+    "caddy-2.11.9/modules/caddypki/maintain.go": {
+      "sha256": "c672e44381414c6f373bf972f2f0dc40bba6c13fdc6a1c0c01d45e6acbc835ac",
+      "field_keys": [
+        "ca",
+        "new_expiration",
+        "time_remaining"
+      ]
+    },
+    "caddy-2.11.9/modules/caddypki/ca.go": {
+      "sha256": "6d21eea49a1205e515cb7852b01e567e335ba611b15253b94ac98d5c870b208b",
+      "field_keys": [
+        "not_after",
+        "not_before",
+        "path",
+        "serial"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/server_test.go": {
+      "sha256": "2e22a29014257b156a275d41042b1a08a3d550aa905afcbc38e7954acba3ab9d",
+      "field_keys": [
+        "spanID",
+        "traceID"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/server.go": {
+      "sha256": "c0a203212083a74cb58551e22dfaace3d732971fd199b34765194bca4a2631fe",
+      "field_keys": [
+        "bytes_read",
+        "count",
+        "duration",
+        "error",
+        "first_error",
+        "header",
+        "method_trunc",
+        "module",
+        "msg",
+        "remote_addr",
+        "request",
+        "resp_headers",
+        "size",
+        "status",
+        "user_id",
+        "write_error"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/replacer.go": {
+      "sha256": "2f713f81909fd91862978acef96c9b5b726ca0c6b49c031bf1d1a1aad76bd6c2",
+      "field_keys": [
+        "uuid"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/logging.go": {
+      "sha256": "e0196e7ed13178ab8a03d97615c679372658f662331434369b04e56eeaa7f036",
+      "field_keys": [
+        "err_id",
+        "err_trace",
+        "status"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/ip_matchers.go": {
+      "sha256": "74266bba69af6f72fb608a074face709619e8d42ced7e260c42c9ffc1dd3b10b",
+      "field_keys": [
+        "zone"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/autohttps.go": {
+      "sha256": "90f829ec5a4408137d240225ea22d2495e6c02de9a09dfc0b0b9ac811035f204",
+      "field_keys": [
+        "domain",
+        "domains",
+        "http",
+        "http_port",
+        "https_port",
+        "server_name",
+        "tls"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/app.go": {
+      "sha256": "f1a5bf9af965a42198561349de7a7bb3ab4a334f65bc745f9619c262a5b3fdd8",
+      "field_keys": [
+        "actual_address",
+        "addr",
+        "address",
+        "addresses",
+        "delay_duration",
+        "duration",
+        "file",
+        "http3",
+        "input_address",
+        "name",
+        "network",
+        "protocols",
+        "server",
+        "server_id",
+        "time",
+        "tls"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyfs/filesystem.go": {
+      "sha256": "59aef15c5f91cd6eae394f99714265d5382ff097a2fabebe5a6ff4dfe1b23e57",
+      "field_keys": [
+        "fs"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyevents/app.go": {
+      "sha256": "d132e4f75f32124c9f0757415ccc800f3a178365ce53ef3ce3a5020cda424378",
+      "field_keys": [
+        "aborted",
+        "data",
+        "handler",
+        "id",
+        "name",
+        "origin",
+        "subscribed_to"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/tracing/tracer.go": {
+      "sha256": "dbe61b7e2a3011c4bc9624ecda9da949124e5fa39c09869e92c3980796ac7e21",
+      "field_keys": [
+        "spanID",
+        "traceID"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/templates/tplcontext.go": {
+      "sha256": "778e7a6bd82583fd3fdc2b5735e715103124327f7ae7259b55d0907a8f21fa5e",
+      "field_keys": [
+        "name"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/rewrite/rewrite.go": {
+      "sha256": "8fa039fd3afe49ebae4ddc180bf9560b2d0918018944b2a41bb6efa0f44dc167",
+      "field_keys": [
+        "method",
+        "request",
+        "uri"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/upstreams.go": {
+      "sha256": "8a49b5646a55af8e7be96ff2af9af9d7a9540c1dbed1f0511fc9495515303b24",
+      "field_keys": [
+        "ip",
+        "name",
+        "port",
+        "priority",
+        "proto",
+        "service",
+        "source_idx",
+        "target",
+        "version",
+        "weight"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/streaming.go": {
+      "sha256": "56d7929eb647ad210083cf3891c963b6ab9bcfaf42f4b6dea139a813be889323",
+      "field_keys": [
+        "backend_upgrade",
+        "delay",
+        "duration",
+        "http_version",
+        "n",
+        "read",
+        "requested_upgrade",
+        "timeout",
+        "type",
+        "written",
+        "written_total"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/reverseproxy.go": {
+      "sha256": "aa3b70813e9bd764ff65d744b1ac2ffdf07e74fc2f35362a77fb4472b6c53e06",
+      "field_keys": [
+        "after",
+        "count",
+        "dial",
+        "duration",
+        "handler",
+        "headers",
+        "request",
+        "status",
+        "total_upstreams",
+        "upstream"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/metrics.go": {
+      "sha256": "613b0ccdf88b88e11f8ee6e9c9416643b91beaa18c495014d929fee48d6d921a",
+      "field_keys": [
+        "error",
+        "stack"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/httptransport.go": {
+      "sha256": "a07cbb54bef3c8cc21e387c7499f5ba932991059627cd05d825c06ded2220cf9",
+      "field_keys": [
+        "header"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/healthchecks.go": {
+      "sha256": "c1e88a92d76359711dad08ee98e362b940c98d50a568f82656f94ce059815e25",
+      "field_keys": [
+        "address",
+        "error",
+        "host",
+        "stack",
+        "status_code"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/command.go": {
+      "sha256": "8246fc3d5b86762f6872c18d5c5a078de61dfaa466ef677c335284a2822274bd",
+      "field_keys": [
+        "from",
+        "policy",
+        "to"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/push/handler.go": {
+      "sha256": "005119f72093df0962f83b63111f42a45c66163893c7b3128515f062ecf5ed91",
+      "field_keys": [
+        "linked",
+        "push_headers",
+        "push_method",
+        "push_target",
+        "uri"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/intercept/intercept.go": {
+      "sha256": "f16f55583c7eacd2dad401bb18fb2dea6df431cc9edc4090142522b27f1462aa",
+      "field_keys": [
+        "handler"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/fileserver/staticfiles.go": {
+      "sha256": "932bc92cb455fab4611603a118e4eb68f6ec3f75c570a016960e9868f34b0beb",
+      "field_keys": [
+        "backoff",
+        "filename",
+        "files_to_hide",
+        "from_path",
+        "fs",
+        "index_filenames",
+        "path",
+        "request_path",
+        "result",
+        "site_root",
+        "to_path"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/fileserver/matcher.go": {
+      "sha256": "b7862736b2beef347d803f71ab0b63b7a8c4ec732a33fd711d08ab4a108de785",
+      "field_keys": [
+        "fs"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/fileserver/browsetplcontext.go": {
+      "sha256": "506b2c956d8d6d7ec6edbdddb5ec2af30daf7a09909d3b8dbe97102072c57a5b",
+      "field_keys": [
+        "dir_path",
+        "name"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/fileserver/browse.go": {
+      "sha256": "02fe2879c70418ba59376347c5c518586eea9e9a82696fbe62458827ada01ae3",
+      "field_keys": [
+        "path",
+        "request_path",
+        "root"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/caddyauth/caddyauth.go": {
+      "sha256": "0199004da3b264da3314e4ccb2ae5acd0e18355f60b38b6995f8a8ef1cee0245",
+      "field_keys": [
+        "provider"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/fastcgi/fastcgi.go": {
+      "sha256": "71deec0fe9fd80b5b9d0cc7c02f036e63a0cde3966179d4a63457b1c1a591ebb",
+      "field_keys": [
+        "dial",
+        "env",
+        "request"
+      ]
+    },
+    "caddy-2.11.9/modules/caddyhttp/reverseproxy/fastcgi/client.go": {
+      "sha256": "571df41176fd3474c7e4a09c6e36b8f2f236e51efa6e63b39f74abf8e15b6a08",
+      "field_keys": [
+        "body",
+        "content_length",
+        "surplus_bytes"
+      ]
+    },
+    "caddy-2.11.9/modules/caddypki/acmeserver/acmeserver.go": {
+      "sha256": "cacbc1f405ba058207d9e7da527c8d0ce2e6ded84e263a612add1a31372979b0",
+      "field_keys": [
+        "allow_wildcard_names",
+        "ca",
+        "db_key"
+      ]
+    },
+    "caddy-2.11.9/modules/internal/network/networkproxy.go": {
+      "sha256": "892e0f07b24f606704160db41d488f13ed1f21ed012a1128b91a74df515c1d7c",
+      "field_keys": [
+        "final_value",
+        "hint",
+        "initial_value",
+        "url"
+      ]
+    },
+    "certmagic-0.25.6/zerosslissuer.go": {
+      "sha256": "0394a8c77766115a214dfe723f43975a3086b65acf12336404c2d09967c23120",
+      "field_keys": [
+        "cert_id",
+        "dns_name",
+        "domain",
+        "identifiers",
+        "verification_method"
+      ]
+    },
+    "certmagic-0.25.6/storage.go": {
+      "sha256": "51855fb679da444049dcbf1cabf78d162f6e2b5d54c7f4e959ac69f3f70208bd",
+      "field_keys": [
+        "lock_key",
+        "storage"
+      ]
+    },
+    "certmagic-0.25.6/solvers.go": {
+      "sha256": "8714e345bddd8f461940f44bcdbdadb2883446782a74ea23f652d70f3417ba30",
+      "field_keys": [
+        "dns_name",
+        "expected_data",
+        "fqdn",
+        "record_data",
+        "record_name",
+        "record_ttl",
+        "record_type",
+        "resolvers",
+        "zone"
+      ]
+    },
+    "certmagic-0.25.6/maintain.go": {
+      "sha256": "e3157e439061dc2b86041c9146565fccc955c55a87d360b6214f253c193fe89d",
+      "field_keys": [
+        "ari_unique_id",
+        "asset_key",
+        "base_name",
+        "cache",
+        "cert_expiry",
+        "cert_hash",
+        "cert_key",
+        "error",
+        "expiration",
+        "expired_for",
+        "explanation_url",
+        "from",
+        "grace_period",
+        "identifiers",
+        "instance",
+        "issuer",
+        "issuer_key",
+        "next_end",
+        "next_refresh",
+        "next_selected_time",
+        "next_start",
+        "next_update",
+        "prev_end",
+        "prev_selected_time",
+        "prev_start",
+        "related_asset",
+        "remaining",
+        "renewal_time",
+        "selected_time",
+        "site_key",
+        "stack",
+        "storage",
+        "storage_key",
+        "storage_path",
+        "to",
+        "try_again",
+        "try_again_in"
+      ]
+    },
+    "certmagic-0.25.6/localcache.go": {
+      "sha256": "251269b478d3ed3534a71090764ed10021b2f21914df5c68a19e8949a65ad3e2",
+      "field_keys": [
+        "key"
+      ]
+    },
+    "certmagic-0.25.6/httphandlers.go": {
+      "sha256": "0b63e3fc3bb0d6dff695e928a50e425bc76b6905c7a1110028f8353868e4d40b",
+      "field_keys": [
+        "blind",
+        "ca",
+        "challenge",
+        "distributed",
+        "file_validation_url",
+        "host",
+        "identifier",
+        "remote",
+        "remote_addr",
+        "uri",
+        "user_agent",
+        "validation_path"
+      ]
+    },
+    "certmagic-0.25.6/handshake.go": {
+      "sha256": "69f900fd16d81717e120ffbe799af6481199461cb4d7a0d4ac755d427e1819f3",
+      "field_keys": [
+        "cert_cache_fill",
+        "cert_manager",
+        "cert_manager_idx",
+        "challenge",
+        "cipher_suites",
+        "distributed",
+        "expiration",
+        "expired",
+        "hash",
+        "identifier",
+        "identifiers",
+        "issuer_key",
+        "load_or_obtain_if_necessary",
+        "managed",
+        "names",
+        "next_update",
+        "not_after",
+        "num_choices",
+        "ocsp_status",
+        "on_demand",
+        "remaining",
+        "remote",
+        "remote_addr",
+        "remote_ip",
+        "remote_port",
+        "revoked",
+        "revoked_at",
+        "server_name",
+        "sni",
+        "subject",
+        "subjects",
+        "this_update"
+      ]
+    },
+    "certmagic-0.25.6/dnsutil.go": {
+      "sha256": "f11bafbf0cf20dcf4ae207eb4926d0b498d5421cf331dcbe1e684761f439aed9",
+      "field_keys": [
+        "entry",
+        "msg",
+        "resolvers"
+      ]
+    },
+    "certmagic-0.25.6/crypto.go": {
+      "sha256": "d4677b92deec26f48afe901bdc714c8b0598340ee66c2eaa4833c4cd10f6530f",
+      "field_keys": [
+        "domain",
+        "expiration",
+        "issuer_key",
+        "storage"
+      ]
+    },
+    "certmagic-0.25.6/config.go": {
+      "sha256": "f5810f859c19c481b0072539ce6ec22f5fccc19a107dd4fb43f05fac0017c65a",
+      "field_keys": [
+        "attempt",
+        "common_name",
+        "extra_extensions",
+        "identifier",
+        "identifiers",
+        "issuer",
+        "key",
+        "lockKey",
+        "lock_key",
+        "original",
+        "remaining",
+        "san_dns_names",
+        "san_emails",
+        "subject",
+        "transformed"
+      ]
+    },
+    "certmagic-0.25.6/certificates.go": {
+      "sha256": "e19941c61a3ba076adbab331693a0526db5c51e0fc109ac81cc88e4073f9e607",
+      "field_keys": [
+        "ari_cert_id",
+        "ephemeral_selected_time",
+        "expiration",
+        "identifier",
+        "identifiers",
+        "next_ari_update",
+        "not_after",
+        "remaining",
+        "renew_check_interval",
+        "renewal_cutoff",
+        "sans",
+        "selected_time",
+        "subjects",
+        "window_end",
+        "window_start"
+      ]
+    },
+    "certmagic-0.25.6/cache.go": {
+      "sha256": "d57373d15909931c322d83a3f006532f5f5433dbe6b5d4119d73ba296bfbb748",
+      "field_keys": [
+        "cache_capacity",
+        "cache_size",
+        "expiration",
+        "hash",
+        "inserting_hash",
+        "inserting_subjects",
+        "issuer_key",
+        "managed",
+        "new_expiration",
+        "removing_hash",
+        "removing_subjects",
+        "subjects",
+        "tags"
+      ]
+    },
+    "certmagic-0.25.6/async.go": {
+      "sha256": "bb0fa1f0832b3b93c0a18883a63d41ba0916afa3cc1257607f91b450b8759703",
+      "field_keys": [
+        "attempt",
+        "elapsed",
+        "max_duration",
+        "retrying_in"
+      ]
+    },
+    "certmagic-0.25.6/acmeissuer.go": {
+      "sha256": "03009e31e73b54edeeae9095ae653921b56350a7380842f3d01147a4f0c7c730",
+      "field_keys": [
+        "account_contact",
+        "account_id",
+        "chain",
+        "chain_url",
+        "key_location",
+        "preference",
+        "problem",
+        "url"
+      ]
+    },
+    "certmagic-0.25.6/acmeclient.go": {
+      "sha256": "4217baa468a6ba19d12ac77611f58cb9b39224e8f25cf322259db521cd38134f",
+      "field_keys": [
+        "account",
+        "ca",
+        "contact",
+        "identifiers",
+        "location",
+        "status"
+      ]
+    },
+    "certmagic-0.25.6/account.go": {
+      "sha256": "03a62797e14aa8c8f0b24cbdcfbd7c8ffd064719c7146670e48961d852666ff3",
+      "field_keys": [
+        "ca",
+        "email"
+      ]
+    }
+  }
+}

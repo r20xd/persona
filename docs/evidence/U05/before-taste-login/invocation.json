@@ -1,0 +1,14 @@
+{
+  "kind": "consistency",
+  "page": "login",
+  "widths": [
+    1440,
+    360
+  ],
+  "quick": true,
+  "runs": null,
+  "exit_code": 1,
+  "seconds": 47.15,
+  "snapshot": "sanitized rendered login.html; private root",
+  "scripts": "unmodified Taste Skill 2.5.1"
+}

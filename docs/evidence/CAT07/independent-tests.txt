@@ -1,0 +1,14 @@
+Root independent run against frozen source (166 hashes in source-sha256.txt):
+UV_CACHE_DIR=/tmp/persona-uv-cache TEST_DB_PORT=55439 TEST_DB_NAME=test_cat07_root PLAYWRIGHT_BROWSERS_PATH=/tmp/persona-browsers UPDATE_CAT07_EVIDENCE=1 uv run --locked pytest tests/test_cat.py tests/test_cat_pixels.py tests/test_cat_browser.py -q
+
+Exit 0: 34 passed, 1 warning in 159.05s (0:02:39).
+Existing PytestRemovedIn10Warning: Session-scoped fixtures defined as instance methods are deprecated (pytest-playwright base_url fixture).
+
+Independent PNG decoding and reproducibility; no upsampling of old32/16 geometry, expressive endpoints and no clipping; all poses clear of all toys.
+Real Chromium: 360/1440, all three characters and four toys in game/profile; full game, repeated games, save retry, timeout, keyboard/focus, fast shuffle, multiple-toy persistence and noJS form; static profile; ambient blink/stretch/yawn, wrong-pick surprise, jump reaction priority, win joy, pause/hidden/calm/reduced; exact screenshot pixel blocks at DPR1/1.25/2.
+
+Ruff check and format check on changed Python: exit0.
+JavaScript syntax via cached node binary --check: exit0.
+DJANGO_SETTINGS_MODULE=config.settings.preview uv run --locked python manage.py check: no issues, exit0.
+git diff --check: exit0.
+166 hashes unchanged after full run.

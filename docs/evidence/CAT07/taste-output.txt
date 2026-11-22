@@ -1,0 +1,6 @@
+Command: UV_CACHE_DIR=/tmp/persona-uv-cache uv run --offline --no-project --with nodejs-wheel node /Users/local-user/.codex/plugins/cache/taste-skill/taste-skill/2.5.1/skills/taste-skill/scripts/shoot.mjs --url http://127.0.0.1:8767/rendered-cat.html --w 360 --out docs/evidence/CAT07/taste-rendered-360.png --profile /tmp/cat07-chrome
+Exit: 0
+saved docs/evidence/CAT07/taste-rendered-360.png (360x2915, 4 screens)
+tiles mobile: 3 sections, 3.74 screens, navH 0, tiles 5; heights 0.06 1.73 1.34
+
+Input: sanitized real Django template render using fictional cat Пиксель, all4toys unlocked, no student data, CSRF value snapshot-not-a-live-token. Local source assets copied into /tmp/cat07-snapshot/static including accounts JS. It proves rendering only; no working POST or authenticated-session behavior is claimed from this snapshot. Parent owns optional gate findings and live browser acceptance.

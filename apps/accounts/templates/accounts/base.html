@@ -1,0 +1,36 @@
+{% load static %}<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{% block title %}persōna · Личный кабинет
+{% endblock %}
+</title>
+<link rel="icon" href="{% static 'icons/persona-mark-small.png' %}">
+<link rel="stylesheet" href="{% static 'css/workspace.css' %}">
+{% block workspace_transition_styles %}
+{% if request.method == 'GET' and request.user.is_authenticated and request.user.is_active and request.user.role == 'student' %}
+{% with route=request.resolver_match.url_name %}
+{% if route == 'home' or route == 'deadlines' or route == 'schedule' or route == 'session' or route == 'session-legacy' or route == 'grades' or route == 'requests' or route == 'students' or route == 'cat' or route == 'assistant' or route == 'notifications' or route == 'profile' %}
+<link rel="stylesheet" href="{% static 'css/workspace-transitions.css' %}">
+<script src="{% static 'accounts/workspace-transitions.js' %}" defer></script>
+{% endif %}
+{% endwith %}
+{% endif %}
+{% endblock %}
+<script src="{% static 'accounts/history.js' %}" defer></script>
+<script src="{% static 'accounts/forms.js' %}" defer></script>
+<script src="{% static 'accounts/filters.js' %}" defer></script>
+<script src="{% static 'accounts/workspace-menu.js' %}" defer></script>
+</head>
+<body hx-history="false" data-request-method="{{ request.method }}">
+<a class="skip-link" href="#main">К содержимому</a>
+{% if request.user.is_authenticated and request.resolver_match.url_name != 'login' %}{% include 'accounts/navigation.html' %}{% include 'accounts/header.html' %}{% endif %}
+{% block body %}
+
+{% endblock %}
+{% include 'accounts/concept_notice.html' %}
+{% block cat_cameo %}{% if cat_walk_preference %}{% include 'accounts/cat_cameo.html' %}{% endif %}{% endblock %}
+</body>
+</html>

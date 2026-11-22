@@ -1,0 +1,11 @@
+{
+ "page": null,
+ "url": "http://127.0.0.1:8764/docs/evidence/CAT04/rendered-cat.html",
+ "root": null,
+ "kind": "gaming",
+ "category": "Студенческая мини-игра Кот в рюкзаке",
+ "primary": "Начать сборы",
+ "rounds": 3,
+ "start": "2026-11-15T09:13:12.164Z",
+ "by": "gate.mjs --start"
+}

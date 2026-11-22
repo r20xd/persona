@@ -1,0 +1,4 @@
+<section class="dashboard-card attention-card" aria-labelledby="attention-title">
+<h2 id="attention-title">Требует внимания</h2>
+{% for item in attention.items %}<article class="dashboard-item"><p class="attention-label priority-{{ item.priority }}">{{ item.label }}</p><h3>{{ item.title }}</h3>{% if item.move %}{% include "dashboard/_lesson_move.html" with change=item.move only %}{% else %}<p>{{ item.reason }}</p>{% endif %}<a href="{{ item.url }}">{{ item.action }} →</a></article>{% empty %}<p>Сейчас подтверждённых поводов для внимания нет.</p><p class="account-note">Отсутствие оценки не означает задолженность. Здесь появятся опубликованные итоги, изменения занятий и ответы деканата.</p>{% endfor %}
+</section>

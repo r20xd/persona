@@ -1,0 +1,345 @@
+consistency  /tmp/deanery-u05-b9qb89so/public-after/home.html
+--quick: not checked: scroll-linked (stepping), scroll-reveal (the reveal walk; IntersectionObserver reveals are read), hover-spill, hidden-visual, loop-pause, forms, reduced-motion, the dead-IntersectionObserver walk (hidden content is read with scripts off and under reduced motion), hover-move. Still told: IntersectionObserver reveals (scroll-reveal), held sections (pinned) and CSS scroll timelines (scroll-linked); faults inside held or [data-big-scene] sections are WARNs
+
+1440x900  3 screens  45 FAIL  28 WARN
+  FAIL hero-fill       main#main > section.dashboard-card.dashboard-next  "Анализ данных"
+       the next section shows on the first screen: it starts at 242px on a 900px screen (the hero ends at 188px)  [1440-01-hero-fill.jpg]
+       fix: let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load
+  FAIL flush           main#main > div.dashboard-actions > a.button.button-primary  "Заказать справку →"
+       its button sits 0px above the rule on top of section.dashboard-card.attention-card  [1440-02-flush.jpg]
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  FAIL flush           main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(1) > a:nth-of-type(1)  "Успеваемость →"
+       its button sits -258px above the rule on top of section.dashboard-card:nth-of-type(2)  [1440-24-flush.jpg]
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  FAIL flush           main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(3) > a  "Мои заявки →"
+       its button sits -165px above the rule on top of section.dashboard-card:nth-of-type(4)  [1440-25-flush.jpg]
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  FAIL card-visual     main#main > div.dashboard-grid:nth-of-type(3)  "Как идёт учёба Демонстрационный семестр "
+       4 cards hold only text: no picture, icon, UI fragment or effect in any of them  [1440-26-card-visual.jpg]
+       fix: give the cards a visual: an inset panel with a UI fragment, a photograph or real icons
+  FAIL cta             main#main > h1
+       the hero has no button (the nav's does not count)  [1440-03-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  FAIL cta             main#main > details.dashboard-card.changes-summary > article.dashboard-item  "Мировая экономикаПеренос · Демонстрацион"
+       the last section before the footer ends with no button  [1440-30-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  FAIL heading-scale   h2#next-title  "Анализ данных"
+       h2 headings in 3 sizes, 20px ("Как идёт учёба") to 32px (x1.60)  [1440-04-heading-scale.jpg]
+       fix: size headings by level: the h1 largest, one size per level, each level below the one above
+  FAIL section-gaps    main#main > section.dashboard-card.dashboard-next / main#main > div.dashboard-actions
+       45px between these sections, -61% against the median 116px of gaps at a change of ground  [1440-05-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  FAIL section-gaps    main#main > div.dashboard-actions / main#main > div.dashboard-grid.attention-grid > section.dashboard-card.attention-card
+       60px between these sections, -65% against the median 172px  [1440-06-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  FAIL section-gaps    main#main > div.dashboard-grid.attention-grid > section.dashboard-card.digest-card / main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(1)
+       374px between these sections, +117% against the median 172px  [1440-32-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  FAIL section-tile    main#main > section.dashboard-card.dashboard-next  "Анализ данных"
+       the section is 249px tall (0.28 screens at 1440x900), shorter than the screen: its tile (the screen from its top) shows 249px of it and 473px of a section further down, its heading "Требует внимания" on screen  [1440-34-section-tile.jpg]
+       fix: set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb
+  FAIL focus-ring      main:focus
+       "main:focus" in workspace.bf585f27e9e3.css removes the focus outline and sets nothing in its place
+       fix: keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it
+  WARN flush           main#main > section.dashboard-card.dashboard-next > a  "Открыть расписание события →"
+       its button sits 29px above the lower edge of section.dashboard-card.dashboard-next, where the ground changes to div.dashboard-actions  [1440-07-flush.jpg]
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  WARN flush           main#main > div.dashboard-grid.attention-grid > section.dashboard-card.attention-card > p.overline  "ВАШИ ПРИОРИТЕТЫ"
+       its first line sits 28px under the top edge of section.dashboard-card.attention-card, where the ground changes  [1440-08-flush.jpg]
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  WARN flush           main#main > div.dashboard-grid.attention-grid > section.dashboard-card.digest-card > p:nth-of-type(3)  "Вы в курсе всех отслеживаемых изменений."
+       its last line sits 28px above the rule on top of section.dashboard-card:nth-of-type(1)  [1440-09-flush.jpg]
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  WARN flush           main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(2) > p.account-note  "Срок не подтверждает факт сдачи. Все сро"
+       its last line sits 27px above the rule on top of section.dashboard-card:nth-of-type(3)  [1440-27-flush.jpg]
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  WARN copy-headline   main#main > h1  "Ваш учебный день"
+       "Ваш учебный день": no category known to check it against (pass --category, or write the <title> as "Name: what it is for whom")  [1440-10-copy-headline.jpg]
+       fix: put the category noun in the h1 (and who it is for, or where), in 2 to 8 words
+  WARN copy-headline   main#main > h1  "Ваш учебный день"
+       the h1 has 0 words (2 to 8 read at a glance)  [1440-11-copy-headline.jpg]
+       fix: put the category noun in the h1 (and who it is for, or where), in 2 to 8 words
+  WARN copy-actions    (the page)
+       the main action "Заказать справку" does not read word for word the same in the nav or hero and the closing section
+       fix: few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close
+  WARN off-grid        h2#next-title  "Анализ данных"
+       the section's heading starts at 349px, 33px off the page margin (316px), and no other section starts there  [1440-12-off-grid.jpg]
+       fix: move it onto the page margin, or the column edge its section uses
+  WARN off-grid        h2#digest-title  "Пока вас не было"
+       the section's heading starts at 938px, 622px off the page margin (316px), and no other section starts there  [1440-13-off-grid.jpg]
+       fix: move it onto the page margin, or the column edge its section uses
+  WARN section-gaps    main#main > div.dashboard-grid.attention-grid > section.dashboard-card.attention-card / main#main > div.dashboard-grid.attention-grid > section.dashboard-card.digest-card
+       the sections overlap by 413px  [1440-31-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(1) / main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(2)
+       the sections overlap by 232px  [1440-28-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(3) / main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(4)
+       the sections overlap by 139px  [1440-29-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN links           aside.workspace-sidebar > div.sidebar-brand > a.brand  "кампус Цифровой деканат"
+       "кампус Цифровой деканат" goes to /, which does not exist here  [1440-14-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN links           aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(2)  "Расписание"
+       "Расписание" goes to /schedule/, which does not exist here  [1440-15-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN links           aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(3)  "Успеваемость"
+       "Успеваемость" goes to /grades/, which does not exist here  [1440-16-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN links           aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(4)  "Заявки"
+       "Заявки" goes to /requests/, which does not exist here  [1440-17-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN links           aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(5)  "Уведомления"
+       "Уведомления" goes to /notifications/, which does not exist here  [1440-18-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN links           header.account-header > div.header-inner > div.header-actions > a.header-profile  "Мой профиль"
+       "Мой профиль" goes to /profile/, which does not exist here  [1440-19-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN links           main#main > div.dashboard-actions > a.button.button-primary  "Заказать справку →"
+       "Заказать справку →" goes to /requests/new/, which does not exist here  [1440-20-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN links           div.dashboard-grid.attention-grid > section.dashboard-card.attention-card > article.dashboard-item:nth-of-type(1) > a  "Проверить срок →"
+       "Проверить срок →" goes to /deadlines/26520c20-3aa4-415c-b419-e7c1d35b9530/, which does not exist here  [1440-21-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN one-screen      main#main > div.dashboard-grid.attention-grid > section.dashboard-card.attention-card  "Требует внимания"
+       1 section is shorter than the screen, so the next one's heading or picture shows with it: "Требует внимания" is 473px of the 900px under the nav, and "Пока вас не было" shows below it  [1440-22-one-screen.jpg]
+       fix: give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one
+  WARN moment-none     (the page)
+       a software page (--type) deals no moment: every kind carries one, two on a long page (moments.md)
+       fix: deal one (moments.mjs pick --page software) and mount it in its own section
+  WARN section-tile    main#main > div.dashboard-grid:nth-of-type(3)  "Как идёт учёба"
+       the section is 990px tall (1.10 screens at 1440x900), not one screen or two: the screen one screen on from its top (scroll 1373px, held at the page's end) shows 706px of it and only 74px of the next section's ground ("Изменения на неделю"), none of its content  [1440-37-section-tile.jpg]
+       fix: set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb
+  WARN skip-link       a.skip-link  "К содержимому"
+       the first Tab stop is "К содержимому", not a skip link: a keyboard user tabs through the whole nav on every visit
+       fix: add the starter's skip link as the header's first child: <a class="skip-link" href="#top">Skip to content</a>
+  WARN page-meta       head  "Главная · Кампус"
+       no <meta name="description">: a search result and a shared link show a scrap of the page instead
+       fix: write a <title> "Name: what it is for whom or where" and a one-sentence description in other words (starter.html)
+  WARN share-meta      head
+       the head lacks og:title, og:description, og:image, twitter:card, theme-color: a shared link shows no picture or title of its own
+       fix: copy the head block of starter.html: og tags, twitter:card, the icon and theme-color (references/system.md, Head)
+  WARN form-fields     header.account-header > div.header-inner > div.header-actions:nth-of-type(2) > form
+       the form has no status line (role="status"): sending, sent and errors are never read out  [1440-23-form-fields.jpg]
+       fix: give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)
+  FAIL hero-screen     main#main > p.overline  "Среда, 11 ноября 2026 · МИ-201"
+       the hero ends at 137px on a 900px screen, 764px above the fold: it ends at the fold, 1px either way (SR-1)  [1440-rhythm-01-hero-screen.jpg]
+       fix: make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter
+  FAIL hero-screen     main#main > h1  "Ваш учебный день"
+       754px of the next section shows on the first screen (from 147px on a 900px screen): nothing below the hero shows at load (SR-1)
+       fix: end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)
+  FAIL section-height  main#main > p.account-intro  "Арина Листова Северина · 2 курс"
+       the section is 22px tall (0 screens), 878px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)  [1440-rhythm-02-section-height.jpg]
+       fix: set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit
+  FAIL section-height  main#main > h1  "Ваш учебный день"
+       the section is 41px tall (0 screens), 859px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)
+       fix: set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit
+  FAIL section-height  main#main > div.dashboard-actions  "Заказать справку →Моё расписание →"
+       the section is 44px tall (0 screens), 856px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 4 more like it: "Изменения на неделюМиров", "БЛИЖАЙШЕЕ СОБЫТИЕАнализ ", "ВАШИ ПРИОРИТЕТЫТребует в") (SR-2)
+       fix: set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit
+  FAIL section-height  main#main > div.dashboard-actions  "Заказать справку →Моё расписание →"
+       the section starts at 507px, 393px above the screen grid (1 x 900px): sections start on whole screens (SR-2)
+       fix: make every section above it exactly one or two screens tall, so this one starts on a whole screen
+  FAIL section-height  main#main > div.dashboard-grid.attention-grid  "ВАШИ ПРИОРИТЕТЫТребует внимания Скоро ср"
+       the section starts at 583px, 317px above the screen grid (1 x 900px): sections start on whole screens (SR-2)
+       fix: make every section above it exactly one or two screens tall, so this one starts on a whole screen
+  FAIL section-height  main#main > details.dashboard-card.changes-summary  "Изменения на неделюМировая экономикаПере"
+       the section starts at 2103px, 303px below the screen grid (2 x 900px): sections start on whole screens (and 5 more like it: "БЛИЖАЙШЕЕ СОБЫТИЕАнализ ", "Арина Листова Северина ·", "Как идёт учёбаДемонстрац") (SR-2)
+       fix: make every section above it exactly one or two screens tall, so this one starts on a whole screen
+  FAIL section-height  main#main > div.dashboard-actions  "Заказать справку →Моё расписание →"
+       the section's content does not fit it: its lowest content ends 44px below its top, past -28px (the section less 72px of bottom padding) (SR-2)
+       fix: fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups
+  FAIL section-height  main#main > div.dashboard-grid.attention-grid  "ВАШИ ПРИОРИТЕТЫТребует внимания Скоро ср"
+       the section's content does not fit it: its lowest content ends 448px below its top, past 401px (the section less 72px of bottom padding) (and 3 more like it: "Как идёт учёбаДемонстрац", "Изменения на неделюМиров", "БЛИЖАЙШЕЕ СОБЫТИЕАнализ ") (SR-2)
+       fix: fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups
+  FAIL section-air     main#main > section.dashboard-card.dashboard-next / main#main > div.dashboard-actions
+       45px of air between the content of these two sections: 128-480px (64-600px WARN) (every gap out of the band at 1440px, top to bottom: 45px after "БЛИЖАЙШЕЕ СОБЫТИЕАна", 58px after "Заказать справку →Мо", 83px after "ВАШИ ПРИОРИТЕТЫТребу", 77px after "Как идёт учёбаДемонс") (SR-3)  [1440-rhythm-03-section-air.jpg]
+       fix: keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)
+  FAIL section-air     main#main > div.dashboard-actions / main#main > div.dashboard-grid.attention-grid
+       58px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)
+       fix: keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)
+  WARN section-air     main#main > div.dashboard-grid:nth-of-type(3) / main#main > details.dashboard-card.changes-summary
+       77px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)
+       fix: keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)
+  FAIL section-air     main#main > h1  "Ваш учебный день"
+       the section shows no content: its content fills 0% of its 41px (55% or more) (SR-3)
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  FAIL section-air     main#main > p.account-intro  "Арина Листова Северина · 2 курс"
+       the section shows no content: its content fills 0% of its 22px (55% or more) (SR-3)
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  FAIL section-air     main#main > details.dashboard-card.changes-summary  "Изменения на неделюМировая экономикаПере"
+       the content fills 22.9% of the section's height (17 of 74px): 55% or more (40% WARN) (SR-3)
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  FAIL one-section     h2#study-title  "Как идёт учёба"
+       the screen at scroll 507px (the top of section 5) shows 318px of section 7 and the heading of section 7 whole and the content of 3 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)  [1440-rhythm-04-one-section.jpg]
+       fix: make each section exactly one screen or two, so a screen shows one section and no neighbour peeks
+  FAIL one-section     h2#next-title  "Анализ данных"
+       the screen at scroll 0px (stride 0) shows 249px of section 4 and the heading of section 4 whole and the content of 3 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)
+       fix: make each section exactly one screen or two, so a screen shows one section and no neighbour peeks
+  FAIL one-section     h2#next-title  "Анализ данных"
+       the screen at scroll 120px (the top of section 1) shows 249px of section 4 and the heading of section 4 whole and the content of 3 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (and 2 more like it: scroll 900px, scroll 1373px) (SR-4)
+       fix: make each section exactly one screen or two, so a screen shows one section and no neighbour peeks
+  FAIL one-section     main#main > p.overline  "Среда, 11 ноября 2026 · МИ-201"
+       a <p> sits directly in <main>: every part of <main> is a <section> (SR-4)
+       fix: put every block of <main> in a <section>, and give a band its own section instead of a ground inside one
+  FAIL one-section     main#main > h1  "Ваш учебный день"
+       a <h1> sits directly in <main>: every part of <main> is a <section> (SR-4)
+       fix: put every block of <main> in a <section>, and give a band its own section instead of a ground inside one
+  FAIL one-section     main#main > p.account-intro  "Арина Листова Северина · 2 курс"
+       a <p> sits directly in <main>: every part of <main> is a <section> (and 4 more like it: "Заказать справку →Моё ра", "ВАШИ ПРИОРИТЕТЫТребует в", "Как идёт учёбаДемонстрац") (SR-4)
+       fix: put every block of <main> in a <section>, and give a band its own section instead of a ground inside one
+  FAIL one-heading     h2#digest-title  "Пока вас не было"
+       the section holds 2 h2 headings: one per section, first in its .wrap (SR-5)  [1440-rhythm-05-one-heading.jpg]
+       fix: give each section one h2, first in its .wrap, and the hero only its h1
+  FAIL one-heading     h2#due-title  "Ближайшие сроки"
+       the section holds 4 h2 headings: one per section, first in its .wrap (SR-5)
+       fix: give each section one h2, first in its .wrap, and the hero only its h1
+  FAIL one-heading     h2#attention-title  "Требует внимания"
+       headings of two sections show whole on one screen at 13 of 28 scroll positions (46.4%; at scroll 0, 50, 100, 150px), here with "Анализ данных": at most 3% on a desktop (SR-5)
+       fix: make the sections one screen tall so their headings sit a screen apart and two never share one
+  FAIL container-edges header.account-header  "кампусЦифровой деканат Личный кабинет ст"
+       the nav's content runs 316px from the left and 84px from the right (read from its outermost blocks: no .wrap): 316 and 84px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)  [1440-rhythm-06-container-edges.jpg]
+       fix: use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone
+  FAIL container-edges main#main > section.dashboard-card.dashboard-next  "БЛИЖАЙШЕЕ СОБЫТИЕАнализ данных 13 ноября"
+       the content of section 4 runs 349px from the left and 117px from the right (read from its outermost blocks: no .wrap): the page's container starts at 316px; 349 and 117px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)
+       fix: use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone
+  FAIL container-edges main#main > div.dashboard-grid.attention-grid  "ВАШИ ПРИОРИТЕТЫТребует внимания Скоро ср"
+       the content of section 6 runs 316px from the left and 84px from the right (read from its outermost blocks: no .wrap): 316 and 84px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (and 2 more like it: "Как идёт учёбаДемонстрац", "Изменения на неделюМиров") (SR-6)
+       fix: use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone
+  FAIL container-edges a.skip-link  "К содержимому"
+       a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges aside.workspace-sidebar  "кампусЦифровой деканат Ваше пространство"
+       a <aside> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 10 more like it: "кампусЦифровой деканат Л", "Конкурсный концепт · Нео", "Среда, 11 ноября 2026 · ") (SR-6)
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges h2#digest-title  "Пока вас не было"
+       the h2 starts 622px right of the container's left: every h1 and h2 starts on it, 2px either way (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL container-edges h2#due-title  "Ближайшие сроки"
+       the h2 starts 555px right of the container's left: every h1 and h2 starts on it, 2px either way (and 5 more like it: "Важное рядом", x 341, "Требует внимания") (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL container-edges main#main > div.dashboard-grid.attention-grid > section.dashboard-card.attention-card  "ВАШИ ПРИОРИТЕТЫТребует внимания Скоро ср"
+       a box over half the container wide runs 316-893px, not on the container's lines at 316-1356px (SR-6)
+       fix: run the picture or box from the container's left line to its right line, or put it in a row or a split
+
+360x780  5 screens  10 FAIL  8 WARN
+  FAIL hero-fill       main#main > div.dashboard-actions  "Заказать справку → Моё расписание →"
+       the next section shows on the first screen: it starts at 488px on a 780px screen (the hero ends at 476px)  [360-01-hero-fill.jpg]
+       fix: let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load
+  FAIL flush           main#main > div.dashboard-actions > a.button.button-primary  "Заказать справку →"
+       its button sits 0px above the rule on top of section.dashboard-card.attention-card  [360-02-flush.jpg]
+       fix: give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)
+  FAIL nav             header.account-header > div.header-inner > div.mobile-brand > a.brand  "кампус Цифровой деканат"
+       nav link wraps to a second line  [360-03-nav.jpg]
+       fix: make the nav one bar from the content's left edge to its right edge, with every link and action inside it
+  FAIL no-visual       main#main > div.dashboard-grid.attention-grid > section.dashboard-card.attention-card  "Требует внимания"
+       no picture, effect or mock in this section; a feature section needs a visual  [360-08-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL no-visual       main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(1)  "Как идёт учёба"
+       no picture, effect or mock in this section; a feature section needs a visual  [360-12-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL no-visual       main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(4)  "Важное рядом"
+       no picture, effect or mock in this section; a feature section needs a visual  [360-16-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL card-visual     main#main > div.dashboard-grid:nth-of-type(3)  "Как идёт учёба Демонстрационный семестр "
+       4 cards hold only text: no picture, icon, UI fragment or effect in any of them  [360-13-card-visual.jpg]
+       fix: give the cards a visual: an inset panel with a UI fragment, a photograph or real icons
+  FAIL cta             main#main > details.dashboard-card.changes-summary > article.dashboard-item  "Мировая экономикаПеренос · Демонстрацион"
+       the last section before the footer ends with no button  [360-18-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  FAIL heading-scale   section.dashboard-card:nth-of-type(1) > dl.dashboard-counts > div:nth-of-type(1) > dd  "1"
+       the figure "1" is set at 30px, larger than the h1 (28px) (and 1 more like it: "0")  [360-14-heading-scale.jpg]
+       fix: set figures below the h1: a stat reads as data, not as the headline
+  FAIL off-grid        main#main > div.dashboard-grid.attention-grid > section.dashboard-card.digest-card > p.overline  "ЛИЧНАЯ СВОДКА"
+       left edge at 39px, 23px off the page margin at 16px (12 elements, like section.dashboard-card.attention-card); 3 more in this section off the grid too (h2#digest-title at 39px, p.account-note at 39px, p:nth-of-type(3) at 39px)  [360-09-off-grid.jpg]
+       fix: move it onto the page margin, or the column edge its section uses
+  WARN tap-size        header.account-header > div.header-inner > div.mobile-brand > a.brand  "кампус Цифровой деканат"
+       a 146x43px tap target: under the 44px a phone needs  [360-04-tap-size.jpg]
+       fix: make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box
+  WARN tap-size        div.dashboard-grid.attention-grid > section.dashboard-card.attention-card > article.dashboard-item:nth-of-type(1) > a  "Проверить срок →"
+       a 120x36px tap target (and 1 more like it on this screen): under the 44px a phone needs  [360-10-tap-size.jpg]
+       fix: make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box
+  WARN tap-size        div.dashboard-grid.attention-grid > section.dashboard-card.attention-card > p.account-note > a:nth-of-type(1)  "учёба"
+       a 32x32px tap target (and 3 more like it on this screen): under the 44px a phone needs  [360-11-tap-size.jpg]
+       fix: make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box
+  WARN heading-scale   div.dashboard-grid.attention-grid > section.dashboard-card.attention-card > article.dashboard-item:nth-of-type(1) > h3  "Подготовить новый учебный проект"
+       the h3s (16px) are only 1.25x smaller than the h2s (20px): one level a clear step (1.3x or more) below the other  [360-05-heading-scale.jpg]
+       fix: size headings by level: the h1 largest, one size per level, each level below the one above
+  WARN section-gaps    main#main > section.dashboard-card.dashboard-next / main#main > div.dashboard-actions
+       35px between these sections, -52% against the median 73px of gaps at a change of ground  [360-06-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    main#main > div.dashboard-actions / main#main > div.dashboard-grid.attention-grid > section.dashboard-card.attention-card
+       50px between these sections, -30% against the median 71px  [360-07-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN hole            main#main > div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(4)  "Важное рядом"
+       an empty hole 136x240px inside the section (31% of the screen's height), with content above and below it  [360-17-hole.jpg]
+       fix: close the empty space: move the content together, or give the space the visual it lacks
+  WARN fade-cut        div.dashboard-grid:nth-of-type(3) > section.dashboard-card:nth-of-type(3) > article.dashboard-item > p  "Отправлена"
+       a line of section.dashboard-card:nth-of-type(3) fades out under its edge ("Отправлена"): drawn at a fraction of #384c65 on #ffffff, half-erased  [360-15-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+
+first screen at 1280, 1152, 1024, 896, 768  0 FAIL  0 WARN
+
+the page at 320x640, walked for what runs past the screen's edge  0 FAIL
+  WARN tap-size        [320] header.account-header > div.header-inner > div.mobile-brand > a.brand  "кампус Цифровой деканат"
+       a 146x43px tap target: under the 44px a phone needs  [narrow-320-01-tap-size.jpg]
+       fix: make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box
+  WARN tap-size        [320] div.dashboard-grid.attention-grid > section.dashboard-card.attention-card > article.dashboard-item:nth-of-type(1) > a  "Проверить срок →"
+       a 120x36px tap target (and 1 more like it on this screen): under the 44px a phone needs  [narrow-320-02-tap-size.jpg]
+       fix: make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box
+  WARN tap-size        [320] div.dashboard-grid.attention-grid > section.dashboard-card.attention-card > p.account-note > a:nth-of-type(1)  "учёба"
+       a 32x32px tap target (and 3 more like it on this screen): under the 44px a phone needs  [narrow-320-03-tap-size.jpg]
+       fix: make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box
+
+checks
+  PASS assets                 PASS shader-lint            PASS gl-fallback
+  PASS empty-visual           FAIL hero-fill              FAIL flush
+  PASS placeholder            PASS sample-label           PASS caption
+  PASS credit-wall            FAIL nav                    PASS nav-covers
+  PASS spill                  PASS off-viewport           PASS fold-card
+  SKIP hover-spill            PASS overlap-text           PASS collide
+  WARN tap-size               PASS row-gap                PASS cut-text
+  PASS fold-cut               PASS marquee                SKIP scroll-linked
+  SKIP scroll-reveal          PASS pinned                 SKIP loop-pause
+  SKIP reduced-motion         PASS hidden-content         PASS webgl
+  FAIL no-visual              PASS text-only              FAIL card-visual
+  SKIP hidden-visual          PASS card-family            PASS card-layout
+  PASS nesting                PASS effect-repeat          PASS ui-fit
+  PASS ui-centre              PASS dark-ground            PASS button-styles
+  PASS button-shape           PASS same-action            PASS button-picture
+  FAIL cta                    PASS pricing-tiers          WARN copy-headline
+  PASS copy-fact              PASS copy-headings          PASS copy-buttons
+  WARN copy-actions           FAIL heading-scale          PASS stagger
+  PASS top-stagger            FAIL off-grid               PASS col-edge
+  PASS right-edge             PASS centre-axis            PASS tilt
+  PASS contrast               PASS text-contrast          PASS body-size
+  PASS busy-ground            FAIL section-gaps           PASS proximity
+  WARN hole                   WARN links                  SKIP forms
+  PASS photo-upscale          PASS photo-set              PASS photo-credit
+  PASS nav-family             PASS nav-labels             PASS link-styles
+  PASS heading-align          PASS label-centre           PASS fake-button
+  PASS stranded-action        PASS orphan                 PASS unit-break
+  PASS tab-wrap               PASS effects-fit            WARN fade-cut
+  PASS photo-weight           PASS copy-length            PASS nav-current
+  PASS progress-bar           PASS photo-repeat           PASS button-contrast
+  PASS photo-print            PASS grounds                PASS split-align
+  PASS fact-agree             PASS fold-action            PASS action-count
+  WARN one-screen             SKIP hover                  SKIP hover-move
+  PASS product-shown          PASS same-object            PASS font-load
+  PASS visual-caption         PASS visual-empty           PASS effect-kind
+  PASS hero-enter             WARN moment-none            PASS street-number
+  PASS postcode               PASS coordinates            PASS company-number
+  PASS phone-number           FAIL hero-screen            FAIL section-height
+  FAIL section-air            FAIL one-section            FAIL one-heading
+  FAIL container-edges        PASS row-lines              PASS split-pair
+  PASS motion-layer           PASS count-text             PASS loop-cycle
+  FAIL section-tile           PASS empty-area             PASS a11y-name
+  PASS img-alt                PASS field-label            PASS heading-order
+  PASS tabindex               FAIL focus-ring             PASS focus-visible
+  PASS focus-hidden           WARN skip-link              PASS menu-toggle
+  PASS lang                   WARN page-meta              WARN share-meta
+  PASS action-repeat          PASS map-link               PASS open-now
+  PASS assumed                PASS run-on                 WARN form-fields
+  PASS form-send
+
+total  55 FAIL  39 WARN  (crops and report.json in /home/local-user/test_mgimo-vibe-coding/docs/evidence/U05/after-taste-home)

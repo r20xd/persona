@@ -1,0 +1,36 @@
+<section class="request-card request-conversation" id="conversation" aria-labelledby="conversation-heading">
+<h2 id="conversation-heading">Сообщение оператору</h2>
+{% if conversation_page %}
+<ol class="request-messages" aria-label="Сообщения по заявке">
+{% for message in conversation_page reversed %}
+<li class="request-message{% if message.author_id == request.user.pk %} request-message-own{% endif %}">
+<div class="request-message-meta">
+<strong>{% if message.author_id == application.student.user_id %}Студент{% else %}Деканат{% endif %}{% if message.author_id == request.user.pk %} · Вы{% endif %}</strong>
+<time datetime="{{ message.created_at|date:'c' }}">{{ message.created_at|date:'d.m.Y H:i' }}</time>
+</div>
+<p class="request-comment">{{ message.body }}</p>
+</li>
+{% endfor %}
+</ol>
+{% else %}
+<p class="account-note">Сообщений пока нет. Здесь можно уточнить детали заявки у {% if operator %}студента{% else %}деканата{% endif %}.</p>
+{% endif %}
+{% if conversation_page.has_other_pages %}
+<nav class="request-nav" aria-label="Страницы сообщений">
+{% if conversation_page.has_next %}<a href="?messages_page={{ conversation_page.next_page_number }}#conversation">Более ранние сообщения</a>{% endif %}
+{% if conversation_page.has_previous %}<a href="?messages_page={{ conversation_page.previous_page_number }}#conversation">Более новые сообщения</a>{% endif %}
+</nav>
+{% endif %}
+<form method="post" class="request-form" action="{% if operator %}{% url 'operator-request-message-send' application.id %}{% else %}{% url 'request-message-send' application.id %}{% endif %}">
+{% csrf_token %}
+{% for field in message_form.hidden_fields %}{{ field }}{% endfor %}
+{% include 'requests/error_summary.html' with form=message_form %}
+{% if message_form.body.errors %}<div role="alert">{{ message_form.body.errors }}</div>{% endif %}
+<p>
+<label for="{{ message_form.body.id_for_label }}">Сообщение</label>
+{{ message_form.body }}
+<span class="helptext" id="{{ message_form.body.auto_id }}_helptext">До 2 000 символов. Используйте только вымышленные данные.</span>
+</p>
+<button class="button request-primary" type="submit">Отправить сообщение</button>
+</form>
+</section>

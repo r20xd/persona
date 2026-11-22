@@ -1,0 +1,1417 @@
+{
+ "start": "2026-11-15T09:13:12.164Z",
+ "round": 1,
+ "idle": 0,
+ "errors": 0,
+ "status": "fail",
+ "history": [
+  {
+   "at": "2026-11-15T09:14:46.707Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 31,
+   "round": 1,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": null,
+  "url": "http://127.0.0.1:8764/docs/evidence/CAT04/rendered-cat.html",
+  "root": null,
+  "kind": "gaming",
+  "category": "Студенческая мини-игра Кот в рюкзаке",
+  "primary": "Начать сборы",
+  "rounds": 3,
+  "start": "2026-11-15T09:13:12.164Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "roundKey": "8a2e716eba4794da:da39a3ee",
+ "roundFree": false,
+ "idleFree": false,
+ "blockKey": null,
+ "fp": "8a2e716eba4794da",
+ "page": "http://127.0.0.1:8764/docs/evidence/CAT04/rendered-cat.html",
+ "found": {
+  "fails": [
+   {
+    "check": "hero-fill",
+    "where": "main#main > div.cat-layout > section.cat-companion \"Плюш\"",
+    "msg": "the next section shows on the first screen: it starts at 258px on a 900px screen (the hero ends at 193px)",
+    "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-fill"
+    ],
+    "wheres": [
+     "main#main > div.cat-layout > section.cat-companion \"Плюш\""
+    ]
+   },
+   {
+    "check": "spill",
+    "where": "section.cat-companion > div.cat-portrait > div.cat-art > img.cat-foreground.cat-foreground-right \"img: cat-sleepy.webp\"",
+    "msg": "runs 60px past the bottom edge of the panel it sits on (section.cat-companion > div.cat-portrait > div.cat-art > img.cat-accessory.outfit-gown) (and 2 more like it: img.cat-foreground.cat-foreground-left, img.cat-foreground.cat-foreground-head)",
+    "fix": "keep the box inside the panel it starts on: shrink it, or grow the panel to hold it",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "spill"
+    ],
+    "wheres": [
+     "section.cat-companion > div.cat-portrait > div.cat-art > img.cat-foreground.cat-foreground-right \"img: cat-sleepy.webp\""
+    ]
+   },
+   {
+    "check": "card-layout",
+    "where": "section#cat-wardrobe > div.cat-unlocks \"Шарфик Открыто\"",
+    "msg": "4 of 4 cards drawn one way (one panel, ground, placement and fragment): copies of one card",
+    "fix": "a card layout at most twice on a page: build the other sections another way",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "card-layout"
+    ],
+    "wheres": [
+     "section#cat-wardrobe > div.cat-unlocks \"Шарфик Открыто\""
+    ]
+   },
+   {
+    "check": "cta",
+    "where": "main#main > h1",
+    "msg": "the hero has no button (the nav's does not count)",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "cta"
+    ],
+    "wheres": [
+     "main#main > h1"
+    ]
+   },
+   {
+    "check": "focus-ring",
+    "where": "main:focus",
+    "msg": "\"main:focus\" in workspace.css removes the focus outline and sets nothing in its place",
+    "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-ring"
+    ],
+    "wheres": [
+     "main:focus"
+    ]
+   },
+   {
+    "check": "moment-none",
+    "where": "(the page)",
+    "msg": "a gaming page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+    "fix": "deal one (moments.mjs pick --page gaming) and mount it in its own section",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "moment-none"
+    ],
+    "wheres": [
+     "(the page)"
+    ]
+   },
+   {
+    "check": "hero-screen",
+    "where": "main#main > p.overline \"МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ПАРАМИ\"",
+    "msg": "the hero ends at 137px on a 900px screen, 764px above the fold: it ends at the fold, 1px either way (SR-1)",
+    "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-screen"
+    ],
+    "wheres": [
+     "main#main > p.overline \"МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ПАРАМИ\""
+    ]
+   },
+   {
+    "check": "hero-screen",
+    "where": "main#main > h1 \"Кот в рюкзаке\"",
+    "msg": "754px of the next section shows on the first screen (from 147px on a 900px screen): nothing below the hero shows at load (SR-1)",
+    "fix": "end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-screen"
+    ],
+    "wheres": [
+     "main#main > h1 \"Кот в рюкзаке\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\"",
+    "msg": "the section is 24px tall (0 screens), 876px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\"",
+     "main#main > h1 \"Кот в рюкзаке\"",
+     "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\"",
+    "msg": "the section is 529px tall (0.6 screens), 371px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 1 more like it: \"ВАШ СПУТНИК · СоняПлюшЯ \") (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\""
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "main#main > h1 \"Кот в рюкзаке\"",
+    "msg": "the section shows no content: its content fills 0% of its 46px (55% or more) (SR-3)",
+    "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "main#main > h1 \"Кот в рюкзаке\""
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\"",
+    "msg": "the section shows no content: its content fills 0% of its 24px (55% or more) (SR-3)",
+    "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\"",
+    "msg": "the screen at scroll 770px (the top of section 5) shows 247px of section 4 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\"",
+     "main#main > p.overline \"МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ПАРАМИ\"",
+     "main#main > h1 \"Кот в рюкзаке\"",
+     "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "h2#wardrobe-title \"Имя, характер и гардероб\"",
+    "msg": "the screen at scroll 257px (the top of section 4) shows 112px of section 5 and the heading of section 5 whole and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "h2#wardrobe-title \"Имя, характер и гардероб\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\"",
+    "msg": "the screen at scroll 205px (the top of section 3) shows 60px of section 5 beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (and 2 more like it: scroll 0px, scroll 120px) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\""
+    ]
+   },
+   {
+    "check": "one-heading",
+    "where": "h2#game-title \"Что берём в рюкзак?\"",
+    "msg": "the section holds 2 h2 headings: one per section, first in its .wrap (SR-5)",
+    "fix": "give each section one h2, first in its .wrap, and the hero only its h1",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-heading"
+    ],
+    "wheres": [
+     "h2#game-title \"Что берём в рюкзак?\""
+    ]
+   },
+   {
+    "check": "one-heading",
+    "where": "h2#wardrobe-title \"Имя, характер и гардероб\"",
+    "msg": "headings of two sections show whole on one screen at 10 of 16 scroll positions (62.5%; at scroll 250, 300, 350, 400px), here with \"Плюш\": at most 3% on a desktop (SR-5)",
+    "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-heading"
+    ],
+    "wheres": [
+     "h2#wardrobe-title \"Имя, характер и гардероб\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "header.account-header \"persōnaЦифровой деканат Мой профиль Выйт\"",
+    "msg": "the nav's content runs 1114px from the left and 84px from the right (read from its outermost blocks: no .wrap): the page's container starts at 316px; 1114 and 84px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+    "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "header.account-header \"persōnaЦифровой деканат Мой профиль Выйт\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\"",
+    "msg": "the content of section 5 runs 345px from the left and 113px from the right (read from its outermost blocks: no .wrap): the page's container starts at 316px; 345 and 113px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+    "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\"",
+    "msg": "the content of section 4 runs 316px from the left and 84px from the right (read from its outermost blocks: no .wrap): 316 and 84px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+    "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "a.skip-link \"К содержимому\"",
+    "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+    "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "a.skip-link \"К содержимому\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "aside.workspace-sidebar \"persōnaЦифровой деканат Ваше пространств\"",
+    "msg": "a <aside> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 7 more like it: \"persōnaЦифровой деканат \", \"Конкурсный концепт · Нео\", \"МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ \") (SR-6)",
+    "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "aside.workspace-sidebar \"persōnaЦифровой деканат Ваше пространств\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "main#main > div.cat-layout > section.cat-play > p.cat-game-status \"Соберите три вещи и откройте аксессуар д\"",
+    "msg": "3 text blocks start on a left line at x 767, 451px from the container's left: text starts on the container's left, or on one split line (x 759, 848, 937) (also \"Без ежедневных заданий: кот рад \", \"Спокойный режим — вещи не двигаю\") (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "main#main > div.cat-layout > section.cat-play > p.cat-game-status \"Соберите три вещи и откройте аксессуар д\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "h2#game-title \"Что берём в рюкзак?\"",
+    "msg": "the h2 starts 451px right of the container's left: every h1 and h2 starts on it, 2px either way (and 1 more like it: \"Плюш\") (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "h2#game-title \"Что берём в рюкзак?\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "main#main > div.cat-layout > section.cat-play \"СБОРЫ НА ПАРУЧто берём в рюкзак?20 с Лов\"",
+    "msg": "a box over half the container wide runs 742-1356px, not on the container's lines at 316-1356px (SR-6)",
+    "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "main#main > div.cat-layout > section.cat-play \"СБОРЫ НА ПАРУЧто берём в рюкзак?20 с Лов\""
+    ]
+   },
+   {
+    "check": "empty-visual",
+    "where": "div.cat-unlocks > div.cat-unlock:nth-of-type(1) > span.cat-unlock-icon > img \"cat-scarf.png\"",
+    "msg": "the picture shows nothing here: with it hidden the screen looks the same (the picture is there but invisible: faded out, clipped or covered), so the visitor sees only the ground behind it (and 1 more like it: \"cat-glasses.png\")",
+    "fix": "make the visual draw at every width: a picture that loads, an effect that renders, or its still fallback; never an empty frame",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "empty-visual"
+    ],
+    "wheres": [
+     "div.cat-unlocks > div.cat-unlock:nth-of-type(1) > span.cat-unlock-icon > img \"cat-scarf.png\""
+    ]
+   },
+   {
+    "check": "nav",
+    "where": "header.account-header > div.header-inner > div.mobile-brand > a.brand \"persōna Цифровой деканат\"",
+    "msg": "nav link wraps to a second line",
+    "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "nav"
+    ],
+    "wheres": [
+     "header.account-header > div.header-inner > div.mobile-brand > a.brand \"persōna Цифровой деканат\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "main#main > div.cat-layout > section.cat-play \"Что берём в рюкзак?\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "main#main > div.cat-layout > section.cat-play \"Что берём в рюкзак?\""
+    ]
+   },
+   {
+    "check": "cta",
+    "where": "main#main > p.account-intro",
+    "msg": "the hero has no button (the nav's does not count)",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "cta"
+    ],
+    "wheres": [
+     "main#main > p.account-intro"
+    ]
+   },
+   {
+    "check": "hero-fill",
+    "where": "main#main > div.cat-layout > section.cat-play \"Что берём в рюкзак?\"",
+    "msg": "the next section shows on the first screen: it starts at 250px on a 864px screen (the hero ends at 1030px) (also at 1024, 896, 768)",
+    "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+    "widths": [
+     1152
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-fill"
+    ],
+    "wheres": [
+     "main#main > div.cat-layout > section.cat-play \"Что берём в рюкзак?\""
+    ]
+   },
+   {
+    "check": "container",
+    "where": "page",
+    "msg": "no .wrap",
+    "fix": "put the content in one .wrap",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "container"
+    ],
+    "wheres": [
+     "page"
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "flush",
+    "where": "section.cat-play > div.cat-game-heading > div > p.overline \"СБОРЫ НА ПАРУ\"",
+    "msg": "its first line sits 26px under the top edge of section.cat-play, where the ground changes",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "flush",
+    "where": "main#main > div.cat-layout > section.cat-play > p.account-note \"Без ежедневных заданий: кот рад вам в лю\"",
+    "msg": "its last line sits 28px above the lower edge of section.cat-play, where the ground changes to section#cat-wardrobe",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "flush",
+    "where": "section#cat-wardrobe > div:nth-of-type(1) > p.overline \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛА\"",
+    "msg": "its first line sits 30px under the top edge of section#cat-wardrobe, where the ground changes",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-headline",
+    "where": "main#main > h1 \"Кот в рюкзаке\"",
+    "msg": "\"Кот в рюкзаке\": no category known to check it against (pass --category, or write the <title> as \"Name: what it is for whom\")",
+    "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "heading-scale",
+    "where": "h2#cat-name \"Плюш\"",
+    "msg": "h2 headings in 2 sizes, 22px (\"Что берём в рюкзак?\") to 28px (x1.27)",
+    "fix": "size headings by level: the h1 largest, one size per level, each level below the one above",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "off-grid",
+    "where": "h2#cat-name \"Плюш\"",
+    "msg": "the section's heading starts at 341px, 25px off the page margin (316px), and no other section starts there",
+    "fix": "move it onto the page margin, or the column edge its section uses",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "off-grid",
+    "where": "h2#game-title \"Что берём в рюкзак?\"",
+    "msg": "the section's heading starts at 767px, 451px off the page margin (316px), and no other section starts there",
+    "fix": "move it onto the page margin, or the column edge its section uses",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "off-grid",
+    "where": "h2#wardrobe-title \"Имя, характер и гардероб\"",
+    "msg": "the section's heading starts at 345px, 29px off the page margin (316px), and no other section starts there",
+    "fix": "move it onto the page margin, or the column edge its section uses",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "main#main > div.cat-layout > section.cat-companion / main#main > div.cat-layout > section.cat-play",
+    "msg": "the sections overlap by 576px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "main#main > div.cat-layout > section.cat-play / section#cat-wardrobe",
+    "msg": "uneven space at the edge of a band: 56px outside its edge, 30px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "links",
+    "where": "aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(2) \"Расписание\"",
+    "msg": "\"Расписание\" goes to /schedule/, which does not exist here",
+    "fix": "point every link at a real section, page or file",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "links",
+    "where": "aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(3) \"Успеваемость\"",
+    "msg": "\"Успеваемость\" goes to /grades/, which does not exist here",
+    "fix": "point every link at a real section, page or file",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "links",
+    "where": "aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(4) \"Заявки\"",
+    "msg": "\"Заявки\" goes to /requests/, which does not exist here",
+    "fix": "point every link at a real section, page or file",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "links",
+    "where": "aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(5) \"Студенты\"",
+    "msg": "\"Студенты\" goes to /students/, which does not exist here",
+    "fix": "point every link at a real section, page or file",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "links",
+    "where": "aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(6) \"Кот в рюкзаке\"",
+    "msg": "\"Кот в рюкзаке\" goes to /cat/, which does not exist here",
+    "fix": "point every link at a real section, page or file",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "links",
+    "where": "aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(7) \"Уведомления\"",
+    "msg": "\"Уведомления\" goes to /notifications/, which does not exist here",
+    "fix": "point every link at a real section, page or file",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "links",
+    "where": "header.account-header > div.header-inner > div.header-actions > a.header-profile \"Мой профиль\"",
+    "msg": "\"Мой профиль\" goes to /profile/, which does not exist here",
+    "fix": "point every link at a real section, page or file",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "photo-set",
+    "where": "div.cat-unlocks > div.cat-unlock:nth-of-type(4) > span.cat-unlock-icon > img \"cat-mug.png\"",
+    "msg": "9 photographs in more than one look: lightness from 0.36 to 0.83; the odd one out is cat-mug.png",
+    "fix": "grade the photographs to one look (light, colour, warmth), or replace the odd one out",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "label-centre",
+    "where": "aside.workspace-sidebar > nav.campus-nav > a:nth-of-type(6) \"Кот в рюкзаке\"",
+    "msg": "its label sits 33px off-centre (12px of room at the left, 45px at the right)",
+    "fix": "centre the label in its button, or fill the empty side with an icon",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "one-screen",
+    "where": "main#main > div.cat-layout > section.cat-companion \"Плюш\"",
+    "msg": "2 sections are shorter than the screen, so the next one's heading or picture shows with them: \"Плюш\" is 760px of the 900px under the nav, and \"Что берём в рюкзак?\" shows below it (\"Что берём в рюкзак?\")",
+    "fix": "give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "visual-caption",
+    "where": "section#cat-wardrobe > div.cat-unlocks > div.cat-unlock:nth-of-type(1) > strong \"Шарфик\"",
+    "msg": "a muted 13px line of 1 row sits 6px under the picture cat-scarf.png: it reads as a caption: \"Шарфик\"; no caption or description under any image, render or visual (house rule)",
+    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "visual-caption",
+    "where": "section#cat-wardrobe > div.cat-unlocks > div.cat-unlock:nth-of-type(2) > strong \"Очки\"",
+    "msg": "a muted 13px line of 1 row sits 6px under the picture cat-glasses.png: it reads as a caption: \"Очки\"; no caption or description under any image, render or visual (house rule)",
+    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "visual-caption",
+    "where": "section#cat-wardrobe > div.cat-unlocks > div.cat-unlock:nth-of-type(3) > strong \"Крошечная мантия\"",
+    "msg": "a muted 13px line of 1 row sits 6px under the picture cat-gown-fitted.png: it reads as a caption: \"Крошечная мантия\"; no caption or description under any image, render or visual (house rule)",
+    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "visual-caption",
+    "where": "section#cat-wardrobe > div.cat-unlocks > div.cat-unlock:nth-of-type(4) > strong \"Кружка «Я на пересдачу»\"",
+    "msg": "a muted 13px line of 1 row sits 6px under the picture cat-mug.png: it reads as a caption: \"Кружка «Я на пересдачу»\"; no caption or description under any image, render or visual (house rule)",
+    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "skip-link",
+    "where": "a.skip-link \"К содержимому\"",
+    "msg": "the first Tab stop is \"К содержимому\", not a skip link: a keyboard user tabs through the whole nav on every visit",
+    "fix": "add the starter's skip link as the header's first child: <a class=\"skip-link\" href=\"#top\">Skip to content</a>",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "page-meta",
+    "where": "head \"Кот в рюкзаке · persōna\"",
+    "msg": "no <meta name=\"description\">: a search result and a shared link show a scrap of the page instead",
+    "fix": "write a <title> \"Name: what it is for whom or where\" and a one-sentence description in other words (starter.html)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "share-meta",
+    "where": "head",
+    "msg": "the head lacks og:title, og:description, og:image, twitter:card, theme-color: a shared link shows no picture or title of its own",
+    "fix": "copy the head block of starter.html: og tags, twitter:card, the icon and theme-color (references/system.md, Head)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "form-fields",
+    "where": "header.account-header > div.header-inner > div.header-actions:nth-of-type(2) > form",
+    "msg": "the form has no status line (role=\"status\"): sending, sent and errors are never read out",
+    "fix": "give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "form-fields",
+    "where": "input#id_name",
+    "msg": "the name field lacks autocomplete=\"name\": the phone shows the wrong keyboard and nothing fills it in",
+    "fix": "give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "form-fields",
+    "where": "section#cat-wardrobe > form.cat-settings",
+    "msg": "the form has no status line (role=\"status\"): sending, sent and errors are never read out",
+    "fix": "give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-air",
+    "where": "main#main > div.cat-layout / section#cat-wardrobe",
+    "msg": "86px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)",
+    "fix": "keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav",
+    "where": "div.header-inner > div.header-actions > form > button.button.button-quiet \"Выйти\"",
+    "msg": "the nav is lopsided: its last item ends 11px inside the content's edge (374px), while its first starts on the other edge",
+    "fix": "start the nav's first item and end its last on the content's two edges",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "no-visual",
+    "where": "section#cat-wardrobe \"Имя, характер и гардероб\"",
+    "msg": "pictures, effects and mocks cover 17% of this section; a feature section needs a visual (about 25% or more)",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "photo-set",
+    "where": "div.cat-unlocks > div.cat-unlock:nth-of-type(2) > span.cat-unlock-icon > img \"cat-glasses.png\"",
+    "msg": "8 photographs in more than one look: lightness from 0.36 to 0.83; the odd one out is cat-glasses.png",
+    "fix": "grade the photographs to one look (light, colour, warmth), or replace the odd one out",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-em-dash",
+    "msg": "3 em dashes in the body (budget 2)",
+    "fix": "use a comma, a colon, parentheses or a full stop where each is natural (references/copy-tells.md)",
+    "widths": [],
+    "from": "copy",
+    "where": "(the copy)",
+    "exact": false
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 65,
+   "layout": 12
+  }
+ },
+ "open": [
+  {
+   "check": "hero-fill",
+   "where": "main#main > div.cat-layout > section.cat-companion \"Плюш\"",
+   "msg": "the next section shows on the first screen: it starts at 258px on a 900px screen (the hero ends at 193px)",
+   "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-fill"
+   ],
+   "wheres": [
+    "main#main > div.cat-layout > section.cat-companion \"Плюш\""
+   ]
+  },
+  {
+   "check": "spill",
+   "where": "section.cat-companion > div.cat-portrait > div.cat-art > img.cat-foreground.cat-foreground-right \"img: cat-sleepy.webp\"",
+   "msg": "runs 60px past the bottom edge of the panel it sits on (section.cat-companion > div.cat-portrait > div.cat-art > img.cat-accessory.outfit-gown) (and 2 more like it: img.cat-foreground.cat-foreground-left, img.cat-foreground.cat-foreground-head)",
+   "fix": "keep the box inside the panel it starts on: shrink it, or grow the panel to hold it",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "spill"
+   ],
+   "wheres": [
+    "section.cat-companion > div.cat-portrait > div.cat-art > img.cat-foreground.cat-foreground-right \"img: cat-sleepy.webp\""
+   ]
+  },
+  {
+   "check": "card-layout",
+   "where": "section#cat-wardrobe > div.cat-unlocks \"Шарфик Открыто\"",
+   "msg": "4 of 4 cards drawn one way (one panel, ground, placement and fragment): copies of one card",
+   "fix": "a card layout at most twice on a page: build the other sections another way",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "card-layout"
+   ],
+   "wheres": [
+    "section#cat-wardrobe > div.cat-unlocks \"Шарфик Открыто\""
+   ]
+  },
+  {
+   "check": "cta",
+   "where": "main#main > h1",
+   "msg": "the hero has no button (the nav's does not count)",
+   "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "cta"
+   ],
+   "wheres": [
+    "main#main > h1"
+   ]
+  },
+  {
+   "check": "focus-ring",
+   "where": "main:focus",
+   "msg": "\"main:focus\" in workspace.css removes the focus outline and sets nothing in its place",
+   "fix": "keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-ring"
+   ],
+   "wheres": [
+    "main:focus"
+   ]
+  },
+  {
+   "check": "moment-none",
+   "where": "(the page)",
+   "msg": "a gaming page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+   "fix": "deal one (moments.mjs pick --page gaming) and mount it in its own section",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "moment-none"
+   ],
+   "wheres": [
+    "(the page)"
+   ]
+  },
+  {
+   "check": "hero-screen",
+   "where": "main#main > p.overline \"МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ПАРАМИ\"",
+   "msg": "the hero ends at 137px on a 900px screen, 764px above the fold: it ends at the fold, 1px either way (SR-1)",
+   "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-screen"
+   ],
+   "wheres": [
+    "main#main > p.overline \"МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ПАРАМИ\""
+   ]
+  },
+  {
+   "check": "hero-screen",
+   "where": "main#main > h1 \"Кот в рюкзаке\"",
+   "msg": "754px of the next section shows on the first screen (from 147px on a 900px screen): nothing below the hero shows at load (SR-1)",
+   "fix": "end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-screen"
+   ],
+   "wheres": [
+    "main#main > h1 \"Кот в рюкзаке\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\"",
+   "msg": "the section is 24px tall (0 screens), 876px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\"",
+    "main#main > h1 \"Кот в рюкзаке\"",
+    "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\"",
+   "msg": "the section is 529px tall (0.6 screens), 371px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 1 more like it: \"ВАШ СПУТНИК · СоняПлюшЯ \") (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\""
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "main#main > h1 \"Кот в рюкзаке\"",
+   "msg": "the section shows no content: its content fills 0% of its 46px (55% or more) (SR-3)",
+   "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "main#main > h1 \"Кот в рюкзаке\""
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\"",
+   "msg": "the section shows no content: its content fills 0% of its 24px (55% or more) (SR-3)",
+   "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\"",
+   "msg": "the screen at scroll 770px (the top of section 5) shows 247px of section 4 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\"",
+    "main#main > p.overline \"МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ПАРАМИ\"",
+    "main#main > h1 \"Кот в рюкзаке\"",
+    "main#main > p.account-intro \"20 секунд, три вещи и один очень самосто\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "h2#wardrobe-title \"Имя, характер и гардероб\"",
+   "msg": "the screen at scroll 257px (the top of section 4) shows 112px of section 5 and the heading of section 5 whole and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "h2#wardrobe-title \"Имя, характер и гардероб\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\"",
+   "msg": "the screen at scroll 205px (the top of section 3) shows 60px of section 5 beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (and 2 more like it: scroll 0px, scroll 120px) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\""
+   ]
+  },
+  {
+   "check": "one-heading",
+   "where": "h2#game-title \"Что берём в рюкзак?\"",
+   "msg": "the section holds 2 h2 headings: one per section, first in its .wrap (SR-5)",
+   "fix": "give each section one h2, first in its .wrap, and the hero only its h1",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-heading"
+   ],
+   "wheres": [
+    "h2#game-title \"Что берём в рюкзак?\""
+   ]
+  },
+  {
+   "check": "one-heading",
+   "where": "h2#wardrobe-title \"Имя, характер и гардероб\"",
+   "msg": "headings of two sections show whole on one screen at 10 of 16 scroll positions (62.5%; at scroll 250, 300, 350, 400px), here with \"Плюш\": at most 3% on a desktop (SR-5)",
+   "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-heading"
+   ],
+   "wheres": [
+    "h2#wardrobe-title \"Имя, характер и гардероб\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "header.account-header \"persōnaЦифровой деканат Мой профиль Выйт\"",
+   "msg": "the nav's content runs 1114px from the left and 84px from the right (read from its outermost blocks: no .wrap): the page's container starts at 316px; 1114 and 84px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+   "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "header.account-header \"persōnaЦифровой деканат Мой профиль Выйт\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\"",
+   "msg": "the content of section 5 runs 345px from the left and 113px from the right (read from its outermost blocks: no .wrap): the page's container starts at 316px; 345 and 113px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+   "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "section#cat-wardrobe \"ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\"",
+   "msg": "the content of section 4 runs 316px from the left and 84px from the right (read from its outermost blocks: no .wrap): 316 and 84px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+   "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "main#main > div.cat-layout \"ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "a.skip-link \"К содержимому\"",
+   "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+   "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "a.skip-link \"К содержимому\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "aside.workspace-sidebar \"persōnaЦифровой деканат Ваше пространств\"",
+   "msg": "a <aside> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 7 more like it: \"persōnaЦифровой деканат \", \"Конкурсный концепт · Нео\", \"МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ \") (SR-6)",
+   "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "aside.workspace-sidebar \"persōnaЦифровой деканат Ваше пространств\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "main#main > div.cat-layout > section.cat-play > p.cat-game-status \"Соберите три вещи и откройте аксессуар д\"",
+   "msg": "3 text blocks start on a left line at x 767, 451px from the container's left: text starts on the container's left, or on one split line (x 759, 848, 937) (also \"Без ежедневных заданий: кот рад \", \"Спокойный режим — вещи не двигаю\") (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "main#main > div.cat-layout > section.cat-play > p.cat-game-status \"Соберите три вещи и откройте аксессуар д\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "h2#game-title \"Что берём в рюкзак?\"",
+   "msg": "the h2 starts 451px right of the container's left: every h1 and h2 starts on it, 2px either way (and 1 more like it: \"Плюш\") (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "h2#game-title \"Что берём в рюкзак?\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "main#main > div.cat-layout > section.cat-play \"СБОРЫ НА ПАРУЧто берём в рюкзак?20 с Лов\"",
+   "msg": "a box over half the container wide runs 742-1356px, not on the container's lines at 316-1356px (SR-6)",
+   "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "main#main > div.cat-layout > section.cat-play \"СБОРЫ НА ПАРУЧто берём в рюкзак?20 с Лов\""
+   ]
+  },
+  {
+   "check": "empty-visual",
+   "where": "div.cat-unlocks > div.cat-unlock:nth-of-type(1) > span.cat-unlock-icon > img \"cat-scarf.png\"",
+   "msg": "the picture shows nothing here: with it hidden the screen looks the same (the picture is there but invisible: faded out, clipped or covered), so the visitor sees only the ground behind it (and 1 more like it: \"cat-glasses.png\")",
+   "fix": "make the visual draw at every width: a picture that loads, an effect that renders, or its still fallback; never an empty frame",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "empty-visual"
+   ],
+   "wheres": [
+    "div.cat-unlocks > div.cat-unlock:nth-of-type(1) > span.cat-unlock-icon > img \"cat-scarf.png\""
+   ]
+  },
+  {
+   "check": "nav",
+   "where": "header.account-header > div.header-inner > div.mobile-brand > a.brand \"persōna Цифровой деканат\"",
+   "msg": "nav link wraps to a second line",
+   "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "nav"
+   ],
+   "wheres": [
+    "header.account-header > div.header-inner > div.mobile-brand > a.brand \"persōna Цифровой деканат\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "main#main > div.cat-layout > section.cat-play \"Что берём в рюкзак?\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "main#main > div.cat-layout > section.cat-play \"Что берём в рюкзак?\""
+   ]
+  },
+  {
+   "check": "cta",
+   "where": "main#main > p.account-intro",
+   "msg": "the hero has no button (the nav's does not count)",
+   "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "cta"
+   ],
+   "wheres": [
+    "main#main > p.account-intro"
+   ]
+  },
+  {
+   "check": "hero-fill",
+   "where": "main#main > div.cat-layout > section.cat-play \"Что берём в рюкзак?\"",
+   "msg": "the next section shows on the first screen: it starts at 250px on a 864px screen (the hero ends at 1030px) (also at 1024, 896, 768)",
+   "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+   "widths": [
+    1152
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-fill"
+   ],
+   "wheres": [
+    "main#main > div.cat-layout > section.cat-play \"Что берём в рюкзак?\""
+   ]
+  },
+  {
+   "check": "container",
+   "where": "page",
+   "msg": "no .wrap",
+   "fix": "put the content in one .wrap",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "container"
+   ],
+   "wheres": [
+    "page"
+   ]
+  }
+ ],
+ "waived": [],
+ "warnCount": 35,
+ "at": "2026-11-15T09:14:46.707Z"
+}

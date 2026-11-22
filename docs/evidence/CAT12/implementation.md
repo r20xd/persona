@@ -1,0 +1,9 @@
+# CAT12 — implementation report
+
+Исполнитель: gpt-6.1-sol / low, без субагентов. Прочитаны TASK.md, AGENTS.md, ARCHITECTURE §32, PLAN CAT10/CAT11 и Taste SKILL 2.5.1. Сохранены существующая палитра/renderer/cadence/suppression; новая страница или дизайн-система не создавались.
+
+По заданию root добавлена приватная оценка страницы в облачке кота: минимум два стабильных вопроса для каждой разрешённой страницы, в том числе ИИ-помощника. Выбор вопроса отделён от отображения ответа POST. Вопрос меняется между появлениями, повторный клик в текущем показе сохраняет вопрос. Пять кнопок 44×44 с именами и aria-pressed, накопленное выделение звёзд, ожидание через aria-disabled без потери фокуса/подтверждение/повтор после ошибки; отправка только после явного клика и настоящего ответа сервера. Последние оценки сохраняются в памяти страницы, в БД — за текущим студентом. Форма содержит штатный CSRF token, запрос FormData.
+
+CatPageRating: FK StudentProfile, question, rating, updated_at; unique student/question и DB range 1..5. Аддитивная 0007. POST /cat/rating/ ограничен own_profile и whitelist ключей/строгих строк 1..5; подставленный student не используется. GET не читает таблицу оценок. Новых зависимостей/привилегий/интеграций нет. Связанные требования PRD-03/04/05, TECH-03/06, SEC-01/02.
+
+Фактические проверки: `TEST_DB_PORT=55439 TEST_DB_USER=deanery TEST_DB_NAME=test_cat12_agent .venv/bin/pytest tests/test_cat_cameo.py -q --tb=short` — 6 passed на изолированной PostgreSQL17 root. Первый sandbox запуск был заблокирован loopback; штатный escalation позволил тесты. Ruff для изменённых Python файлов — All checks passed; git diff --check — clean. Makemigrations создал только 0007; рабочая БД не мигрировалась. Node отсутствует в PATH исполнителя, JS syntax check не выполнен. Browser QA, Taste gate и независимая приёмка оставлены root; визуальная готовность/публикация не заявлены. Коммит/push не выполнялись.

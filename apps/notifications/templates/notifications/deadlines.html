@@ -1,0 +1,15 @@
+{% extends 'requests/base.html' %}{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/deadlines.css' %}">
+<h1>Дедлайны</h1><p>Сроки считаются по московской дате.</p>
+{% if focus %}<p><a href="{% url 'deadlines' %}">Все дедлайны →</a></p>{% endif %}
+<section class="deadline-create" aria-labelledby="new-deadline"><h2 id="new-deadline">Новая задача</h2>
+<form method="post" class="deadline-form" novalidate>{% csrf_token %}
+{% for field in form %}<div><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{% if field.errors %}<div role="alert">{{ field.errors }}</div>{% endif %}</div>{% endfor %}
+<button class="button button-primary" type="submit">Добавить задачу</button></form></section>
+<section class="deadline-list" aria-labelledby="active-heading"><h2 id="active-heading">В работе</h2>
+{% for item in active_deadlines %}<article class="deadline-row{% if item.due_date < today %} deadline-overdue{% endif %}" id="deadline-{{ item.pk }}" {% if focus.pk == item.pk %}tabindex="-1"{% endif %}><div><h3>{{ item.title }}</h3><p><time datetime="{{ item.due_date|date:'Y-m-d' }}">{{ item.due_date|date:'d.m.Y' }}</time>{% if item.due_date < today %} · Просрочено{% elif item.due_date == today %} · Сегодня{% endif %}</p></div><form method="post" action="{% url 'deadline-state' item.pk %}">{% csrf_token %}<input type="hidden" name="completed" value="yes"><button class="button" type="submit" aria-label="Завершить задачу {{ item.title }}">Завершить</button></form></article>
+{% empty %}<p class="deadline-empty">Задач в работе пока нет. Добавьте первую задачу с датой.</p>{% endfor %}{% if links.active_prev or links.active_next %}<nav aria-label="Страницы задач в работе">{% if links.active_prev %}<a href="{{ links.active_prev }}">← Назад</a>{% endif %}{% if links.active_next %}<a href="{{ links.active_next }}">Далее →</a>{% endif %}</nav>{% endif %}</section>
+<section class="deadline-list" aria-labelledby="completed-heading"><h2 id="completed-heading">Выполнено</h2>
+{% for item in completed_deadlines %}<article class="deadline-row deadline-completed" id="deadline-{{ item.pk }}" {% if focus.pk == item.pk %}tabindex="-1"{% endif %}><div><h3>{{ item.title }}</h3><p>Выполнено {{ item.completed_at|date:'d.m.Y' }} · Дедлайн {{ item.due_date|date:'d.m.Y' }}</p></div><form method="post" action="{% url 'deadline-state' item.pk %}">{% csrf_token %}<input type="hidden" name="completed" value="no"><button class="button" type="submit" aria-label="Вернуть в работу задачу {{ item.title }}">Вернуть в работу</button></form></article>{% empty %}<p class="deadline-empty">Выполненные задачи появятся здесь.</p>{% endfor %}{% if links.completed_prev or links.completed_next %}<nav aria-label="Страницы выполненных задач">{% if links.completed_prev %}<a href="{{ links.completed_prev }}">← Назад</a>{% endif %}{% if links.completed_next %}<a href="{{ links.completed_next }}">Далее →</a>{% endif %}</nav>{% endif %}</section>
+{% endblock %}

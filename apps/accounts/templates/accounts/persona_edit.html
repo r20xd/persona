@@ -1,0 +1,13 @@
+{% extends 'accounts/base.html' %}{% load static %}
+{% block title %}Моя persōna · persōna{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/persona.css' %}">
+<main id="main" tabindex="-1" class="account-main persona-editor">
+<a class="persona-back" href="{% url 'profile' %}">← Ваш профиль</a><p class="overline">ИНТЕРЕСЫ И ПЛАНЫ</p><h1>Моя persōna</h1><p class="account-intro">Расскажите о себе другим студентам. Выберите то, что откликается сейчас — ответы можно менять.</p>
+<form method="post" action="{% url 'persona-edit' %}" class="persona-form">{% csrf_token %}
+{% if form.errors %}<div class="persona-errors" data-error-summary tabindex="-1" role="alert"><h2>Проверьте ответы</h2><ul>{% for field in form %}{% for error in field.errors %}<li><a href="#{% if field.name == 'goal' or field.name == 'progress' %}{{ field.id_for_label }}{% else %}persona-{{ field.name }}{% endif %}">{{ field.label }}: {{ error }}</a></li>{% endfor %}{% endfor %}{% for error in form.non_field_errors %}<li>{{ error }}</li>{% endfor %}</ul></div>{% endif %}
+{% for field in form %}{% if field.name != 'goal' and field.name != 'progress' %}<fieldset class="persona-fieldset" id="persona-{{ field.name }}"><legend><span>{{ field.label }}</span></legend><p>Можно выбрать несколько вариантов.</p>{% if field.errors %}<div class="persona-field-error" id="{{ field.name }}-errors">{{ field.errors }}</div>{% endif %}<div class="persona-choices">{% for checkbox in field %}<label class="persona-choice">{{ checkbox.tag }}<span>{{ checkbox.choice_label }}</span></label>{% endfor %}</div></fieldset>{% endif %}{% endfor %}
+<section class="persona-goal-editor" aria-labelledby="persona-goal-title"><h2 id="persona-goal-title">Цель на семестр</h2><p>Один план, к которому хочется двигаться.</p><div class="persona-goal-fields"><div><label for="{{ form.goal.id_for_label }}">{{ form.goal.label }}</label>{{ form.goal }}{{ form.goal.errors }}</div><div><label for="{{ form.progress.id_for_label }}">{{ form.progress.label }}</label>{{ form.progress }}{{ form.progress.errors }}</div><p>Отмечайте прогресс сами. Если цель не заполнена, сохраним 0%.</p></div></section>
+<div class="persona-actions"><button class="button button-primary" type="submit">Сохранить persōna</button><a class="button" href="{% url 'profile' %}">Отмена</a></div>
+</form></main>
+{% endblock %}

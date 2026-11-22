@@ -1,0 +1,10 @@
+# CAT03 — генерированные аксессуары
+
+Встроенный image_gen, четыре отдельных вызова, reference `static/images/cat-scholar.webp`, transparent_background=true. Референс предварительно просмотрен. Общие ограничения промптов: только отдельный аксессуар, без кота/частей тела/фона/пола; квадратный прозрачный PNG, premium cute3D toy render, серебристый chrome/ice-blue/navy/teal под стиль кота, фронтальный вид, все края видимы, без watermark/лишнего текста.
+
+- **Шарфик**: широкая овальная петля для шеи круглого котёнка, завязан справа, два коротких конца с кисточками; pearly icyblue satin, subtle silver/chrome trim, navy/teal woven stripes, округлые складки. PNG `exec-88b957e2-10e2-416c-9ace-557e2f3abdbc.png` → `static/images/cat-scarf.png`.
+- **Очки**: две большие круглые линзы, короткий мостик, маленькие дужки; тонкая chrome оправa/navy внешний обод, icyblue lenses/glossy highlights, горизонтально спереди. PNG `exec-ca132917-4007-4a0b-95e0-828e21a5c83d.png` → `static/images/cat-glasses.png`.
+- **Мантия**: короткий navy satin gown с pearly silverblue lapels/chrome trim, круглые плечи/короткие рукава и открытый ворот; драпировка на круглый живот, без длинной юбки и шапки. PNG `exec-34002828-34be-4553-a738-855e87836ce6.png` → `static/images/cat-gown.png`.
+- **Кружка**: pearlywhite porcelain с chrome rim/base и iceblue glaze, округлая ручка справа, две лёгкие струи пара, короткая широкая форма; точная надпись в две строки «Я на»/«пересдачу». PNG `exec-7405a4e4-50ad-4b83-8fe0-55fa45a38638.png` → `static/images/cat-mug.png`.
+
+Результаты просмотрены при получении. PNG для web уменьшены до640px по длинной стороне с сохранением RGBA/прозрачного canvas и пропорций (временный Pillow/uv --no-project, не dependency проекта). Исходные generatedPNG оставлены в ~/.codex/generated_images/01a1db2e-bc83-70d0-8b3a-fc21fe0c2be6/. CSS подгоняет одежду относительно кошачьей подложки; сама генерация не подменялась SVG. Финальная посадка проверяется screenshots. Условия открытия прежние, лицензии сторонних новых библиотек/артов не вводились.

@@ -1,0 +1,18 @@
+{% extends 'accounts/base.html' %}{% load static %}
+{% block title %}Студенты · persōna{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/directory.css' %}">
+<main id="main" tabindex="-1" class="account-main directory-main">
+<header class="directory-heading"><div><p class="overline">ЛЮДИ РЯДОМ</p><h1>Студенты</h1><p class="account-intro">Найдите знакомых и узнайте, что им интересно.</p></div><span class="directory-total"><strong>{{ items.paginator.count }}</strong><span>в каталоге{% if query %} по запросу{% endif %}</span></span></header>
+<form method="get" class="directory-search"><label for="student-query">Поиск по имени</label><div class="directory-search-control"><span class="directory-search-mark" aria-hidden="true"></span><input id="student-query" name="q" type="search" maxlength="80" value="{{ query }}" placeholder="Имя или фамилия"><button type="submit" class="button button-primary">Найти</button></div></form>
+<div class="directory-results"><p class="directory-count">{% if query %}Результаты поиска{% else %}Все студенты{% endif %}<span>{{ items.paginator.count }}</span></p>{% if query %}<a class="directory-reset" href="{% url 'students' %}">Сбросить поиск ×</a>{% endif %}</div>
+<div class="directory-grid">
+{% for student in items %}
+<article class="directory-card">
+<div class="directory-card-top"><div class="directory-avatar" aria-hidden="true">{{ student.full_name|first }}</div><span class="directory-group">{{ student.course }} курс · {{ student.group__code }}</span></div>
+<h2><a href="{% url 'student-detail' student.pk %}">{{ student.full_name }}<span class="directory-card-arrow" aria-hidden="true">↗</span></a></h2>
+<div class="directory-study"><p>{{ student.group__program__faculty__name }}</p><p>{{ student.group__program__name }}</p></div>
+</article>
+{% empty %}<section class="directory-empty"><span class="directory-empty-mark" aria-hidden="true">○</span><h2>Никого не нашли</h2><p>Попробуйте другую часть имени или <a href="{% url 'students' %}">посмотрите всех студентов</a>.</p></section>{% endfor %}</div>
+{% if items.paginator.num_pages > 1 %}<nav class="directory-pagination" aria-label="Страницы студентов">{% if items.has_previous %}<a class="button" href="?q={{ query|urlencode }}&amp;page={{ items.previous_page_number }}">← Назад</a>{% endif %}<span>{{ items.number }} из {{ items.paginator.num_pages }}</span>{% if items.has_next %}<a class="button" href="?q={{ query|urlencode }}&amp;page={{ items.next_page_number }}">Далее →</a>{% endif %}</nav>{% endif %}
+</main>{% endblock %}

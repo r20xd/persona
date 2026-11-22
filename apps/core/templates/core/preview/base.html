@@ -1,0 +1,21 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#2F4156">
+    <title>
+      {% block title %}persōna · Визуальный обзор{% endblock %}
+    </title>
+    <link rel="icon" href="{% static 'icons/persona-mark.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/preview.css' %}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К содержимому</a>
+    {% block body %}
+    {% endblock %}
+  {% include 'accounts/concept_notice.html' %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+{{ cat_walk_preference|json_script:'cat-walk-preference' }}
+<link rel="stylesheet" href="{% static 'css/cat-cameo.css' %}">
+{% if cat_cameo %}
+<div class="cat-cameo" data-cat-cameo hidden>
+<div class="cat-cameo-traveller" data-cameo-traveller>
+<button class="cat-cameo-pet" type="button" aria-label="Погладить кота {{ cat_cameo.name }}" aria-expanded="false" aria-controls="cat-cameo-bubble" data-cameo-pet>
+<span data-cat-renderer data-pose="idle" data-frame="0"><img class="cat-fallback" src="{{ cat_cameo.renderer.source }}" width="48" height="48" alt=""><canvas width="48" height="48" aria-hidden="true" hidden></canvas></span>
+</button>
+<div class="cat-cameo-bubble" id="cat-cameo-bubble" data-cameo-bubble hidden>
+<p><strong>{{ cat_cameo.name }}</strong> · {{ cat_cameo.character_label }}</p><p role="status">{{ cat_cameo.quote }}</p>
+<form data-cameo-rating action="{% url 'cat-rating' %}" method="post">
+{% csrf_token %}
+<p id="cat-rating-question" data-rating-question></p>
+<div class="cat-rating-stars" role="group" aria-labelledby="cat-rating-question">
+{% for star in '12345' %}<button type="button" data-rating-value="{{ star }}" aria-label="Оценка {{ star }} из 5" aria-pressed="false"><span aria-hidden="true">☆</span></button>{% endfor %}
+</div>
+<p class="cat-rating-status" role="status" data-rating-status>1 — плохо, 5 — отлично</p>
+</form>
+<div><a href="{% url 'cat' %}">К коту</a><button type="button" data-cameo-close>Скрыть кота</button><button type="button" data-cameo-disable>Отключить прогулки</button></div>
+</div>
+</div>
+</div>
+{{ cat_rating_questions|json_script:'cat-rating-questions' }}
+{{ cat_cameo.renderer|json_script:'cat-renderer-config' }}
+<script src="{% static 'accounts/cat-renderer.js' %}" defer></script>
+{% endif %}
+<script src="{% static 'accounts/cat-cameo.js' %}" defer></script>

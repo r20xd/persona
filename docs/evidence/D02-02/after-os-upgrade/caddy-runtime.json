@@ -1,0 +1,10 @@
+{
+  "notice_sha256_lines": [
+    "0be269bcacdc64791be4a6c876530e8bb5fd6653e000bfb7df2351770dd399d5  /usr/share/doc/deanery/apk-installed-sha256.txt",
+    "4aebd574fefb7feaed16ed9a6d0d5cd31bf6f84f0af935076b76ebcfe264337b  /usr/share/doc/deanery/apk-updated-at.txt"
+  ],
+  "package_index_provenance": [
+    "b6a04eaf5cebac96e0bdcd0de1d9a9dd095b4e9a7a68e9eeab21e4eb5ab0ebb2  /lib/apk/db/installed",
+    "2026-11-08T07:43:36Z"
+  ]
+}

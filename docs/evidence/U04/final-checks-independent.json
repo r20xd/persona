@@ -1,0 +1,48 @@
+[
+  {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_requests.py",
+      "--reuse-db",
+      "--tb=short"
+    ],
+    "returncode": 0,
+    "seconds": 3.97,
+    "output": ".....................................                                    [100%]\n37 passed in 3.67s\n"
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "manage.py",
+      "check"
+    ],
+    "returncode": 0,
+    "seconds": 0.18,
+    "output": "System check identified no issues (0 silenced).\n"
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "manage.py",
+      "makemigrations",
+      "--check",
+      "--dry-run"
+    ],
+    "returncode": 0,
+    "seconds": 0.22,
+    "output": "No changes detected\n"
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "-c",
+      "import django;django.setup()\nfrom django.test import Client\nfrom apps.accounts.models import User\nc=Client(enforce_csrf_checks=True);c.get('/login/');token=c.cookies['csrftoken'].value\npaths=['/schedule/session/','/session/']\nfor path in paths:\n assert c.get(path).status_code==302\n assert c.post(path,{'csrfmiddlewaretoken':token}).status_code==302\nop=User.objects.create_user(username='u04-independent-operator',role='operator')\nc.force_login(op)\nfor path in paths:\n response=c.get(path);assert response.status_code==403\n assert 'no-store' in response['Cache-Control']\nprint('canonical/legacy: guest GET and valid-CSRF POST redirect; operator denied/no-store')\n"
+    ],
+    "returncode": 0,
+    "seconds": 0.23,
+    "output": "canonical/legacy: guest GET and valid-CSRF POST redirect; operator denied/no-store\nINFO deanery.http request_id=3e1b1ba3eb744180b273e54dbe924923 route=login status=200 duration_ms=8\nINFO deanery.http request_id=d57409b4451f4329843f69555df82d05 route=session status=302 duration_ms=0\nINFO deanery.http request_id=3006247e6c2444c1b5c41d3c874d225c route=session status=302 duration_ms=0\nINFO deanery.http request_id=cb13d8fc7cca444ca24531160155f885 route=session-legacy status=302 duration_ms=0\nINFO deanery.http request_id=67eb5ad656874ca5b96a7f5ace14095f route=session-legacy status=302 duration_ms=0\nWARNING django.request event=framework_error error_type=PermissionDenied\nINFO deanery.http request_id=b2bbcf6f48da415d9200411e3801c5a4 route=session status=403 duration_ms=1\nWARNING django.request event=framework_error error_type=PermissionDenied\nINFO deanery.http request_id=2886b541a3494c4ba95b21cadf04c76c route=session-legacy status=403 duration_ms=1\n"
+  }
+]

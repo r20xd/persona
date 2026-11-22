@@ -1,0 +1,65 @@
+{% extends 'requests/base.html' %}
+{% block title %}Справка об обучении · persōna{% endblock %}
+{% block content %}
+<p class="overline">КАРТОЧКА ЗАЯВКИ</p>
+<div class="request-heading">
+<h1>Справка об обучении</h1>
+<span class="request-status status-{{ application.status }}">{{ application.get_status_display }}</span>
+</div>
+<p class="account-note request-identifier">№ {{ application.id }} · {{ application.created_at|date:'d.m.Y H:i' }}</p>
+<section class="request-card">
+<h2>Детали обращения</h2>
+{% if operator %}
+<p>{{ application.student.full_name }} · {{ application.student.group.code }}</p>
+{% endif %}
+<p>
+<strong>Назначение:</strong> {{ application.get_purpose_display }}</p>
+<p class="request-comment">{{ application.comment|default:'Без пояснения' }}</p>
+{% if application.status == 'ready' %}
+<p class="request-notice">Заявка обработана. Подробности в истории ниже.</p>
+{% endif %}
+</section>
+{% include 'requests/_conversation.html' %}
+{% if operator and application.status == 'submitted' or operator and application.status == 'in_progress' %}
+<section class="request-card">
+<h2>Обработка заявки</h2>
+{% if application.status == 'submitted' %}
+<form method="post" class="request-form" action="{% url 'operator-request-transition' application.id %}">
+{% csrf_token %}{% include "requests/error_summary.html" %}{{ form.expected_version }}
+<input type="hidden" name="desired_status" value="in_progress">
+<button class="button request-primary" type="submit">Принять в работу</button>
+</form>
+{% else %}
+<p>Комментарий увидит студент. Для отказа укажите причину.</p>
+<form method="post" class="request-form" action="{% url 'operator-request-transition' application.id %}">
+{% csrf_token %}{% include "requests/error_summary.html" %}{{ form.as_p }}<button class="button request-primary" type="submit">Сохранить статус</button>
+</form>
+{% endif %}
+</section>
+{% elif not operator and application.status == 'submitted' %}
+<section class="request-card">
+<h2>Нужно отменить?</h2>
+<p>Отмена доступна до начала обработки.</p>
+<form method="post" action="{% url 'request-cancel' application.id %}">
+{% csrf_token %}{% include "requests/error_summary.html" %}{{ form.as_p }}<button class="button" type="submit">Отменить заявку</button>
+</form>
+</section>
+{% else %}{% if form.errors %}
+<div class="request-card" data-error-summary tabindex="-1" role="alert">{{ form.errors }}<a href="{{ detail_url }}">Обновить карточку</a>
+</div>
+{% endif %}{% endif %}
+<section class="request-card">
+<h2>История статусов</h2>
+<ol class="request-history">
+{% for event in events %}
+<li>
+<strong>{{ event.get_to_status_display }}</strong>
+<time datetime="{{ event.created_at|date:'c' }}">{{ event.created_at|date:'d.m.Y H:i' }}</time>
+{% if event.public_comment %}
+<p class="request-comment">{{ event.public_comment }}</p>
+{% endif %}
+</li>
+{% endfor %}
+</ol>
+</section>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ title }} · persōna</title>
+{% if stylesheet %}<link rel="stylesheet" href="{{ stylesheet }}">{% endif %}
+</head>
+<body>
+<main class="account-main" id="main" aria-labelledby="error-title">
+<p class="overline">persōna · Ошибка {{ code }}</p>
+<h1 id="error-title">{{ title }}</h1>
+<p class="account-intro">{{ explanation }}</p>
+<p><a class="button button-primary" href="/">Вернуться в кабинет</a></p>
+</main>
+<p class="concept-notice">Конкурсный концепт · Неофициальный сервис</p>
+</body>
+</html>

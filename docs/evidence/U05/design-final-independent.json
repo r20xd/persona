@@ -1,0 +1,20 @@
+{
+  "reviewer": "root",
+  "command": "python -m pytest --reuse-db --tb=short -q tests/test_design_browser.py",
+  "environment": "own isolated PostgreSQL17.11 and Chromium; test_u05_root; env allowlist",
+  "exit_code": 0,
+  "seconds": 25.65,
+  "inputs_unchanged": true,
+  "source_file_count": 181,
+  "source_hash": "721522712dcb0f11fcbb996b65248e67354f3b9b8f9bfc67cc2351f75436bc3c",
+  "tail": [
+    "  Instance attributes set in the 'base_url' fixture will NOT be visible to test methods,",
+    "  as each test gets a new instance while the fixture runs only once per class.",
+    "  Use a @classmethod decorator below @pytest.fixture and set attributes on cls instead.",
+    "  See https://docs.pytest.org/en/stable/deprecations.html#class-scoped-fixture-as-instance-method",
+    "    fixturefunc = resolve_fixture_function(fixturedef, request)",
+    "",
+    "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+    "5 passed, 1 warning in 25.34s"
+  ]
+}

@@ -1,0 +1,2 @@
+check.mjs --url /private/tmp/pers05-visual/students.html --root /private/tmp/pers05-visual --profile /private/tmp/pers05-chrome-layout --sizes 1440x900,1024x768,820x1180,768x1024,390x844 --shots docs/evidence/PERS05/layout
+Exit 1. check: Cannot read properties of undefined (reading map). Then TypeError: r.sections is not iterable at check.mjs:193. No layout PASS claimed; no kit files changed.

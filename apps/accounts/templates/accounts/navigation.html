@@ -1,0 +1,14 @@
+{% with current=request.resolver_match.url_name %}
+<aside class="workspace-sidebar"><div class="sidebar-brand">{% include 'accounts/brand.html' %}</div>
+<p class="sidebar-caption">{% if request.user.role == 'operator' %}Деканат{% else %}Ваше пространство{% endif %}</p>
+<nav class="campus-nav{% if request.user.role == 'operator' %} campus-nav-operator{% endif %}" aria-label="{% if request.user.role == 'operator' %}Разделы оператора{% else %}Основные разделы{% endif %}">
+{% if request.user.role == 'student' %}
+<a href="{% url 'home' %}" {% if current == 'home' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='home' %}<span>Главная</span></a>
+<a href="{% url 'schedule' %}" {% if current == 'schedule' or current == 'session' or current == 'session-legacy' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='calendar' %}<span>Расписание</span></a>
+<a href="{% url 'grades' %}" {% if current == 'grades' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='book' %}<span class="desktop-study-label">Успеваемость</span><span class="mobile-study-label">Учёба</span></a>
+<a href="{% url 'requests' %}" {% if current == 'requests' or current == 'request-new' or current == 'request-detail' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='document' %}<span>Заявки</span></a>
+<a href="{% url 'deadlines' %}" {% if current == 'deadlines' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='calendar' %}<span>Дедлайны</span></a>
+<div class="desktop-extra-navigation">{% include 'accounts/_extra_navigation.html' %}</div>
+{% else %}<a href="{% url 'operator-requests' %}" {% if current == 'operator-requests' or current == 'operator-request-detail' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='document' %}<span>Очередь заявок</span></a>{% endif %}
+<a class="nav-notifications" href="{% url 'notifications' %}" {% if current == 'notifications' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='bell' %}<span>Уведомления</span></a>
+</nav><p class="sidebar-foot">persōna — у учёбы есть лицо.<br>Твоё.</p></aside>{% endwith %}

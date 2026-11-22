@@ -1,0 +1,7 @@
+# U12 — шесть маленьких разнонаправленных знаков
+
+Прежний назначенный cat01/Sol-low, одинwriter безподагентов. Прочитаны текущаяпостановка, проектныеправила/контрактARCH§33U12/PLAN и актуальныйTaste2.5.1. Kindsoftware, пользовательявновыбралмножественныйнаклонённыймотив; палитра/типографика/фигуры прежние.
+
+Созданобщий companion_marks.html:aria-hiddenконтейнер и6emptyspan безalt/labels/Tabstops. Includeпервымребёнкомcat-portrait иassistant-avatar; остальныеатрибуты/rendererconfig/canvas/toys/chatcontentсохранены. Общиеclass-onlyправилавworkspace.css:абсолютныйinset0/z0/clip/pointer-none, существующийsmall96PNG,6разныхстатичныхуглов(-24/18/-10/34/10/-32deg), позициипо свободнымкраям. Ширины12–18%сmin12–18px/max36–52px, безкрупнойцентральнойбуквы. Catopacity.10–.18, наassistantмножитель.78(итогпримерно.08–.14). Foregroundz1/portraitgeometry/сетка/поведениесохранены. Старыеbefore/afterудаленыиздвухCSS, поэтомузнакинеудваиваются.
+
+Фактическиизмененытолько6разрешённыхappфайлов(3CSS,2existingtemplates,1newpartial). gitdiffcheckexit0, sourcefreezeдоrootQA. Никакихновыхassets/deps/models/JS/серверныхправок, вход/brand/cameoне затронуты. ИсполнительнесоздавалБД/сервер/тесты, не запускалsuite/commit/push/deploy. Rootвыполнитсуществующие4game/assistantсценария иactual360/1440/Taste/метрики; непроверенныйPASSисполнительне заявляет. Kit/пользовательскиефайлы/историческиеevidenceне менялись.

@@ -1,0 +1,51 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block title %}
+Успеваемость · persōna{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/grades.css' %}">
+
+<main id="main" tabindex="-1" class="account-main grades-main">
+
+<p class="overline">УСПЕВАЕМОСТЬ · {{ profile.group.code }}</p>
+<h1>Успеваемость</h1>
+<p class="account-intro">{{ profile.full_name }} · Ваши дисциплины и опубликованные результаты</p>
+
+{% if terms %}<form class="term-filter" method="get" data-auto-filter>
+<label for="term">Семестр</label>
+<select id="term" name="term">{% for item in terms %}<option value="{{ item.pk }}" {% if item == term %}selected{% endif %}>{{ item.title }}</option>{% endfor %}</select>
+<noscript><button class="button" type="submit" data-filter-submit>Показать</button></noscript>
+</form>{% endif %}
+{% include "grades/_term_state.html" %}
+{% if term %}<p class="account-note"><a class="button button-quiet" href="{% url 'session' %}?term={{ term.pk }}">К сессии →</a></p>{% endif %}
+{% if rows %}
+<section class="study-summary" aria-label="Итоги по дисциплинам">
+<div>
+<strong>{{ counts.success }}</strong>Сданы</div>
+<div>
+<strong>{{ counts.failure }}</strong>Требуют внимания</div>
+<div>
+<strong>{{ counts.awaiting }}</strong>Ожидают результата</div>
+</section>
+<p class="account-note">Итог учитывает экзамен или зачёт каждой дисциплины. Текущие работы показаны отдельно; отсутствие оценки не означает задолженность.</p>
+{% for row in rows %}<article class="grade-card">
+<div class="grade-heading">
+<div>
+<p class="overline">{{ row.offering.get_control_type_display }}</p>
+<h2>{{ row.offering.subject.name }}</h2>
+</div>
+<span class="grade-state state-{{ row.state }}">{% if row.final %}{{ row.final.display_value }}
+{% else %}Ожидается результат{% endif %}</span>
+</div>
+<h3>Текущие работы</h3>
+<ul class="work-list">{% for work in row.work %}<li>
+<span>{{ work.assessment.title }}</span>
+<strong>{% if work.result %}{{ work.result.points }} / {{ work.assessment.max_points }} баллов{% else %}Результат не опубликован{% endif %}</strong>
+</li>{% empty %}<li>Текущих работ пока нет</li>{% endfor %}</ul>
+</article>{% endfor %}
+{% else %}<section class="grade-card">
+<h2>Дисциплины пока не назначены</h2>
+<p>После записи на учебные курсы здесь появятся результаты.</p>
+</section>{% endif %}
+</main>
+{% endblock %}

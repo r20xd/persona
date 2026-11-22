@@ -1,0 +1,11 @@
+{
+  "runner": "root independent",
+  "utc": "2026-11-11T10:14:38.630525+00:00",
+  "returncode": 1,
+  "seconds": 216.11,
+  "summary": "-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/test_requests.py::test_transition_table_versions_and_public_history\n1 failed, 396 passed, 1 warning in 215.77s (0:03:35)",
+  "preflight": "SELECT 1 passed",
+  "postgres": "17.11 (Debian 17.11-1.pgdg12+2)",
+  "inputs_unchanged": true,
+  "cleanup": "exact own container/volume/network cleanup after suite"
+}

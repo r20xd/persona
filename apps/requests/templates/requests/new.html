@@ -1,0 +1,16 @@
+{% extends 'requests/base.html' %}
+{% block title %}Заказать справку · persōna{% endblock %}
+{% block content %}
+<p class="overline">НОВАЯ ЗАЯВКА</p>
+<h1>Справка об обучении</h1>
+<p class="account-intro">Выберите назначение. Деканат увидит заявку после отправки.</p>
+<section class="request-card">
+<p class="request-notice">Это демонстрация. Не вводите реальные персональные сведения. Настоящий подписанный документ не выдаётся.</p>
+<form method="post" action="{% url 'request-new' %}" class="request-form">
+{% csrf_token %}{% include "requests/error_summary.html" %}{{ form.as_p }}<button class="button request-primary" type="submit">Отправить заявку</button>
+</form>
+<p class="account-note">До 30 новых заявок в час. При повторной отправке той же формы заявка не дублируется.</p>
+<p class="account-note">Если ответ не пришёл, проверьте <a href="{% url 'requests' %}">Мои заявки</a> перед повторной отправкой.</p>
+<a href="{% url 'request-new' %}">Открыть новую форму</a>
+</section>
+{% endblock %}

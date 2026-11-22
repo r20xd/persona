@@ -1,0 +1,7 @@
+{
+  "before_inner_image_rendering": "pixelated",
+  "after_inner_image_rendering": "pixelated",
+  "before": "prior CSS/original source with current clip geometry",
+  "before_source": "/static/images/pixel-chaos-sheet.8654b280bb2e.png",
+  "after_source": "/static/images/pixel-chaos-clean.77785fcb6ad5.png"
+}

@@ -1,0 +1,14 @@
+{
+  "kind": "consistency",
+  "page": "home",
+  "widths": [
+    1440,
+    360
+  ],
+  "quick": true,
+  "runs": null,
+  "exit_code": 1,
+  "seconds": 74.06,
+  "snapshot": "sanitized rendered home.html; private root",
+  "scripts": "unmodified Taste Skill 2.5.1"
+}

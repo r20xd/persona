@@ -1,0 +1,1 @@
+{% load static %}<a class="brand" href="{% if request.user.role == 'operator' %}{% url 'operator-requests' %}{% else %}{% url 'home' %}{% endif %}"><span class="brand-mark"><img src="{% static 'icons/persona-mark-small.png' %}" alt="" width="44" height="44"></span><span>persōna<span class="brand-caption">Цифровой деканат</span></span></a>

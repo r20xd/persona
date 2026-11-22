@@ -1,0 +1,8 @@
+<section class="persona-card" aria-labelledby="persona-title">
+<div class="persona-heading"><div><p class="overline">ИНТЕРЕСЫ И ПЛАНЫ</p><h2 id="persona-title">Моя persōna</h2></div><a class="button" href="{% url 'persona-edit' %}">{% if persona.has_content %}Редактировать{% else %}Расскажите о себе{% endif %}</a></div>
+{% if persona.has_content %}
+{% if persona.phrase %}<p class="persona-phrase">{{ persona.phrase }}</p>{% endif %}
+<div class="persona-sections">{% for section in persona.sections %}{% if section.tags %}<div class="persona-category"><h3>{{ section.label }}</h3><ul class="persona-tags">{% for tag in section.tags %}<li>{{ tag }}</li>{% endfor %}</ul></div>{% endif %}{% endfor %}</div>
+{% if persona.goal %}<div class="persona-goal"><p class="overline">МОЯ ЦЕЛЬ НА СЕМЕСТР</p><h3>{{ persona.goal }}</h3><div class="persona-progress"><progress max="100" value="{{ persona.progress }}" aria-label="Мой прогресс"></progress><span>{{ persona.progress }}%</span></div><p>Прогресс, который вы отмечаете сами.</p></div>{% endif %}
+{% else %}<p class="persona-phrase">Что вам интересно и что хочется попробовать?</p><p>Добавьте интересы, сильные стороны или цель на семестр.{% if student_directory_enabled %} Вашу persōna смогут посмотреть другие студенты в каталоге.{% endif %}</p>{% endif %}
+</section>

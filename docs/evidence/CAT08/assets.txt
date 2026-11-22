@@ -1,0 +1,7 @@
+static/images/cat-assistant-style/sleepy.png: 1254x1254, bit-depth=8, RGBA, exact copy, sha256=f248a75354d223dd48abc392ad03b79d9a019724de9870f937ae5c1ebc9ceb01
+static/images/cat-assistant-style/scholar.png: 1254x1254, bit-depth=8, RGBA, exact copy, sha256=8fa62ee78ec27dff3287a6ae11b7b64114912084cb3f324ab0fce5cb99daf450
+static/images/cat-assistant-style/chaos.png: 1254x1254, bit-depth=8, RGBA, exact copy, sha256=a4de751af0f3fd5cc20da11b7d3d161a0c14b830d2d587899915f45f7a21a393
+
+chaos.png: RGBA; transparent top-left alpha=0
+scholar.png: RGBA; transparent top-left alpha=0
+sleepy.png: RGBA; transparent top-left alpha=0

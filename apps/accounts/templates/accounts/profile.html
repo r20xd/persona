@@ -1,0 +1,40 @@
+{% extends 'accounts/base.html' %}{% load static %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/persona.css' %}">
+
+
+<main id="main" tabindex="-1" class="account-main">
+<p class="overline">ЛИЧНЫЙ КАБИНЕТ</p>
+<h1>Ваш профиль</h1>
+<p class="account-intro">Данные вашего демонстрационного аккаунта.</p>
+<section class="profile-card" aria-labelledby="student-name">
+<span class="profile-avatar" aria-hidden="true">{{ profile.full_name|first }}</span>
+<div>
+<h2 id="student-name">{{ profile.full_name }}</h2>
+<p>Студент · {{ profile.course }} курс</p>
+</div>
+<dl>
+<div>
+<dt>Факультет</dt>
+<dd>{{ profile.group.program.faculty.name }}</dd>
+</div>
+<div>
+<dt>Направление</dt>
+<dd>{{ profile.group.program.name }}</dd>
+</div>
+<div>
+<dt>Курс</dt>
+<dd>{{ profile.course }}</dd>
+</div>
+<div>
+<dt>Группа</dt>
+<dd>{{ profile.group.code }}</dd>
+</div>
+</dl>
+</section>
+
+{% include 'accounts/persona_card.html' %}
+{% include 'accounts/cat_profile.html' %}
+</main>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{
+  "executor": "gpt-6.1-sol / low",
+  "status": "passed",
+  "project": "deanery-d02-64dff4a3e92f4c2795293c6934254497",
+  "cleanup": "complete",
+  "failure": null,
+  "checks": {
+    "tls_trusted_private_ca": true,
+    "http_redirect_csrf_body_headers": true,
+    "tls_browser_3roles_360_1440_persistence_isolation_static": true,
+    "readiness_db_stop_recovery": true,
+    "deploy_check_hsts_pending": true,
+    "app_non_superuser": true,
+    "runtime": {
+      "python": "3.13.14",
+      "packages": [
+        "argon2-cffi",
+        "argon2-cffi-bindings",
+        "asgiref",
+        "cffi",
+        "django",
+        "django-axes",
+        "gunicorn",
+        "packaging",
+        "psycopg",
+        "psycopg-binary",
+        "pycparser",
+        "sqlparse",
+        "whitenoise"
+      ]
+    },
+    "runtime_nonroot_readonly_internal_no_dev": true,
+    "spoofed_client_headers_axes_key_unchanged": true,
+    "safe_logs_sentinel_bootstrap_secret_not_in_app": true
+  },
+  "after_run_pending_root": [
+    "upstream502 and actual Docker app health assertions",
+    "body cap exact64KiB adjustment",
+    "full regression"
+  ],
+  "not_claimed": [
+    "public deployment",
+    "public certificate",
+    "Russia accessibility",
+    "native OS license/CVE audit",
+    "entire D02 completion"
+  ],
+  "qa_bootstrap_correction": {
+    "initial_handoff": "readiness was not confirmed; exited because native Docker did not inherit WSL POSTGRES_PASSWORD",
+    "password_rotation": "completed; generated QA secret retained only in private state",
+    "actual_psycopg_select1": "passed",
+    "native_explicit_NUL_compose_parser": "passed",
+    "full_regression": "pending root rerun"
+  }
+}

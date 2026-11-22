@@ -1,0 +1,17 @@
+{% extends 'accounts/base.html' %}{% load static %}
+{% block title %}Главная · persōna{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+<main id="main" tabindex="-1" class="account-main dashboard-main">
+<p class="overline">{{ today|date:'l, j E Y' }} · {{ profile.group.code }}</p>
+<h1>Ваш учебный день</h1><p class="account-intro">{{ profile.full_name }} · {{ profile.course }} курс</p>
+<section class="dashboard-card dashboard-next" aria-labelledby="next-title"><p class="overline">БЛИЖАЙШЕЕ СОБЫТИЕ</p><h2 id="next-title">{% if nearest %}{{ nearest.offering.subject.name }}{% else %}Впереди пока нет занятий{% endif %}</h2>
+{% if nearest %}<p class="event-date">{{ nearest.starts_at|date:'j E, H:i' }}–{{ nearest.ends_at|date:'H:i' }}</p><p>{% if nearest_exam %}Сессия{% else %}Занятие{% endif %} · Время московское</p><p>{{ nearest.room.building }} · аудитория {{ nearest.room.number }}</p><p>{{ nearest.teacher.full_name }}</p><a href="{% if nearest_exam %}{% url 'session' %}?term={{ nearest.offering.term_id }}{% else %}{% url 'schedule' %}?date={{ nearest.starts_at|date:'Y-m-d' }}{% endif %}">Открыть расписание события →</a>{% else %}<p>Посмотрите неделю или вернитесь после публикации расписания.</p>{% endif %}</section>
+<div class="dashboard-actions"><a class="button button-primary" href="{% url 'request-new' %}">Заказать справку →</a><a class="button" href="{% url 'schedule' %}">Моё расписание →</a></div>
+<div class="dashboard-grid attention-grid">
+{% include "dashboard/_attention.html" %}
+</div>
+<details class="dashboard-card changes-summary"><summary>Изменения на неделю</summary>{% for change in changes %}<article class="dashboard-item"><strong>{{ change.lesson.offering.subject.name }}</strong>{% if change.old_starts_at != change.new_starts_at and change.new_status == 'scheduled' %}<p>Пара перенесена</p>{% include "dashboard/_lesson_move.html" with change=change only %}<a href="{% url 'schedule' %}?date={{ change.new_starts_at|date:'Y-m-d' }}">Открыть новую дату →</a>{% else %}<p>{% if change.new_status == 'cancelled' %}Отменено{% elif change.old_starts_at != change.new_starts_at %}Перенос{% else %}Изменено{% endif %} · {{ change.reason }}</p><p>{{ change.old_starts_at|date:'j E H:i' }} → {{ change.new_starts_at|date:'j E H:i' }}</p><a href="{% url 'schedule' %}?date={{ change.lesson.starts_at|date:'Y-m-d' }}">Актуальное занятие →</a>{% endif %}</article>{% empty %}<p>Изменений в ближайшие семь дней нет.</p>{% endfor %}</details>
+</main>
+{% endblock %}

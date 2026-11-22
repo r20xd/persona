@@ -1,0 +1,36 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block title %}
+Сессия · persōna{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/grades.css' %}">
+<link rel="stylesheet" href="{% static 'css/schedule.css' %}">
+
+<main id="main" tabindex="-1" class="account-main grades-main">
+
+<p class="overline">РАСПИСАНИЕ · {{ profile.group.code }}</p>
+<h1>Сессия</h1>
+<p class="account-intro">{{ profile.full_name }} · Экзамены и зачёты ваших учебных курсов</p>
+{% include 'schedule/tabs.html' with view='session' %}
+
+{% if terms %}<form class="term-filter" method="get" data-auto-filter>
+<label for="term">Семестр</label>
+<select id="term" name="term">{% for item in terms %}<option value="{{ item.pk }}" {% if item == term %}selected{% endif %}>{{ item.title }}</option>{% endfor %}</select>
+<noscript><button class="button" type="submit" data-filter-submit>Показать</button></noscript>
+</form>{% endif %}
+{% include "grades/_term_state.html" %}
+{% if term %}<p class="account-note"><a class="button button-quiet" href="{% url 'grades' %}?term={{ term.pk }}">К успеваемости →</a></p>{% endif %}
+<p class="account-note">Время московское. Отменённые события остаются в списке, чтобы изменения были заметны.</p>
+{% for event in events %}<article class="grade-card exam-card{% if event.status == 'cancelled' %} exam-cancelled{% endif %}">
+<p class="overline">{{ event.offering.get_control_type_display }} · Попытка {{ event.attempt }}</p>
+{% if event.status == 'cancelled' %}<p class="exam-status">Отменено</p>{% endif %}
+<h2>{{ event.offering.subject.name }}</h2>
+<p class="exam-date">{{ event.starts_at|date:'j E Y' }} · {{ event.starts_at|date:'H:i' }}–{{ event.ends_at|date:'H:i' }}</p>
+<p>{{ event.room.building }} · аудитория {{ event.room.number }}</p>
+<p>{{ event.teacher.full_name }}</p>
+</article>{% empty %}<section class="grade-card">
+<h2>Событий сессии пока нет</h2>
+<p>Даты экзаменов и зачётов появятся после назначения.</p>
+</section>{% endfor %}
+</main>
+{% endblock %}

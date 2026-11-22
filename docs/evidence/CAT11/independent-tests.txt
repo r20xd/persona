@@ -1,0 +1,123 @@
+.......FFF........                                                       [100%]
+=================================== FAILURES ===================================
+____________ test_cameo_fractional_dpr_pixels_and_resize[chromium] _____________
+
+browser = <Browser type=<BrowserType name=chromium executable_path=/tmp/persona-browsers/chromium-1248/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing> version=156.0.8078.4>
+ui_site = <isolated QA site>
+
+    @pytest.mark.browser
+    def test_cameo_fractional_dpr_pixels_and_resize(browser, ui_site):  # noqa: F811
+        from tests.test_cat_pixels import screenshot_pixels
+
+        context = browser.new_context(viewport={"width": 360, "height": 900}, device_scale_factor=1.25)
+        page = context.new_page()
+        try:
+            setup(page, ui_site)
+            advance_to_walk(page)
+            page.locator("[data-cameo-pet]").focus()
+            canvas = page.locator("[data-cat-renderer] canvas")
+            box = canvas.bounding_box()
+            dpr = 1.25
+            width = round(box["width"] * dpr)
+            assert width % 48 == 0
+            assert abs(box["x"] * dpr - round(box["x"] * dpr)) < 0.001
+            assert abs(box["y"] * dpr - round(box["y"] * dpr)) < 0.001
+            mirrored = canvas.locator("..").evaluate("e=>getComputedStyle(e).transform !== 'none'")
+            rgba = canvas.evaluate('e=>Array.from(e.getContext("2d").getImageData(0,0,48,48).data)')
+            _, _, screen = screenshot_pixels(page.screenshot(scale="device"))
+            left, top = round(box["x"] * dpr), round(box["y"] * dpr)
+            scale = width // 48
+            for y in range(48):
+                for x in range(48):
+                    source_x = 47 - x if mirrored else x
+                    if rgba[(y * 48 + source_x) * 4 + 3] != 255:
+                        continue
+                    colours = {
+                        screen[top + yy][left + xx]
+                        for yy in range(y * scale, (y + 1) * scale)
+                        for xx in range(x * scale, (x + 1) * scale)
+                    }
+                    assert len(colours) == 1
+            page.keyboard.press("Enter")
+            page.set_viewport_size({"width": 320, "height": 400})
+            bubble = page.locator("[data-cameo-bubble]").bounding_box()
+            assert bubble["x"] >= 0 and bubble["y"] >= 0
+            assert bubble["x"] + bubble["width"] <= 320
+            pet = page.locator("[data-cameo-pet]").bounding_box()
+>           assert pet["y"] + pet["height"] < page.locator(".campus-nav").bounding_box()["y"]
+E           assert (632.7999877929688 + 115.1875) < 262
+
+tests/test_cat_cameo_browser.py:253: AssertionError
+_ test_new_cadence_ignores_old_deadline_and_keeps_natural_cooldown[chromium-360-0.1-3300-22000] _
+
+page = <Page url='http://127.0.0.1:57545/'>, ui_site = <isolated QA site>
+width = 360, random = '0.1', first_ms = 3300, repeat_ms = 22000
+
+    @pytest.mark.browser
+    @pytest.mark.parametrize(
+        "width,random,first_ms,repeat_ms", [(360, "0.1", 3300, 22000), (1440, "0.9", 5700, 38000)]
+    )
+    def test_new_cadence_ignores_old_deadline_and_keeps_natural_cooldown(
+        page,
+        ui_site,  # noqa: F811
+        width,
+        random,
+        first_ms,
+        repeat_ms,
+    ):  # noqa: F811
+        page.set_viewport_size({"width": width, "height": 900})
+        url = setup(page, ui_site, random, legacy=True)
+        keys = walk_keys(page)
+        now = page.evaluate("Date.now()")
+        first = walk_deadline(page)
+        assert first - now == first_ms
+        assert 3000 <= first - now <= 6000
+        old = page.evaluate("key=>Number(localStorage.getItem(key))", keys["legacy"])
+>       assert old > first + 100000
+E       assert 1794905097287 > (1794904917294300 + 100000)
+
+tests/test_cat_cameo_browser.py:279: AssertionError
+_ test_new_cadence_ignores_old_deadline_and_keeps_natural_cooldown[chromium-1440-0.9-5700-38000] _
+
+page = <Page url='http://127.0.0.1:57565/'>, ui_site = <isolated QA site>
+width = 1440, random = '0.9', first_ms = 5700, repeat_ms = 38000
+
+    @pytest.mark.browser
+    @pytest.mark.parametrize(
+        "width,random,first_ms,repeat_ms", [(360, "0.1", 3300, 22000), (1440, "0.9", 5700, 38000)]
+    )
+    def test_new_cadence_ignores_old_deadline_and_keeps_natural_cooldown(
+        page,
+        ui_site,  # noqa: F811
+        width,
+        random,
+        first_ms,
+        repeat_ms,
+    ):  # noqa: F811
+        page.set_viewport_size({"width": width, "height": 900})
+        url = setup(page, ui_site, random, legacy=True)
+        keys = walk_keys(page)
+        now = page.evaluate("Date.now()")
+        first = walk_deadline(page)
+        assert first - now == first_ms
+        assert 3000 <= first - now <= 6000
+        old = page.evaluate("key=>Number(localStorage.getItem(key))", keys["legacy"])
+>       assert old > first + 100000
+E       assert 1794905102386 > (1794904922396700 + 100000)
+
+tests/test_cat_cameo_browser.py:279: AssertionError
+=============================== warnings summary ===============================
+tests/test_cat_cameo_browser.py::test_real_walk_click_keyboard_and_cooldown[chromium-360-0.1-run]
+  /Users/local-user/Desktop/test_mgimo-vibe-coding/.venv/lib/python3.13/site-packages/_pytest/fixtures.py:1392: PytestRemovedIn10Warning: Session-scoped fixtures defined as instance methods are deprecated.
+  Instance attributes set in the 'base_url' fixture will NOT be visible to test methods,
+  as each test gets a new instance while the fixture runs only once per class.
+  Use a @classmethod decorator below @pytest.fixture and set attributes on cls instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#class-scoped-fixture-as-instance-method
+    fixturefunc = resolve_fixture_function(fixturedef, request)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_cat_cameo_browser.py::test_cameo_fractional_dpr_pixels_and_resize[chromium]
+FAILED tests/test_cat_cameo_browser.py::test_new_cadence_ignores_old_deadline_and_keeps_natural_cooldown[chromium-360-0.1-3300-22000]
+FAILED tests/test_cat_cameo_browser.py::test_new_cadence_ignores_old_deadline_and_keeps_natural_cooldown[chromium-1440-0.9-5700-38000]
+3 failed, 15 passed, 1 warning in 89.47s (0:01:29)

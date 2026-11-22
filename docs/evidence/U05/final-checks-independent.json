@@ -1,0 +1,11 @@
+{
+  "reviewer": "root",
+  "django_check": {"exit_code": 0, "issues": 0, "environment": "owned U05 app PostgreSQL, not user DB"},
+  "migration_check": {"command": "makemigrations --check --dry-run", "exit_code": 0, "result": "No changes detected", "database_history_check": "own live QA app DB"},
+  "ruff_check": {"scope": "whole repository", "exit_code": 0},
+  "ruff_format_check": {"scope": "whole repository", "exit_code": 0, "files": 261},
+  "git_diff_check": {"exit_code": 0},
+  "static_color_ratios": {"focus_9DACCC_on_121524": 7.95, "485F88_on_ffffff": 6.43, "384C65_on_f5f7fb": 8.19},
+  "color_ratio_limit": "Calculated token pairs only; rendered controls are checked separately in browser tests.",
+  "source_scope": "templates, own CSS/SVG and design/browser tests; backend contracts, dependencies and schema unchanged"
+}

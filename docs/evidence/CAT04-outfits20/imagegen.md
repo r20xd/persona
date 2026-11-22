@@ -1,0 +1,11 @@
+# CAT04 — исправление позы мантии
+
+Инструмент: встроенный image_gen__imagegen, transparent_background=true. Основной агент прочитал imagegen SKILL.md, просмотрел оба исходных изображения и результат. Кот — существующий imagegen-derived пользовательский reference, мантия — прежний CAT03 asset. Новых сторонних материалов не добавлено. Происхождение исходника кота не меняется.
+
+Входы: static/images/cat-scholar.webp (поза/координаты) и static/images/cat-gown.png (материал/цвет). Сохранённый результат: /home/local-user/.codex/generated_images/01a1db4d-6309-7952-aef2-13df2cbe9a37/exec-787597ed-17cc-476a-9ef4-6f4c989a1ae7.png. Старые файлы не перезаписывать; итоговый файл в приложении — static/images/cat-gown-fitted.png.
+
+Промпт:
+
+Create ONLY a transparent clothing overlay for the exact seated round cat in image 1. Image2 supplies navy satin/silver academic gown material and style. Output a square transparent canvas matching image1 composition and camera, clothing positioned as if the cat wears it, but ALL cat pixels and ALL background pixels must be absent/transparent. Gown anatomy: neck opening at x37%-75% y43%-48%; shoulder sleeves directed FORWARD and UPWARD, ending in openings at the exact two front paws of reference: left front paw occupies x33%-55% y44%-55%, right front paw x70%-83% y44%-55%. NO empty lateral hanging sleeves or empty tubes at sides. Compact robe cloth follows round belly x24%-85% y48%-77%, ends above the two feet at y78%; tiny silver collar and academic brooch immediately beneath neck. Front paws will be composited on top of sleeve cuffs later. No head, face, ears, tail, paws, eyes, animal, body or feet in output. Do not draw the cat. Garment only. Keep highlights turquoise/silver/ivory with dark navy fabric matching second image. Real alpha transparent background AND transparent openings for paws. This is a precision sprite overlay, not a floating product shot. The robe must occupy the same coordinates in the square as the existing cat body; leave the upper 40% empty.
+
+Ограничение генерации: координаты отверстий не совпали с промптом пиксельно. Результат требует CSS-подгонки и проверки в композиции; сам факт генерации не считается приёмкой посадки.

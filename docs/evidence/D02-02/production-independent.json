@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "project": "deanery-d02-ba3ed3f6b24846618cdf53ea80e72137",
+  "cleanup": "complete",
+  "failure": null,
+  "checks": {
+    "tls_trusted_private_ca": true,
+    "http_xfp_redirect": true,
+    "https_security_headers": true,
+    "sentinel_body_limit_413": true,
+    "http_redirect_csrf_body_headers": true,
+    "tls_browser_3roles_360_1440_persistence_isolation_static": true,
+    "readiness_db_stop_recovery": true,
+    "upstream_unavailable_502_app_health": true,
+    "deploy_check_hsts_pending": true,
+    "app_non_superuser": true,
+    "runtime": {
+      "python": "3.13.14",
+      "packages": [
+        "argon2-cffi",
+        "argon2-cffi-bindings",
+        "asgiref",
+        "cffi",
+        "django",
+        "django-axes",
+        "gunicorn",
+        "packaging",
+        "psycopg",
+        "pycparser",
+        "sqlparse",
+        "whitenoise"
+      ]
+    },
+    "notice_bundle_all_images_verified_files": 207,
+    "runtime_nonroot_readonly_internal_no_dev": true,
+    "spoofed_client_headers_axes_key_unchanged": true,
+    "safe_source_request_logs_preserved": true,
+    "caddy_log_observation": {
+      "events": 10,
+      "unexpected_field_count": 0,
+      "tls_maintenance_events": 1,
+      "upstream_502_events": 3
+    },
+    "caddy_operational_logs": {
+      "events": 10,
+      "levels": [
+        "debug",
+        "info"
+      ],
+      "logger_counts": {
+        "http.log.error": 4,
+        "tls.cache.maintenance": 1,
+        "tls.obtain": 5
+      },
+      "keys": [
+        "duration",
+        "err_id",
+        "level",
+        "logger",
+        "status",
+        "ts"
+      ],
+      "upstream_failure": true,
+      "tls_maintenance": true,
+      "private_sentinels_absent": true
+    },
+    "safe_logs_sentinel_bootstrap_secret_not_in_app": true
+  }
+}

@@ -1,0 +1,11 @@
+FROM postgres:17.11-trixie@sha256:ff87138949ad9a46f32ff23bd6852b52ce024a13dffe9b4087be98292cdd3b4f
+RUN apt-get update \
+    && apt-mark hold postgresql-17 postgresql-client-17 \
+    && apt-get upgrade -y \
+    && mkdir -p /usr/share/doc/deanery \
+    && date -u +%FT%TZ > /usr/share/doc/deanery/apt-updated-at.txt \
+    && find /var/lib/apt/lists -type f -exec sha256sum {} + > /usr/share/doc/deanery/apt-index-sha256.txt \
+    && rm -rf /var/lib/apt/lists/*
+COPY deploy/postgres-init.sh /docker-entrypoint-initdb.d/10-app.sh
+
+COPY docs/third-party/runtime-notices /usr/share/doc/deanery/third-party

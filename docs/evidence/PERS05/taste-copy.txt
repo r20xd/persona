@@ -1,0 +1,2 @@
+copy-lint.mjs /private/tmp/pers05-visual/students.html --kind software
+70 words; 0 FAIL; 0 WARN; exit 0.

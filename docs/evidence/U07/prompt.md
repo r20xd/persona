@@ -1,0 +1,11 @@
+# U07 — логотип P и фон входа
+
+Исполнитель gpt-6.1-sol/low, один writer. Прочитать TASK.md, AGENTS.md, ARCHITECTURE.md §§19–21, PLAN.md §2/5, docs/agents/WORKFLOW.md. Требования PRD-03/04, TECH-06, BRAND-01, LIC-01.
+
+Запрос: заменить прежний геометрический логотип на букву P из persona.jpeg в палитре persōna; добавить крупные полупрозрачные декоративные буквы такой формы на фон экрана входа. Родитель генерирует прозрачный перекрашенный asset через imagegen; дождаться его пути (будет static/icons/persona-mark.png). Не заменять изображение обычной типографской P. Главная U06 и её слово пока не изменяются.
+
+Разрешено: apps/accounts/templates/accounts/brand.html, login.html; apps/core/templates/core/preview/{dashboard,login,base}.html, apps/accounts/templates/accounts/base.html (favicon); static/css/workspace.css,preview.css; static/icons/mark.svg (если нужно wrapper) и новый asset по переданному пути (копирование поручит родитель); tests/test_design_browser.py / test_ui_revision_browser.py / test_preview_browser.py только необходимые meaningful assertions logo load, login reflow и decor accessibility; docs/evidence/U07/implementation.md и новые screenshots. Любые другие файлы только читать. .DS_Store/persona.jpeg/palitra.jpeg не включать в commit. Не менять модели/auth/зависимости/контракты фильтров/POST; не делегировать и не commit/push до accepted.
+
+UI: один и тот же узнаваемый P вместо куба во всех brand (login/sidebar/mobile/preview), favicon тоже обновить. Декор на login (и preview/login) absolute/pseudo layer, aria-hidden/empty alt, pointer-events none; форма и ссылки выше декора, без изменения высоты и перекрытия, контраст/видимый focus. На 360px сохраняется Войти в первом экране (design tests), no overflow; фон должен быть заметен и гармоничен, образ P из reference, не слово простой Georgia.
+
+Проверки: ruff/check/diff; browser 360/1440 и design tests; screenshot U07 реального login, родитель выполнит независимую проверку. Новые зависимости запрещены. Генерацию не запускать: родитель предоставит asset. Отчёт с фактическими результатами и ограничениями, без выдуманной лицензии на исходное пользовательское изображение; источник отметить user-supplied, обработка imagegen. Исторические скриншоты не перезаписывать.

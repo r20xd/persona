@@ -1,0 +1,343 @@
+/* AI01: a private chat in the existing persōna workspace palette. */
+.assistant-layout {
+  display:grid;
+  grid-template-columns:minmax(220px,.72fr) minmax(0,1.4fr);
+  gap:24px;
+  margin-top:28px;
+  align-items:start;
+}
+.assistant-companion,.assistant-chat {
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--surface);
+  overflow:hidden;
+}
+.assistant-avatar {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:var(--accent-soft);
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+}
+.assistant-avatar img {
+  position:relative;
+  z-index:1;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  image-rendering:pixelated;
+}
+.assistant-about {
+  padding:24px;
+}
+.assistant-about h2 {
+  margin:8px 0 12px;
+}
+.assistant-about>p:not(.overline) {
+  font-size:14px;
+}
+.assistant-about .assistant-privacy {
+  border-top:1px solid var(--line);
+  padding-top:18px;
+  margin-top:20px;
+  font-size:12px;
+  line-height:1.6;
+}
+.assistant-chat {
+  padding:24px;
+  min-width:0;
+}
+.assistant-chat-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+.assistant-chat-heading form {
+  margin:0;
+}
+.assistant-chat-heading button {
+  font-size:12px;
+}
+.assistant-chat-heading button:disabled {
+  cursor:default;
+  opacity:.55;
+}
+.assistant-connection {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:8px;
+  font-size:12px;
+}
+.assistant-status-dot {
+  width:8px;
+  height:8px;
+  border:1px solid var(--teal);
+  border-radius:50%;
+}
+.assistant-status-dot.is-connected {
+  background:var(--teal);
+}
+.assistant-banner {
+  margin-top:20px;
+  padding:14px 16px;
+  background:var(--paper);
+  border-left:3px solid var(--teal);
+  font-size:13px;
+  line-height:1.6;
+}
+.assistant-thread {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding:24px 0;
+}
+.assistant-empty {
+  padding:28px 14px;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  gap:12px;
+}
+.assistant-empty-icon {
+  display:grid;
+  place-items:center;
+  background:var(--paper);
+  border-radius:18px;
+  width:60px;
+  height:60px;
+}
+.assistant-empty-icon .icon {
+  width:30px;
+  height:30px;
+}
+.assistant-empty p {
+  max-width:310px;
+  font-size:14px;
+}
+.assistant-message {
+  max-width:94%;
+  align-self:flex-start;
+  background:var(--paper);
+  padding:16px 18px;
+  border-radius:14px;
+  overflow-wrap:anywhere;
+}
+.assistant-message.is-user {
+  align-self:flex-end;
+  background:var(--accent-soft);
+}
+.assistant-message h3 {
+  font-size:11px;
+  font-weight:650;
+  margin-bottom:7px;
+  letter-spacing:.2px;
+}
+.assistant-message p {
+  white-space:pre-wrap;
+  font-size:14px;
+  line-height:1.65;
+}
+.assistant-message:not(.is-user) {
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  color:#20565b;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-left:4px solid var(--teal);
+}
+.assistant-response {
+  max-width:65ch;
+  font-size:16px;
+  line-height:1.7;
+}
+.assistant-response p {
+  white-space:normal;
+  font-size:inherit;
+  line-height:inherit;
+}
+.assistant-response>*+* {margin-top:16px}
+.assistant-response h4,.assistant-response h5,.assistant-response h6 {
+  color:inherit;
+  font-size:19px;
+  line-height:1.35;
+  letter-spacing:0;
+  margin:24px 0 10px;
+}
+.assistant-response h5 {font-size:17px}
+.assistant-response h6 {font-size:16px}
+.assistant-response>:first-child {margin-top:0}
+.assistant-response ul,.assistant-response ol {padding-left:24px;margin-bottom:0}
+.assistant-response li+li {margin-top:6px}
+.assistant-response li>p+p {margin-top:8px}
+.assistant-response hr {border:0;border-top:1px solid var(--line);margin:24px 0}
+.assistant-response code {
+  font-family:ui-monospace,SFMono-Regular,Consolas,monospace;
+  font-size:.875em;
+  background:var(--paper);
+  padding:2px 5px;
+  border-radius:4px;
+}
+.assistant-response pre {
+  min-width:0;
+  max-width:100%;
+  padding:14px;
+  background:var(--paper);
+  border-radius:8px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  line-height:1.6;
+}
+.assistant-response pre code {background:none;padding:0;border-radius:0}
+.assistant-response blockquote {
+  margin-left:0;
+  margin-right:0;
+  padding-left:16px;
+  border-left:2px solid var(--line);
+}
+.assistant-starters {
+  padding:0 0 22px;
+}
+.assistant-starters>div {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:10px;
+}
+.assistant-starters button {
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:9px;
+  min-height:44px;
+  padding:8px 12px;
+  font-size:12px;
+}
+.assistant-starters button:hover {
+  background:var(--accent-soft);
+  border-color:var(--teal);
+}
+.assistant-composer {
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.assistant-composer textarea {
+  width:100%;
+  resize:vertical;
+  min-height:120px;
+}
+.assistant-send {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.assistant-send p {
+  font-size:11px;
+  line-height:1.6;
+  max-width:235px;
+  margin:0;
+}
+.assistant-send button {
+  flex:none;
+}
+.assistant-error {
+  border-left:3px solid #9c452d;
+  color:#713321;
+  background:#fff3ef;
+  padding:12px;
+  font-size:13px;
+  margin:0;
+}
+.assistant-pending {
+  font-size:13px;
+  margin:0;
+}
+.assistant-footnote {
+  margin-top:18px;
+  font-size:11px;
+  line-height:1.6;
+}
+@media(max-width:1000px) {
+  .assistant-layout {grid-template-columns:minmax(190px,.7fr) minmax(0,1.4fr)}
+  .assistant-chat {padding:20px}
+  .assistant-send {align-items:stretch;flex-direction:column}
+  .assistant-send p {max-width:none}
+}
+@media(max-width:700px) {
+  .assistant-layout {grid-template-columns:1fr;gap:20px}
+  .assistant-companion {display:grid;grid-template-columns:100px minmax(0,1fr)}
+  .assistant-avatar {height:100%;aspect-ratio:auto}
+  .assistant-about {padding:16px}
+  .assistant-about .overline {font-size:9px}
+  .assistant-about h2 {font-size:19px;margin:6px 0 10px}
+  .assistant-about>p:not(.overline) {font-size:12px}
+  .assistant-about .assistant-privacy {margin-top:12px;padding-top:12px;font-size:11px}
+  .assistant-chat-heading {flex-wrap:wrap}
+  .assistant-chat-heading form {margin-left:-12px}
+  .assistant-message {max-width:100%}
+  .assistant-empty {padding:20px 0}
+  .assistant-starters>div {display:grid;grid-template-columns:1fr}
+}
+/* AI08: the transparent 2×2 atlas shares the static portrait's square bounds. */
+.assistant-motion-sheet {
+  display:none;
+  position:absolute;
+  z-index:1;
+  width:100%;
+  aspect-ratio:1;
+  top:50%;
+  left:0;
+  transform:translateY(-44%) scale(1.1);
+  transform-origin:center;
+  background-size:200% 200%;
+  background-repeat:no-repeat;
+  image-rendering:pixelated;
+  pointer-events:none;
+}
+.assistant-motion-toggle {
+  position:absolute;
+  z-index:2;
+  bottom:8px;
+  right:8px;
+  display:grid;
+  place-items:center;
+  width:44px;
+  height:44px;
+  margin:0;
+  padding:0;
+  border:1px solid var(--line);
+  border-radius:50%;
+  color:var(--ink);
+  background:var(--surface);
+  cursor:pointer;
+}
+.assistant-motion-toggle[hidden] {display:none}
+.assistant-motion-toggle:hover {background:var(--accent-soft);border-color:var(--teal)}
+.assistant-motion-toggle:active {background:var(--paper)}
+.assistant-motion-toggle:focus-visible {outline:3px solid var(--teal);outline-offset:2px}
+@media (prefers-reduced-motion:no-preference) {
+  .assistant-avatar.is-motion-ready img {opacity:0}
+  .assistant-avatar.is-motion-ready .assistant-motion-sheet {
+    display:block;
+    background-image:url('../images/persona-assistant-motion.png');
+    animation:assistant-gestures 3.8s steps(1,end) infinite;
+  }
+  .assistant-avatar.is-motion-paused .assistant-motion-sheet {animation-play-state:paused}
+  @keyframes assistant-gestures {
+    0%,28% {background-position:0 0}
+    32% {background-position:100% 0}
+    36% {background-position:0 0}
+    49% {background-position:0 100%}
+    62% {background-position:0 0}
+    76% {background-position:100% 100%}
+    89%,100% {background-position:0 0}
+  }
+}

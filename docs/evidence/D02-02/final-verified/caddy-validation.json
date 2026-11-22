@@ -1,0 +1,32 @@
+{
+  "adapt": "passed",
+  "validate": "passed",
+  "logger_scopes": {
+    "default": {
+      "include": [],
+      "exclude": [
+        "",
+        "http.log.error",
+        "tls.cache.maintenance",
+        "tls.obtain"
+      ],
+      "level": "INFO"
+    },
+    "handled_faults": {
+      "include": [
+        "http.log.error"
+      ],
+      "exclude": [],
+      "level": "DEBUG"
+    },
+    "tls_events": {
+      "include": [
+        "tls.cache.maintenance",
+        "tls.obtain"
+      ],
+      "exclude": [],
+      "level": "INFO"
+    }
+  },
+  "free_text_message_omitted": true
+}

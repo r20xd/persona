@@ -1,0 +1,5 @@
+{% with current=request.resolver_match.url_name %}
+{% if student_directory_enabled %}<a href="{% url 'students' %}" {% if current == 'students' or current == 'student-detail' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='user' %}<span>Студенты</span></a>{% endif %}
+<a href="{% url 'cat' %}" {% if current == 'cat' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='cat' %}<span>Кот в рюкзаке</span></a>
+<a href="{% url 'assistant' %}" {% if current == 'assistant' %}aria-current="page"{% endif %}>{% include 'accounts/icon.html' with name='assistant' %}<span>Помощник</span></a>
+{% endwith %}

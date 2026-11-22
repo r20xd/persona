@@ -1,0 +1,266 @@
+{% extends 'core/preview/base.html' %}{% load static %}
+{% block body %}
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="{% url 'preview-dashboard' %}" aria-label="persōna — обзор">
+        <span class="brand-mark">
+          <img src="{% static 'icons/persona-mark.png' %}" alt="" width="44" height="44">
+        </span>
+        <span>persōna<span class="brand-caption">Цифровой деканат</span>
+        </span>
+      </a>
+      <span class="sidebar-label">ЛИЧНЫЙ КАБИНЕТ</span>
+      <nav class="primary-nav" aria-label="Основная навигация">
+        <a class="nav-link active" href="#today" aria-current="page">
+          {% include 'core/preview/icon.html' with name='home' %}
+          <span>Главная</span>
+        </a>
+        <a class="nav-link" href="#schedule">
+          {% include 'core/preview/icon.html' with name='calendar' %}
+          <span>Расписание</span>
+        </a>
+        <a class="nav-link" href="#study">
+          {% include 'core/preview/icon.html' with name='book' %}
+          <span>Успеваемость</span>
+        </a>
+        <a class="nav-link" href="#requests">
+          {% include 'core/preview/icon.html' with name='document' %}
+          <span>Заявки</span>
+          <span class="nav-count">1</span>
+        </a>
+        <a class="nav-link" href="#news">
+          {% include 'core/preview/icon.html' with name='bell' %}
+          <span>Уведомления</span>
+          <span class="nav-dot" aria-label="Есть пример уведомления">
+          </span>
+        </a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="campus-note">
+          <span class="small-symbol">↗</span>
+          <p>Учёба под рукой<span>Меньше поиска.<br>Больше ясности.</span>
+          </p>
+        </div>
+        <a class="sidebar-exit" href="{% url 'preview-login' %}">
+          {% include 'core/preview/icon.html' with name='door' %}Макет входа</a>
+        <p class="sidebar-fine">Университет Северного города</p>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <span class="university-name">Университет Северного города</span>
+        <span class="mobile-brand">persōna<span class="brand-period">.</span>
+        </span>
+        <a href="#profile" class="profile-link">
+          <span class="profile-name">Арина Светлолистова<small>МО-21 · 2 курс · пример</small>
+          </span>
+          <span class="avatar">АС</span>
+        </a>
+      </header>
+      <div class="preview-notice" role="note">
+        <span class="preview-tag">ПРЕДПРОСМОТР</span>
+        <span>Визуальный обзор: вход и сохранение ещё не подключены.</span>
+      </div>
+      <main id="main" class="dashboard" tabindex="-1">
+        <section id="today" class="page-intro" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow">СРЕДА, 4 НОЯБРЯ · ПРИМЕР ДНЯ</p>
+            <h1 id="page-title">Сегодня<span class="title-dot">.</span>
+            </h1>
+            <p class="intro-copy">Всё важное для твоего учебного дня.</p>
+          </div>
+          <a class="button button-outline" href="#requests">
+            {% include 'core/preview/icon.html' with name='plus' %}Заказать справку<span class="sr-only"> — узнать о будущем сценарии</span>
+          </a>
+        </section>
+        <div class="content-grid">
+          <div class="main-column">
+            <section class="next-lesson" aria-labelledby="next-title">
+              <div class="next-top">
+                <span class="overline">
+                  <span class="live-dot">
+                  </span>СЛЕДУЮЩЕЕ ЗАНЯТИЕ</span>
+                <span class="next-number">02 / 03</span>
+              </div>
+              <h2 id="next-title">Иностранный язык</h2>
+              <p class="next-kind">Практическое занятие · М. О. Берестова</p>
+              <div class="next-footer">
+                <div class="next-time">10:40 <span>— 12:00</span>
+                </div>
+                <span class="room-pill">
+                  {% include 'core/preview/icon.html' with name='pin' %}Б · 218</span>
+              </div>
+              <span class="lesson-decoration" aria-hidden="true">
+              </span>
+            </section>
+            <section id="schedule" class="card schedule-card" aria-labelledby="schedule-title">
+              <div class="section-header">
+                <h2 id="schedule-title">Расписание</h2>
+                <span class="subtle-label">Время московское</span>
+              </div>
+              <div class="week-strip" aria-label="Пример недели: 2–8 ноября">
+                {% for day, date in days %}
+                  <div class="week-day {% if date == '4' %}selected{% endif %}">
+                  <span>{{ day }}</span>
+                  <strong>{{ date }}</strong>
+                  {% if date == '4' %}
+                    <span class="sr-only">Выбранный день</span>
+                  {% endif %}
+                  <span class="day-dot" aria-hidden="true">
+                  </span>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="schedule-caption">
+              <h3>Среда, 4 ноября</h3>
+              <span>3 занятия</span>
+            </div>
+            <ol class="lesson-list">
+              {% for lesson in lessons %}
+                <li class="lesson-row {% if lesson.next %}upcoming{% endif %}">
+                <div class="lesson-time">
+                  <strong>{{ lesson.time }}</strong>
+                  <span>{{ lesson.end }}</span>
+                </div>
+                <div class="lesson-line" aria-hidden="true">
+                  <span>
+                  </span>
+                </div>
+                <div class="lesson-info">
+                  <span class="lesson-type">{{ lesson.kind }}</span>
+                  <h3>{{ lesson.title }}</h3>
+                  <p>{{ lesson.teacher }}</p>
+                  <p class="lesson-room">
+                    {% include 'core/preview/icon.html' with name='pin' %}{{ lesson.room }}</p>
+                  {% if lesson.changed %}
+                    <p class="change-note">Перенос: было в 12:20 → теперь в 13:00.<br>Пример изменения времени занятия.</p>
+                  {% endif %}
+                </div>
+                <span class="lesson-status {% if lesson.changed %}status-amber{% elif lesson.next %}status-green{% else %}status-muted{% endif %}">{{ lesson.state }}</span>
+            </li>
+          {% endfor %}
+        </ol>
+        <details class="explanation">
+          <summary>Посмотреть неделю {% include 'core/preview/icon.html' with name='arrow' %}
+          </summary>
+          <p>Пока это пример одного дня. Выбор недели и настоящее расписание появятся после подключения учебных данных.</p>
+        </details>
+      </section>
+      <section id="news" class="card news-card" aria-labelledby="news-title">
+        <div class="section-header">
+          <h2 id="news-title">На заметку</h2>
+          <span class="subtle-label">От деканата · примеры</span>
+        </div>
+        <article class="news-item">
+          <span class="news-icon">
+            {% include 'core/preview/icon.html' with name='calendar' %}
+          </span>
+          <div>
+            <p class="news-meta">ДЕДЛАЙН · 6 НОЯБРЯ</p>
+            <h3>Выбор дисциплин следующего семестра</h3>
+            <p>В примере до завершения выбора осталось два дня. Подробности появятся в разделе «Успеваемость».</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <span class="news-icon soft">
+            {% include 'core/preview/icon.html' with name='bell' %}
+          </span>
+          <div>
+            <p class="news-meta">ОБЪЯВЛЕНИЕ · 3 НОЯБРЯ</p>
+            <h3>Консультация перед сессией</h3>
+            <p>Встреча с куратором: разберём вопросы об аттестации и подготовке к экзаменам.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div class="side-column">
+      <section id="study" class="card study-card" aria-labelledby="study-title">
+        <div class="section-header">
+          <h2 id="study-title">Успеваемость</h2>
+          <span class="mini-icon">
+            {% include 'core/preview/icon.html' with name='book' %}
+          </span>
+        </div>
+        <p class="subtle-label">Осенний семестр · пример</p>
+        <div class="score">
+          <strong>82<span>/100</span>
+          </strong>
+          <span class="status status-green">Хороший темп</span>
+        </div>
+        <p class="score-description">Пример среднего результата<br>по опубликованным работам</p>
+        <div class="progress-track" role="img" aria-label="Пример: 82 из 100 баллов">
+          <span>
+          </span>
+        </div>
+        <div class="study-stats">
+          <div>
+            <strong>6</strong>
+            <span>дисциплин</span>
+          </div>
+          <div>
+            <strong>2</strong>
+            <span>зачёта получено</span>
+          </div>
+        </div>
+        <details class="explanation">
+          <summary>Оценки и сессия {% include 'core/preview/icon.html' with name='arrow' %}
+          </summary>
+          <p>Это иллюстрация учебной сводки. Реальные оценки демонстрационных аккаунтов, выбор семестра и сессия ещё не подключены.</p>
+        </details>
+      </section>
+      <section id="requests" class="card requests-card" aria-labelledby="requests-title">
+        <div class="section-header">
+          <h2 id="requests-title">Мои заявки</h2>
+          <span class="count-badge">1</span>
+        </div>
+        <div class="request-preview">
+          <div class="document-icon">
+            {% include 'core/preview/icon.html' with name='document' %}
+          </div>
+          <div>
+            <h3>Справка об обучении</h3>
+            <p>Пример № Д-024 · 3 ноября</p>
+          </div>
+        </div>
+        <span class="status status-amber">
+          <span class="status-dot">
+          </span>В работе · пример</span>
+        <p class="request-copy">Здесь будет статус и ответ деканата. Эта заявка не отправлена.</p>
+        <details class="explanation">
+          <summary>Заказать справку {% include 'core/preview/icon.html' with name='plus' %}
+          </summary>
+          <p>На следующем этапе здесь появится форма заказа справки и её сохранение. Сейчас данные не отправляются и заявка не создаётся.</p>
+        </details>
+      </section>
+      <section id="profile" class="profile-card" aria-labelledby="profile-title">
+        <span class="eyebrow">ДЕМОНСТРАЦИОННЫЙ ПРОФИЛЬ</span>
+        <h2 id="profile-title">Арина<br>Светлолистова</h2>
+        <dl>
+          <div>
+            <dt>Факультет</dt>
+            <dd>Международные отношения</dd>
+          </div>
+          <div>
+            <dt>Направление</dt>
+            <dd>Мировая политика</dd>
+          </div>
+          <div>
+            <dt>Курс и группа</dt>
+            <dd>2 курс · МО-21</dd>
+          </div>
+        </dl>
+
+      </section>
+    </div>
+  </div>
+  <footer class="page-footer">
+    <span>persōna<span class="brand-period">.</span>
+    </span>
+    <p>Визуальная версия без подключения к данным</p>
+    <a href="{% url 'preview-login' %}">Макет входа {% include 'core/preview/icon.html' with name='arrow' %}
+    </a>
+  </footer>
+</main>
+</div>
+</div>
+{% endblock %}

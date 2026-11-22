@@ -1,0 +1,378 @@
+/* CAT01: the workspace palette, original supplied cat art, and native game pieces. */
+.cat-layout {
+  display:grid;
+  grid-template-columns:minmax(250px,.85fr) minmax(0,1.3fr);
+  gap:24px;
+  margin:28px 0}
+.cat-companion,.cat-play,.cat-wardrobe {
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden}
+.cat-portrait {
+  position:relative;
+  display:grid;
+  place-items:center;
+  background:var(--ink);
+  isolation:isolate;
+  aspect-ratio:1;
+  overflow:hidden}
+.cat-art.pixel-scene {
+  --pixel:2px;
+  position:absolute;
+  z-index:1;
+  width:208px;
+  height:208px;
+  left:calc(50% - 104px);
+  top:calc(50% - 104px)}
+.cat-portrait .cat-sprite {
+  position:absolute;
+  width:calc(48 * var(--pixel));
+  height:calc(48 * var(--pixel));
+  left:calc(28 * var(--pixel));
+  top:calc(28 * var(--pixel));
+  image-rendering:pixelated}
+.cat-sprite>.cat-fallback,.cat-sprite>.cat-canvas {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  image-rendering:pixelated}
+.cat-portrait .cat-toy {
+  position:absolute;
+  width:calc(32 * var(--pixel));
+  height:calc(32 * var(--pixel));
+  image-rendering:pixelated;
+  pointer-events:none}
+.toy-yarn {left:0;top:calc(48 * var(--pixel))}
+.toy-ball {left:calc(20 * var(--pixel));top:calc(72 * var(--pixel))}
+.toy-mouse {left:calc(52 * var(--pixel));top:calc(72 * var(--pixel))}
+.toy-fish {left:calc(72 * var(--pixel));top:calc(48 * var(--pixel))}
+.cat-toy-choices {
+  grid-column:1/-1;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px;
+  min-width:0}
+.cat-toy-choices legend {font-weight:600;padding:0 6px}
+.cat-toy-choices #id_toys {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cat-toy-choices label {display:flex;align-items:center;gap:10px;min-height:44px}
+.cat-toy-choices input {width:20px;height:20px;flex-shrink:0}
+.cat-introduction {
+  padding:24px}
+.cat-introduction h2 {
+  font-size:28px;
+  margin:7px 0 12px}
+.cat-quote {
+  font-size:17px;
+  line-height:1.5}
+.cat-student-card {
+  padding:0 24px 20px}
+.cat-student-card dl {
+  margin:8px 0 0}
+.cat-student-card dl>div {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 0;
+  border-top:1px solid var(--line);
+  font-size:13px}
+.cat-student-card dt {
+  flex:0 0 35%}
+.cat-student-card dd {
+  margin:0;
+  text-align:right;
+  font-weight:600}
+.cat-play {
+  padding:24px;
+  min-width:0}
+.cat-game-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px}
+.cat-game-heading h2 {
+  margin-top:5px}
+.cat-clock {
+  font-size:20px;
+  background:var(--paper);
+  padding:9px 12px;
+  border-radius:12px;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.cat-game-help {
+  font-size:13px;
+  margin:16px 0}
+.cat-wishes {
+  display:flex;
+  gap:8px;
+  padding:0;
+  margin:16px 0;
+  list-style:none;
+  flex-wrap:wrap;
+  min-height:52px;
+  align-items:center}
+.cat-wishes li {
+  border:1px solid var(--line);
+  border-radius:8px;
+  font-size:12px;
+  padding:8px 10px}
+.cat-wishes .is-collected {
+  background:var(--accent-soft);
+  text-decoration:line-through}
+.cat-arena {
+  position:relative;
+  min-height:310px;
+  background:var(--paper);
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid var(--line)}
+.cat-idle {
+  min-height:310px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  text-align:center}
+.cat-bag {
+  display:grid;
+  place-items:center;
+  width:72px;
+  height:72px;
+  border-radius:22px;
+  background:var(--accent-soft)}
+.cat-bag .icon {
+  width:38px;
+  height:38px}
+.cat-targets {
+  padding:20px 12px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-auto-rows:90px;
+  gap:12px 8px}
+.cat-item {
+  border:1px solid transparent;
+  background:#fff;
+  border-radius:12px;
+  min-height:80px;
+  height:100%;
+  padding:8px 3px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:3px;
+  box-shadow:0 3px 0 #c8d9e6;
+  font-size:11px;
+  line-height:1.2;
+  animation:none}
+.cat-item svg {
+  width:49px;
+  height:40px;
+  stroke:var(--ink);
+  stroke-width:2;
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round}
+.cat-item:hover {
+  border-color:var(--teal);
+  background:var(--accent-soft)}
+.cat-item:disabled {
+  opacity:.42;
+  cursor:default}
+.cat-item.is-collected {
+  visibility:hidden}
+.cat-item:focus-visible {
+  animation-play-state:paused;
+  outline-offset:0}
+.cat-arena.is-calm .cat-item,.cat-arena.is-paused .cat-item {
+  animation:none}
+.cat-pause-cover {
+  position:absolute;
+  inset:0;
+  background:#f5efebed;
+  display:grid;
+  place-content:center;
+  text-align:center;
+  font-weight:600;
+  z-index:2}
+.cat-game-status {
+  font-size:14px;
+  min-height:44px;
+  margin:16px 0 12px;
+  overflow-wrap:anywhere}
+.cat-controls {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px}
+.cat-controls button:disabled {
+  opacity:.6;
+  cursor:wait}
+.cat-calm {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:48px;
+  margin:12px 0;
+  font-size:13px}
+.cat-play>.account-note {
+  font-size:12px}
+.cat-wardrobe {
+  padding:28px}
+.cat-wardrobe h2 {
+  margin:6px 0 10px}
+.cat-wardrobe>div>p:last-child {
+  font-size:14px}
+.cat-unlocks {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin:24px 0}
+.cat-unlock {
+  padding:16px 12px;
+  background:var(--paper);
+  border:1px dashed var(--teal);
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:12px}
+.cat-unlock strong {
+  font-size:13px}
+.cat-unlock.is-open {
+  background:var(--accent-soft);
+  border-style:solid}
+.cat-unlock-icon {
+  height:90px;
+  display:grid;
+  place-items:center}
+.cat-unlock-icon img {
+  width:80px;
+  height:80px;
+  image-rendering:pixelated}
+.cat-settings {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  align-items:end}
+.cat-settings>div {
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  min-width:0}
+.cat-settings>div[role=alert] {
+  grid-column:1/-1}
+.cat-settings .errorlist {
+  margin:0;
+  padding-left:16px}
+.cat-item-library {
+  width:0;
+  height:0;
+  position:absolute;
+  overflow:hidden}
+.cat-profile {
+  display:grid;
+  grid-template-columns:256px minmax(0,1fr);
+  gap:24px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin:24px 0}
+.cat-profile>.cat-portrait {
+  height:100%;
+  min-height:220px;
+  aspect-ratio:auto}
+.cat-profile>div:last-child {
+  padding:24px 24px 24px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px}
+.cat-profile p:not(.overline) {
+  font-size:14px}
+.cat-profile h2 {
+  overflow-wrap:anywhere}
+.cat-introduction h2 {
+  overflow-wrap:anywhere}
+@keyframes cat-drift {
+  from {
+  transform:translateY(-4px)}
+to {
+  transform:translateY(5px)}
+}
+@media(max-width:1100px) {
+  .cat-layout {
+  grid-template-columns:minmax(220px,.8fr) minmax(0,1.3fr)}
+.cat-play {
+  padding:18px}
+.cat-game-heading h2 {
+  font-size:19px}
+}
+@media(max-width:700px) {
+  .cat-layout {
+  grid-template-columns:1fr}
+.cat-companion {
+  display:grid;
+  grid-template-columns:1fr}
+.cat-companion>.cat-portrait {
+  min-height:240px;
+  height:auto;
+  aspect-ratio:1}
+.cat-introduction {
+  padding:16px}
+.cat-introduction h2 {
+  font-size:24px}
+.cat-introduction .cat-quote {
+  font-size:14px}
+.cat-introduction .overline {
+  font-size:9px}
+.cat-student-card {
+  grid-column:1/-1;
+  padding:4px 16px 12px}
+.cat-play {
+  padding:18px}
+.cat-unlocks {
+  grid-template-columns:1fr 1fr}
+.cat-settings {
+  grid-template-columns:1fr}
+.cat-wardrobe {
+  padding:20px}
+.cat-profile {
+  grid-template-columns:1fr;
+  gap:0}
+.cat-profile>.cat-portrait {min-height:240px;aspect-ratio:1;height:auto}
+.cat-profile>div:last-child {
+  padding:18px 16px}
+.cat-profile .cat-portrait img {
+  object-fit:contain}
+.cat-controls>.button {
+  flex:1 1 100%}
+.cat-game-help {
+  font-size:12px}
+.cat-calm {
+  font-size:12px}
+.cat-game-heading {
+  align-items:flex-start}
+.cat-clock {
+  font-size:16px;
+  padding:8px}
+.cat-wishes {
+  min-height:66px}
+.cat-item {
+  font-size:10px;
+  min-height:82px}
+.cat-arena,.cat-idle {
+  min-height:318px}
+.cat-targets {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-rows:86px;
+  padding:18px 10px;
+  gap:12px 8px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .cat-item {
+  animation:none}
+}
+

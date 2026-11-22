@@ -1,0 +1,172 @@
+[
+  {
+    "width": 320,
+    "items": [
+      {
+        "text": "Главная",
+        "cell": {
+          "left": 2,
+          "right": 50.578125,
+          "width": 48.578125
+        },
+        "label": {
+          "left": 4.484375,
+          "right": 48.09375,
+          "width": 43.609375,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      },
+      {
+        "text": "Расписание",
+        "cell": {
+          "left": 50.578125,
+          "right": 118.234375,
+          "width": 67.65625
+        },
+        "label": {
+          "left": 53.0625,
+          "right": 115.734375,
+          "width": 62.671875,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      },
+      {
+        "text": "Успеваемость",
+        "cell": {
+          "left": 118.234375,
+          "right": 198.03125,
+          "width": 79.796875
+        },
+        "label": {
+          "left": 120.71875,
+          "right": 195.546875,
+          "width": 74.828125,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      },
+      {
+        "text": "Заявки",
+        "cell": {
+          "left": 198.03125,
+          "right": 242.03125,
+          "width": 44
+        },
+        "label": {
+          "left": 201.625,
+          "right": 238.4375,
+          "width": 36.8125,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      },
+      {
+        "text": "Уведомления",
+        "cell": {
+          "left": 242.03125,
+          "right": 318,
+          "width": 75.96875
+        },
+        "label": {
+          "left": 244.515625,
+          "right": 315.515625,
+          "width": 71,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "items": [
+      {
+        "text": "Главная",
+        "cell": {
+          "left": 2,
+          "right": 59.015625,
+          "width": 57.015625
+        },
+        "label": {
+          "left": 8.703125,
+          "right": 52.3125,
+          "width": 43.609375,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      },
+      {
+        "text": "Расписание",
+        "cell": {
+          "left": 59.015625,
+          "right": 135.109375,
+          "width": 76.09375
+        },
+        "label": {
+          "left": 65.71875,
+          "right": 128.390625,
+          "width": 62.671875,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      },
+      {
+        "text": "Успеваемость",
+        "cell": {
+          "left": 135.109375,
+          "right": 223.34375,
+          "width": 88.234375
+        },
+        "label": {
+          "left": 141.8125,
+          "right": 216.640625,
+          "width": 74.828125,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      },
+      {
+        "text": "Заявки",
+        "cell": {
+          "left": 223.34375,
+          "right": 273.578125,
+          "width": 50.234375
+        },
+        "label": {
+          "left": 230.046875,
+          "right": 266.859375,
+          "width": 36.8125,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      },
+      {
+        "text": "Уведомления",
+        "cell": {
+          "left": 273.578125,
+          "right": 358,
+          "width": 84.421875
+        },
+        "label": {
+          "left": 280.28125,
+          "right": 351.28125,
+          "width": 71,
+          "height": 25
+        },
+        "font": "11px",
+        "inside": true
+      }
+    ]
+  }
+]

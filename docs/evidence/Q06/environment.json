@@ -1,0 +1,11 @@
+{
+  "checked_at_utc": "2026-11-06T16:09:01.432118+00:00",
+  "python": "3.13.14",
+  "django": "5.2.19",
+  "gunicorn": "23.0.0",
+  "psycopg_implementation": "binary",
+  "bundled_libpq_version": 180006,
+  "python_openssl": "OpenSSL 3.5.7 9 Jun 2026",
+  "cpu_model": "AMD Ryzen 7 9800X3D 8-Core Processor",
+  "note": "Python ssl does not identify bundled libpq OpenSSL. Native/container audit remains D02."
+}

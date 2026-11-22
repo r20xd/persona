@@ -1,0 +1,361 @@
+.dashboard-main {
+  max-width: var(--content);
+}
+
+.dashboard-main>h1 {
+  font-size: clamp(28px,3vw,36px);
+  margin-bottom: 8px;
+}
+
+.dashboard-main>.account-intro {
+  font-size: 14px;
+}
+
+.dashboard-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.dashboard-card h2 {
+  font-size: 21px;
+  margin: 0 0 16px;
+}
+
+.dashboard-card h3 {
+  font-size: 16px;
+}
+
+.dashboard-card>p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.dashboard-card>.overline {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.dashboard-card>a,.dashboard-item>a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dashboard-next {
+  margin-top: 24px;
+  background: var(--ink);
+  color: var(--surface);
+  border-color: var(--ink);
+  position: relative;
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  column-gap: 32px;
+}
+
+.dashboard-next>.overline {
+  color: var(--accent-soft);
+  grid-column: 1/-1;
+  font-size: 11px;
+}
+
+.dashboard-next h2 {
+  font-size: clamp(24px,3vw,32px);
+  line-height: 1.2;
+  letter-spacing: -.8px;
+  margin: 0 0 16px;
+  grid-column: 1/-1;
+}
+
+.dashboard-next>.event-date {
+  font-size: 25px;
+  font-weight: 650;
+  color: var(--surface);
+  line-height: 1.3;
+  grid-column: 1;
+  grid-row: 3;
+  margin-bottom: 12px;
+}
+
+.dashboard-next>p:not(.overline):not(.event-date) {
+  color: var(--line);
+  font-size: 13px;
+  grid-column: 1;
+  line-height: 1.65;
+}
+
+.dashboard-next>a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: var(--ink);
+  background: var(--line);
+  border-radius: 8px;
+  align-self: end;
+  justify-self: end;
+  grid-column: 2;
+  grid-row: 3/7;
+  padding: 12px 16px;
+  font-size: 13px;
+  min-height: 44px;
+  font-weight: 600;
+  max-width: none;
+}
+
+.dashboard-next>a:hover {
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.dashboard-next>a:focus-visible {
+  outline-color: var(--accent-soft);
+}
+
+.dashboard-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0 32px;
+}
+
+.dashboard-actions .button:not(.button-primary) {
+  border-color: transparent;
+  background: transparent;
+  color: var(--primary);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.attention-grid {
+  grid-template-columns: minmax(0,1fr);
+  margin-bottom: 32px;
+}
+
+.attention-card {
+  border-top: 3px solid #936022;
+}
+
+.dashboard-item {
+  font-size: 14px;
+  line-height: 1.55;
+  padding: 16px 0;
+}
+
+.dashboard-item:first-of-type {
+  padding-top: 0;
+}
+
+.dashboard-item:last-of-type {
+  padding-bottom: 0;
+}
+
+.dashboard-item+.dashboard-item {
+  border-top: 1px solid var(--line);
+}
+
+.dashboard-item p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.dashboard-item>a {
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+.attention-card .dashboard-item {
+  position: relative;
+}
+
+.attention-label {
+  font-size: 11px!important;
+  font-weight: 600;
+  color: #754712!important;
+  margin-bottom: 4px;
+}
+
+.priority-0,.priority-1 {
+  color: #923c30!important;
+}
+
+.attention-card .dashboard-item h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.attention-card .dashboard-item>a {
+  min-height: 44px;
+}
+
+.attention-card>.account-note {
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+.changes-summary {
+  margin-top: 24px;
+  padding-block: 14px;
+  background: transparent;
+}
+
+.changes-summary>summary {
+  font-size: 14px;
+}
+
+.changes-summary .dashboard-item {
+  margin-top: 12px;
+}
+
+
+.lesson-move {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-block: 12px;
+}
+.lesson-move-side {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+.lesson-move-new {
+  background: var(--surface-soft);
+}
+.lesson-move-label {
+  color: var(--muted);
+  font-size: 12px;
+}
+.lesson-move-new .lesson-move-label,
+.dashboard-item .lesson-move-new p {
+  color: var(--ink);
+}
+.dashboard-item .lesson-move-date {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 550;
+  margin-top: 8px;
+}
+.lesson-move-comment>summary {
+  min-height: 44px;
+  align-content: center;
+  cursor: pointer;
+  color: var(--ink);
+}
+.lesson-move-comment {
+  margin-bottom: 4px;
+}
+
+@media(max-width:1050px) {
+  .dashboard-next {
+    padding: 24px;
+  }
+  .dashboard-next>a {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-top: 16px;
+  }
+  .attention-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-grid {
+    gap: 16px;
+  }
+  .dashboard-next>.event-date {
+    font-size: 24px;
+  }
+}
+
+@media(max-width:600px) {
+  .lesson-move {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+  .dashboard-main>h1 {
+    font-size: 28px;
+    margin-top: 8px;
+  }
+  .dashboard-main>.account-intro {
+    font-size: 12px;
+  }
+  .dashboard-next {
+    margin-top: 20px;
+    padding: 22px;
+    border-radius: 20px;
+    display: block;
+  }
+  .dashboard-next>.overline {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .dashboard-next h2 {
+    font-size: 25px;
+    margin-bottom: 14px;
+    letter-spacing: -.6px;
+  }
+  .dashboard-next>.event-date {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+  .dashboard-next>p:not(.overline):not(.event-date) {
+    font-size: 12px;
+  }
+  .dashboard-next>a {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+    font-size: 12px;
+    margin-top: 20px;
+    padding: 11px 8px;
+  }
+  .dashboard-actions {
+    gap: 4px;
+    margin: 12px 0 24px;
+  }
+  .dashboard-actions .button {
+    font-size: 12px;
+    padding-inline: 12px;
+    flex: 1 1 auto;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .attention-grid {
+    margin-bottom: 24px;
+  }
+  .dashboard-card {
+    padding: 22px;
+  }
+  .dashboard-card h2 {
+    font-size: 20px;
+  }
+  .dashboard-item {
+    padding-block: 14px;
+  }
+  .dashboard-card>.overline {
+    font-size: 11px;
+  }
+  .changes-summary {
+    padding-block: 12px;
+  }
+}

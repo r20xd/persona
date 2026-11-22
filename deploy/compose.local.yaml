@@ -1,0 +1,19 @@
+name: digital-deanery-local
+services:
+  db:
+    image: postgres:17.11-bookworm@sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5
+    environment:
+      POSTGRES_DB: ${DB_NAME:-deanery}
+      POSTGRES_USER: ${DB_USER:-deanery}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in private environment}
+    ports:
+      - "127.0.0.1:${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  postgres_data:

@@ -1,0 +1,4 @@
+{% load static %}<link rel="stylesheet" href="{% static 'css/cat.css' %}">
+<section class="cat-profile" aria-labelledby="profile-cat-title">
+{% include 'accounts/cat_portrait.html' %}<div><p class="overline">КОТ В МОЁМ РЮКЗАКЕ</p><h2 id="profile-cat-title">{{ cat.name }}</h2><p class="cat-quote">«{{ cat.quote }}»</p><p>{{ cat.character_label }} · Любимый предмет: {{ cat.subject }}</p><a class="button" href="{% url 'cat' %}">Зайти к коту</a></div>
+</section>

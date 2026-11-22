@@ -1,0 +1,862 @@
+[
+  {
+    "path": "static/images/cat-pixel32/chaos-idle-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-idle-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-idle-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-idle-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-joy-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-joy-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-joy-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-joy-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-jump-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-jump-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-jump-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos-jump-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/chaos.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-idle-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-idle-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-idle-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-idle-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-joy-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-joy-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-joy-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-joy-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-jump-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-jump-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-jump-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar-jump-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/scholar.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-idle-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-idle-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-idle-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-idle-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-joy-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-joy-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-joy-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-joy-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-jump-0.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-jump-1.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-jump-2.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy-jump-3.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/sleepy.png",
+    "width": 32,
+    "height": 32,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/toy-ball.png",
+    "width": 16,
+    "height": 16,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      9,
+      10,
+      11
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/toy-fish.png",
+    "width": 16,
+    "height": 16,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/toy-mouse.png",
+    "width": 16,
+    "height": 16,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "path": "static/images/cat-pixel32/toy-yarn.png",
+    "width": 16,
+    "height": 16,
+    "palette_entries": 12,
+    "alpha_values": [
+      0,
+      255
+    ],
+    "used_indices": [
+      0,
+      2,
+      6,
+      7
+    ]
+  }
+]

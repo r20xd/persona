@@ -1,0 +1,50 @@
+{
+ "start": "2026-11-15T07:58:40.706Z",
+ "round": 0,
+ "idle": 0,
+ "errors": 1,
+ "status": "error",
+ "history": [
+  {
+   "at": "2026-11-15T07:59:08.628Z",
+   "mode": "manual",
+   "status": "error",
+   "fails": 0,
+   "round": 0,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": "../../../../private/tmp/pers05-visual/students.html",
+  "url": null,
+  "root": null,
+  "kind": "software",
+  "category": "Каталог студентов",
+  "primary": "Найти",
+  "rounds": 3,
+  "start": "2026-11-15T07:58:40.706Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "fp": "7461aa49bfac4ae3",
+ "page": "../../../../private/tmp/pers05-visual/students.html",
+ "found": {
+  "fails": [],
+  "warns": [],
+  "crashed": [
+   "consistency.mjs gave no report (exit 1: Error: no free port in 5200-5299)",
+   "check.mjs could not run (exit 2: (node:51236) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 listening listeners added to [Server]. MaxListeners is 10. Use emitter.)"
+  ],
+  "seconds": {
+   "consistency": 0,
+   "layout": 0
+  }
+ },
+ "open": [],
+ "waived": [],
+ "warnCount": 0,
+ "note": "consistency.mjs gave no report (exit 1: Error: no free port in 5200-5299); check.mjs could not run (exit 2: (node:51236) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 listening listeners added to [Server]. MaxListeners is 10. Use emitter.)",
+ "at": "2026-11-15T07:59:08.630Z"
+}

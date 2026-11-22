@@ -1,0 +1,5 @@
+<nav class="schedule-tabs" aria-label="Вид расписания">
+<a href="{% url 'schedule' %}?view=day{% if day %}&amp;date={{ day|date:'Y-m-d' }}{% endif %}" {% if view == 'day' %}aria-current="page"{% endif %}>День</a>
+<a href="{% url 'schedule' %}?view=week{% if day %}&amp;date={{ day|date:'Y-m-d' }}{% endif %}" {% if view == 'week' %}aria-current="page"{% endif %}>Неделя</a>
+<a href="{% url 'session' %}{% if view == 'session' and term %}?term={{ term.pk }}{% endif %}" {% if view == 'session' %}aria-current="page"{% endif %}>Сессия</a>
+</nav>

@@ -1,0 +1,48 @@
+{
+ "url": "http://127.0.0.1:5300/assistant.html",
+ "views": {
+  "desktop": {
+   "width": 1440,
+   "height": 900,
+   "navH": 0,
+   "scrollHeight": 1179,
+   "screens": 1.31,
+   "sections": [
+    {
+     "n": 1,
+     "tag": "h1",
+     "id": "",
+     "cls": "",
+     "top": 147,
+     "h": 46,
+     "hScreens": 0.05,
+     "offGrid": 46,
+     "tiles": [
+      {
+       "file": "desktop-sec-01-a.jpg",
+       "scrollY": 147
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "tag": "div",
+     "id": "",
+     "cls": "assistant-layout",
+     "top": 257,
+     "h": 826,
+     "hScreens": 0.92,
+     "offGrid": 826,
+     "tiles": [
+      {
+       "file": "desktop-sec-02-a.jpg",
+       "scrollY": 257
+      }
+     ]
+    }
+   ],
+   "consoleErrors": []
+  }
+ },
+ "at": "2026-11-17T11:47:05.932Z"
+}

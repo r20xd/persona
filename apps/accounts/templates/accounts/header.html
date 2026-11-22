@@ -1,0 +1,6 @@
+<header class="account-header"><div class="header-inner">
+<div class="mobile-brand">{% include 'accounts/brand.html' %}</div>
+{% if request.user.role == 'operator' %}<p class="header-label">Рабочее место оператора</p>{% endif %}
+<div class="header-actions">{% if request.user.role == 'student' %}<details class="workspace-more" data-workspace-menu><summary>Ещё</summary><nav class="workspace-more-links" aria-label="Дополнительные разделы">{% include 'accounts/_extra_navigation.html' %}</nav></details><a href="{% url 'profile' %}" class="header-profile" aria-label="Мой профиль">{% include 'accounts/icon.html' with name='user' %}<span>Мой профиль</span></a>{% endif %}
+<form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="button button-quiet" type="submit">{% include 'accounts/icon.html' with name='door' %}<span>Выйти</span></button></form></div>
+</div></header>

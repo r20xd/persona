@@ -1,0 +1,67 @@
+{% extends 'requests/base.html' %}
+{% block title %}Заявки · persōna{% endblock %}
+{% block content %}
+<p class="overline">
+{% if operator %}РАБОТА С ОБРАЩЕНИЯМИ{% else %}ДОКУМЕНТЫ БЕЗ ОЧЕРЕДИ{% endif %}
+</p>
+<div class="request-heading">
+<div>
+<h1>
+{% if operator %}Очередь заявок{% else %}Мои заявки{% endif %}
+</h1>
+<p class="account-intro">
+{% if operator %}Только студенты групп в вашей области доступа. Комментарии видны студентам.{% else %}Закажите справку об обучении и следите за её подготовкой здесь.{% endif %}
+</p>
+</div>
+{% if not operator %}
+<a class="button request-primary" href="{% url 'request-new' %}">Заказать справку</a>
+{% endif %}
+</div>
+<form method="get" class="request-filter" data-auto-filter>
+<label for="status">Статус</label>
+<select name="status" id="status">
+<option value="">Все статусы</option>
+{% for value,label in statuses %}
+<option value="{{ value }}" {% if selected_status == value %}selected{% endif %}>{{ label }}</option>
+{% endfor %}
+</select>
+<noscript><button class="button" type="submit" data-filter-submit>Показать</button></noscript>
+</form>
+<p class="account-note">Найдено: {{ items.paginator.count }}</p>
+<div class="request-list">
+{% for application in items %}
+<article class="request-card">
+<div class="request-heading">
+<h2>
+<a href="{% if operator %}{% url 'operator-request-detail' application.id %}{% else %}{% url 'request-detail' application.id %}{% endif %}">Справка об обучении</a>
+</h2>
+<span class="request-status status-{{ application.status }}">{{ application.get_status_display }}</span>
+</div>
+<p>{{ application.get_purpose_display }}</p>
+{% if operator %}
+<p>{{ application.student.full_name }} · {{ application.student.group.code }}</p>
+{% endif %}
+<p class="account-note">{{ application.created_at|date:'d.m.Y H:i' }}</p>
+<details class="request-id"><summary>Номер заявки</summary><p>{{ application.id }}</p></details>
+</article>
+{% empty %}
+<section class="request-card">
+<h2>Пока нет заявок</h2>
+<p>
+{% if selected_status %}Выберите другой статус, чтобы увидеть остальные обращения.{% elif operator %}Новые обращения из доступных вам групп появятся здесь.{% else %}Отправьте первую заявку — её статус и история сохранятся в кабинете.{% endif %}
+</p>
+</section>
+{% endfor %}
+</div>
+{% if items.has_other_pages %}
+<nav class="request-nav" aria-label="Страницы заявок">
+{% if items.has_previous %}
+<a href="?status={{ selected_status }}&amp;page={{ items.previous_page_number }}">← Назад</a>
+{% endif %}
+<span>Страница {{ items.number }} из {{ items.paginator.num_pages }}</span>
+{% if items.has_next %}
+<a href="?status={{ selected_status }}&amp;page={{ items.next_page_number }}">Далее →</a>
+{% endif %}
+</nav>
+{% endif %}
+{% endblock %}

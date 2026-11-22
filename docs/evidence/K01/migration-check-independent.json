@@ -1,0 +1,8 @@
+{
+  "preflight": "SELECT 1 passed",
+  "database": "existing own QA base, not disposable browser database",
+  "returncode": 0,
+  "output": "No changes detected\n",
+  "no_history_connection_warning": true,
+  "previous_attempt": "final-checks-independent.json used already absent disposable test name; that history warning is retained, not a product migration failure"
+}

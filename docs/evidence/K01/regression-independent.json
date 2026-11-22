@@ -1,0 +1,11 @@
+{
+  "runner": "root independent",
+  "utc": "2026-11-08T14:07:26.395385+00:00",
+  "returncode": 0,
+  "seconds": 245.65,
+  "summary": "    fixturefunc = resolve_fixture_function(fixturedef, request)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n392 passed, 1 warning in 245.15s (0:04:05)",
+  "preflight": "SELECT 1 passed",
+  "postgres": "17.11 own isolated project",
+  "inputs_unchanged": true,
+  "cleanup": "separate exact owned cleanup after suite"
+}

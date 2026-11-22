@@ -1,0 +1,13 @@
+{
+  "staged_allowlist_exact": true,
+  "staged_files_before_report": 319,
+  "notice_blobs_sha256_verified": 207,
+  "notice_bytes_preserved": true,
+  "non_notice_whitespace_check": "passed",
+  "full_whitespace_check": "upstream notice whitespace only, root-approved byte-preservation exception",
+  "upstream_whitespace_diagnostics": 36,
+  "branch": "main",
+  "base_head": "архивная-версия",
+  "hook": "core.hooksPath=исторический Git hook; executable commit-msg retained",
+  "commit_push": "not performed; staged review pending"
+}

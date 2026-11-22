@@ -1,0 +1,16 @@
+{% extends 'requests/base.html' %}{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/notifications.css' %}">
+<p><a href="{% url 'notifications' %}">← Уведомления</a></p>
+<h1>Новое объявление</h1>
+<p>Объявление сразу появится у студентов выбранной группы.</p>
+{% if has_groups %}
+<form method="post" class="announcement-form" novalidate>{% csrf_token %}
+{% if form.non_field_errors %}<div role="alert">{{ form.non_field_errors }}<a href="{% url 'announcement-new' %}">Открыть новую форму</a></div>{% endif %}
+{% for field in form %}{% if field.is_hidden %}{{ field }}{% if field.errors %}<div role="alert">Не удалось проверить форму. Обновите страницу и повторите публикацию.</div>{% endif %}{% else %}
+<div class="announcement-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{% if field.errors %}<div role="alert">{{ field.errors }}</div>{% endif %}</div>
+{% endif %}{% endfor %}
+<div class="announcement-actions"><button class="button button-primary" type="submit">Опубликовать</button><a class="button" href="{% url 'notifications' %}">Отмена</a></div>
+</form>
+{% else %}<p class="notification-card">За вами пока не закреплены группы. Обратитесь к администратору, чтобы получить доступ к публикации.</p>{% endif %}
+{% endblock %}

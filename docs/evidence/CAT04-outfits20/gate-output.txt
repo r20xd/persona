@@ -1,0 +1,98 @@
+gate: checking http://127.0.0.1:8764/docs/evidence/CAT04/rendered-cat.html (gaming); this takes a few minutes on a CPU Chrome
+gate: 31 FAIL open
+  FAIL hero-fill        main#main > div.cat-layout > section.cat-companion "Плюш"  [1440, 390]
+       the next section shows on the first screen: it starts at 258px on a 900px screen (the hero ends at 193px)
+       fix: let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load
+  FAIL spill            section.cat-companion > div.cat-portrait > div.cat-art > img.cat-foreground.cat-foreground  [1440, 390]
+       runs 60px past the bottom edge of the panel it sits on (section.cat-companion > div.cat-portrait > div.cat-art > img.cat-accessory.outfit-gown) (and 2 more like it: img.cat-foreground.cat-foreground-left, img.cat-foregro
+       fix: keep the box inside the panel it starts on: shrink it, or grow the panel to hold it
+  FAIL card-layout      section#cat-wardrobe > div.cat-unlocks "Шарфик Открыто"  [1440, 390]
+       4 of 4 cards drawn one way (one panel, ground, placement and fragment): copies of one card
+       fix: a card layout at most twice on a page: build the other sections another way
+  FAIL cta              main#main > h1  [1440]
+       the hero has no button (the nav's does not count)
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  FAIL focus-ring       main:focus  [1440]
+       "main:focus" in workspace.css removes the focus outline and sets nothing in its place
+       fix: keep the kit's :focus-visible ring, or put a change of the same strength (a 2px line in --action) in the rule that removes it
+  FAIL moment-none      (the page)  [1440]
+       a gaming page (--type) deals no moment: every kind carries one, two on a long page (moments.md)
+       fix: deal one (moments.mjs pick --page gaming) and mount it in its own section
+  FAIL hero-screen      main#main > p.overline "МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ПАРАМИ"  [1440]
+       the hero ends at 137px on a 900px screen, 764px above the fold: it ends at the fold, 1px either way (SR-1)
+       fix: make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter
+  FAIL hero-screen      main#main > h1 "Кот в рюкзаке"  [1440]
+       754px of the next section shows on the first screen (from 147px on a 900px screen): nothing below the hero shows at load (SR-1)
+       fix: end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)
+  FAIL section-height   main#main > p.account-intro "20 секунд, три вещи и один очень самосто"  [1440]
+       the section is 24px tall (0 screens), 876px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)
+       fix: set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit
+  FAIL section-height   section#cat-wardrobe "ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде"  [1440]
+       the section is 529px tall (0.6 screens), 371px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 1 more like it: "ВАШ СПУТНИК · СоняПлюшЯ ") (SR-2)
+       fix: set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit
+  FAIL section-air      main#main > h1 "Кот в рюкзаке"  [1440]
+       the section shows no content: its content fills 0% of its 46px (55% or more) (SR-3)
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  FAIL section-air      main#main > p.account-intro "20 секунд, три вещи и один очень самосто"  [1440]
+       the section shows no content: its content fills 0% of its 24px (55% or more) (SR-3)
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  FAIL one-section      main#main > div.cat-layout "ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша"  [1440]
+       the screen at scroll 770px (the top of section 5) shows 247px of section 4 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)
+       fix: make each section exactly one screen or two, so a screen shows one section and no neighbour peeks
+  FAIL one-section      h2#wardrobe-title "Имя, характер и гардероб"  [1440]
+       the screen at scroll 257px (the top of section 4) shows 112px of section 5 and the heading of section 5 whole and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8
+       fix: make each section exactly one screen or two, so a screen shows one section and no neighbour peeks
+  FAIL one-section      section#cat-wardrobe "ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде"  [1440]
+       the screen at scroll 205px (the top of section 3) shows 60px of section 5 beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (and 2 more like it: scroll 0px, scroll 120px) (SR-4)
+       fix: make each section exactly one screen or two, so a screen shows one section and no neighbour peeks
+  FAIL one-heading      h2#game-title "Что берём в рюкзак?"  [1440]
+       the section holds 2 h2 headings: one per section, first in its .wrap (SR-5)
+       fix: give each section one h2, first in its .wrap, and the hero only its h1
+  FAIL one-heading      h2#wardrobe-title "Имя, характер и гардероб"  [1440]
+       headings of two sections show whole on one screen at 10 of 16 scroll positions (62.5%; at scroll 250, 300, 350, 400px), here with "Плюш": at most 3% on a desktop (SR-5)
+       fix: make the sections one screen tall so their headings sit a screen apart and two never share one
+  FAIL container-edges  header.account-header "persōnaЦифровой деканат Мой профиль Выйт"  [1440]
+       the nav's content runs 1114px from the left and 84px from the right (read from its outermost blocks: no .wrap): the page's container starts at 316px; 1114 and 84px are not one margin; the margin is 64-120px at 1440px (on
+       fix: use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone
+  FAIL container-edges  section#cat-wardrobe "ЛИЧНЫЕ КОШAЧЬИ ДЕЛАИмя, характер и гарде"  [1440]
+       the content of section 5 runs 345px from the left and 113px from the right (read from its outermost blocks: no .wrap): the page's container starts at 316px; 345 and 113px are not one margin; the margin is 64-120px at 144
+       fix: use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone
+  FAIL container-edges  main#main > div.cat-layout "ВАШ СПУТНИК · СоняПлюшЯ не сплю. Я слуша"  [1440]
+       the content of section 4 runs 316px from the left and 84px from the right (read from its outermost blocks: no .wrap): 316 and 84px are not one margin; the margin is 64-120px at 1440px (one container, equal margins, 2px e
+       fix: use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone
+  FAIL container-edges  a.skip-link "К содержимому"  [1440]
+       a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges  aside.workspace-sidebar "persōnaЦифровой деканат Ваше пространств"  [1440]
+       a <aside> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 7 more like it: "persōnaЦифровой деканат ", "Конкурсный концепт · Нео", "МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ") (SR-6)
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges  main#main > div.cat-layout > section.cat-play > p.cat-game-status "Соберите три вещи и отк  [1440]
+       3 text blocks start on a left line at x 767, 451px from the container's left: text starts on the container's left, or on one split line (x 759, 848, 937) (also "Без ежедневных заданий: кот рад ", "Спокойный режим — вещи
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL container-edges  h2#game-title "Что берём в рюкзак?"  [1440]
+       the h2 starts 451px right of the container's left: every h1 and h2 starts on it, 2px either way (and 1 more like it: "Плюш") (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL container-edges  main#main > div.cat-layout > section.cat-play "СБОРЫ НА ПАРУЧто берём в рюкзак?20 с Лов"  [1440]
+       a box over half the container wide runs 742-1356px, not on the container's lines at 316-1356px (SR-6)
+       fix: run the picture or box from the container's left line to its right line, or put it in a row or a split
+  FAIL empty-visual     div.cat-unlocks > div.cat-unlock:nth-of-type(1) > span.cat-unlock-icon > img "cat-scarf.pn  [390]
+       the picture shows nothing here: with it hidden the screen looks the same (the picture is there but invisible: faded out, clipped or covered), so the visitor sees only the ground behind it (and 1 more like it: "cat-glasse
+       fix: make the visual draw at every width: a picture that loads, an effect that renders, or its still fallback; never an empty frame
+  FAIL nav              header.account-header > div.header-inner > div.mobile-brand > a.brand "persōna Цифровой де  [390]
+       nav link wraps to a second line
+       fix: make the nav one bar from the content's left edge to its right edge, with every link and action inside it
+  FAIL no-visual        main#main > div.cat-layout > section.cat-play "Что берём в рюкзак?"  [390]
+       no picture, effect or mock in this section; a feature section needs a visual
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL cta              main#main > p.account-intro  [390]
+       the hero has no button (the nav's does not count)
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  FAIL hero-fill        main#main > div.cat-layout > section.cat-play "Что берём в рюкзак?"  [1152]
+       the next section shows on the first screen: it starts at 250px on a 864px screen (the hero ends at 1030px) (also at 1024, 896, 768)
+       fix: let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load
+  FAIL container        page  [1440, 390]
+       no .wrap
+       fix: put the content in one .wrap
+  35 WARN (not blocking), first: flush section.cat-play > div.cat-game-heading ; flush main#main > div.cat-layout > section.cat; flush section#cat-wardrobe > div:nth-of-type(1; copy-headline main#main > h1 "Кот в рюкзаке"; heading-scale h2#cat-name "Плюш"
+A FAIL you judge false: add {"check": "<id>", "target": "<its where, enough to name that one finding>", "reason": "<why, 12+ characters>"} to .taste-skill/waivers.json (one finding each, 5 at most, never for kit-edited or checker-gaming); it goes in your report. Never edit the kit's files or hide the page from the checker.
+GATE: FAIL 31 (round 1 of 3)

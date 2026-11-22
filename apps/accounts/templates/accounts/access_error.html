@@ -1,0 +1,11 @@
+{% extends 'accounts/base.html' %}
+{% block workspace_transition_styles %}{% endblock %}
+{% block body %}
+<main id="main" tabindex="-1" class="account-main">
+<h1>Не удалось открыть страницу</h1>
+<p>{{ message }}</p>
+<a class="button button-primary" href="{% url 'home' %}">Открыть кабинет</a>
+<a class="button" href="{% url 'login' %}">Вернуться ко входу</a>
+
+</main>
+{% endblock %}

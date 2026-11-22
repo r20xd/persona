@@ -1,0 +1,52 @@
+
+perf tmp/u09-snapshot/assistant.html @ 1440px
+  PASS  host CPU load (before/after)               18/14 %
+  PASS  total transfer                             167.8 KiB      html 2.8K  css 5.5K  js 3.2K  img 141.4K  other 14.9K
+  PASS  requests                                   13             12 by load
+  PASS  images bytes                               141.4 KiB      2 files
+  PASS  largest image                              131.1 KiB      images/persona-assistant.2082e935638d.png
+  PASS  JS parsed                                  4.9 KiB        4 files, 3.2K gz
+  PASS  CSS                                        5.5 KiB        2 files
+  PASS  font families                              0
+  PASS  font files                                 0              0K
+  PASS  images without width+height                0
+  PASS  below-fold images not lazy                 0
+  PASS  oversized images (natural > 2.2x shown)    0
+  PASS  WebGL live at load                         0
+  PASS  WebGL live at bottom                       0
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        76 ms          runs 3, 76..80
+  PASS  LCP (CPU, relative)                        76 ms          runs 3, 76..108, img
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0
+  PASS  broken requests                            0
+  PASS  page height                                1.3 screens    DOM 123 nodes
+
+perf tmp/u09-snapshot/assistant.html @ 390px
+  PASS  host CPU load (before/after)               18/14 %
+  PASS  total transfer                             156.6 KiB      html 2.8K  css 5.5K  js 3.2K  img 141.4K  other 3.7K
+  PASS  requests                                   11             10 by load
+  PASS  images bytes                               141.4 KiB      2 files
+  PASS  largest image                              131.1 KiB      images/persona-assistant.2082e935638d.png
+  PASS  JS parsed                                  4.9 KiB        4 files, 3.2K gz
+  PASS  CSS                                        5.5 KiB        2 files
+  PASS  font families                              0
+  PASS  font files                                 0              0K
+  PASS  images without width+height                0
+  PASS  below-fold images not lazy                 0
+  WARN  oversized images (natural > 2.2x shown)    1              persona-assistant.2082e935638d.png 512px for 100
+  PASS  WebGL live at load                         0
+  PASS  WebGL live at bottom                       0
+  PASS  WebGL peak live                            0              0 contexts made in all
+  PASS  long tasks                                 0              runs 3, 0..0, max 0ms
+  PASS  blocking time                              0 ms           runs 3, 0..0 ms; at load 0ms
+  PASS  FCP (CPU, relative)                        60 ms          runs 3, 60..64
+  PASS  LCP (CPU, relative)                        60 ms          runs 3, 60..64, p.assistant-banner
+  PASS  layout shift                               0.000          runs 3, 0.000..0.000; at load 0.000
+  PASS  modules loaded, never mounted              0
+  PASS  broken requests                            0
+  PASS  page height                                2 screens      DOM 123 nodes
+
+SUMMARY tmp/u09-snapshot/assistant.html: 0 FAIL, 1 WARN  -> WARN

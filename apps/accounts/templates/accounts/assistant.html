@@ -1,0 +1,37 @@
+{% extends 'accounts/base.html' %}{% load static assistant_markdown %}
+{% block title %}Помощник · persōna{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/assistant.css' %}">
+<script src="{% static 'accounts/assistant.js' %}" defer></script>
+<script src="{% static 'accounts/assistant-motion.js' %}" defer></script>
+<main id="main" tabindex="-1" class="account-main assistant-main">
+<p class="overline">ЕЩЁ ОДНА ТОЧКА ОПОРЫ</p><h1>Помощник</h1><p class="account-intro">Разобраться в теме, составить план или подготовить вопрос в деканат.</p>
+<div class="assistant-layout">
+<aside class="assistant-companion" aria-labelledby="assistant-about"><div class="assistant-avatar" data-assistant-motion data-motion-source="{% static 'images/persona-assistant-motion.png' %}">{% include 'accounts/companion_marks.html' %}<img src="{% static 'images/persona-assistant.png' %}" width="512" height="512" alt="Пиксельный робот-помощник persōna" data-source="imagegen"><span class="assistant-motion-sheet" aria-hidden="true"></span><button type="button" class="assistant-motion-toggle" data-assistant-motion-toggle aria-label="Приостановить анимацию помощника" hidden><span aria-hidden="true">Ⅱ</span></button></div><div class="assistant-about"><p class="overline">НА ВАШЕЙ СТОРОНЕ</p><h2 id="assistant-about">Начнём с вопроса</h2><p>Здесь можно спокойно разложить учебную задачу на шаги.</p><p class="assistant-privacy">Помощник получает только сообщения этого чата. Оценки, расписание и профиль автоматически не передаются.</p></div></aside>
+<section class="assistant-chat" aria-labelledby="chat-title">
+<div class="assistant-chat-heading"><div><h2 id="chat-title">Ваш диалог</h2><p class="assistant-connection">{% if connected %}<span class="assistant-status-dot is-connected" aria-hidden="true"></span>Готов к диалогу{% else %}<span class="assistant-status-dot" aria-hidden="true"></span>ИИ пока не подключён{% endif %}</p></div><form method="post" action="{% url 'assistant-clear' %}">{% csrf_token %}<button type="submit" class="button button-quiet">Очистить диалог</button></form></div>
+{% if not connected %}<p class="assistant-banner">Подключение появится позже. Пока можно набрать вопрос — ответ ИИ станет доступен после подключения.</p>{% endif %}
+<div class="assistant-thread" aria-label="Сообщения диалога">
+{% if chat_messages %}
+{% for message in chat_messages %}
+<article class="assistant-message {% if message.role == 'user' %}is-user{% endif %}" {% if forloop.last %}id="latest"{% endif %}>
+<h3>{% if message.role == 'user' %}Вы{% else %}Помощник{% endif %}</h3>
+{% if message.role == 'user' %}
+<p>{{ message.content }}</p>
+{% else %}
+<div class="assistant-response">{{ message.content|assistant_markdown }}</div>
+{% endif %}
+</article>
+{% endfor %}
+{% else %}
+<div class="assistant-empty"><span class="assistant-empty-icon" aria-hidden="true">{% include 'accounts/icon.html' with name='assistant' %}</span><h3>Первый вопрос</h3><p>Напишите, с чем нужна помощь. Например, какую тему разобрать или к чему подготовиться.</p></div>
+{% endif %}
+</div>
+<div class="assistant-starters" data-starters hidden><p class="overline">МОЖНО НАЧАТЬ ТАК</p><div><button type="button" data-prompt="Помоги составить план подготовки к экзамену.">Составить план</button><button type="button" data-prompt="Помоги разобраться в учебной теме: ">Разобрать тему</button><button type="button" data-prompt="Помоги сформулировать письмо в деканат: ">Написать письмо</button></div></div>
+<form method="post" class="assistant-composer" data-assistant-form>{% csrf_token %}<label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>{{ form.message }}{{ form.message.errors }}
+{% if chat_error %}<p class="assistant-error" role="alert">{{ chat_error }}</p>{% endif %}
+<div class="assistant-send"><p id="chat-limits">До 2000 символов. Храним последние 12 сообщений только в этой сессии.</p><button class="button button-primary" type="submit" data-send>Отправить вопрос</button></div><p class="assistant-pending" role="status" data-pending hidden>Отправляем вопрос…</p></form>
+<p class="assistant-footnote">Ответы ИИ могут содержать ошибки. Важные решения проверяйте у деканата.</p>
+<div class="assistant-cameo-slot" data-assistant-cameo-slot>{% if cat_walk_preference %}{% include 'accounts/cat_cameo.html' %}{% endif %}</div>
+</section></div></main>{% endblock %}
+{% block cat_cameo %}{% endblock %}

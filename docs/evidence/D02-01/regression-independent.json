@@ -1,0 +1,7 @@
+{
+  "checked_at_utc": "2026-11-06T17:03:57.148999+00:00",
+  "returncode": 0,
+  "summary": "350 passed, 1 warning in 170.93s (0:02:50)",
+  "qa_connection_preflight": "SELECT 1 passed",
+  "logs": "captured; QA credential redacted before output"
+}

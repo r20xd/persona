@@ -1,0 +1,19 @@
+{% extends 'requests/base.html' %}{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/notifications.css' %}">
+<p class="overline">ВАЖНОЕ РЯДОМ</p><h1>Уведомления</h1>
+<div class="notification-summary">
+<p>Непрочитанных: {{ unread_count }} · Время московское</p>
+{% if unread_count %}<form method="post" action="{% url 'notifications-read-all' %}">{% csrf_token %}<button class="button" type="submit">Прочитать все</button></form>{% endif %}
+</div>
+<form method="get" class="notification-filter" data-auto-filter>
+<label>События <select name="kind"><option value="">Все</option><option value="schedule" {% if selected_kind == 'schedule' %}selected{% endif %}>Расписание</option><option value="request" {% if selected_kind == 'request' %}selected{% endif %}>Заявки</option><option value="personal" {% if selected_kind == 'personal' %}selected{% endif %}>Дедлайны</option></select></label>
+<label><input type="checkbox" name="unread" value="1" {% if unread %}checked{% endif %}> Только непрочитанные</label><noscript><button class="button" type="submit" data-filter-submit>Показать</button></noscript>
+</form>
+<section aria-labelledby="personal-heading"><h2 id="personal-heading">Ваши события</h2>
+{% for item in items %}<article class="notification-card {% if not item.read_at %}is-unread{% endif %}"><p class="overline">{{ item.get_kind_display }} · {{ item.created_at|date:'d.m.Y H:i' }}</p><h3>{{ item.title }}</h3><p>{{ item.body|linebreaksbr }}</p><a href="{% url 'notification-open' item.pk %}">Открыть событие →</a>{% if item.read_at %}<p class="read-label">Прочитано</p>{% elif not operator %}<form method="post" action="{% url 'notification-read' item.pk %}">{% csrf_token %}<button class="button">Отметить прочитанным</button></form>{% endif %}</article>{% empty %}<p class="notification-card">Здесь пока нет событий по выбранным условиям.</p>{% endfor %}
+<nav aria-label="Страницы событий">{% if links.personal_prev %}<a href="{{ links.personal_prev }}">← Назад</a>{% endif %} Страница {{ items.number }} из {{ items.paginator.num_pages }} {% if links.personal_next %}<a href="{{ links.personal_next }}">Далее →</a>{% endif %}</nav></section>
+<section aria-labelledby="news-heading"><div class="announcement-heading"><h2 id="news-heading">Объявления деканата</h2>{% if operator %}<a class="button button-primary" href="{% url 'announcement-new' %}">Новое объявление</a>{% endif %}</div>
+{% for item in announcements %}<article id="announcement-{{ item.pk }}" tabindex="-1" class="notification-card {% if not item.is_read %}is-unread{% endif %}"><p class="overline">{{ item.publish_at|date:'d.m.Y H:i' }}{% if operator and item.target_group %} · Группа {{ item.target_group.code }}{% endif %}</p><h3>{{ item.title }}</h3><p>{{ item.body|linebreaksbr }}</p>{% if item.is_read %}<p class="read-label">Прочитано</p>{% elif not operator %}<form method="post" action="{% url 'announcement-read' item.pk %}">{% csrf_token %}<button class="button">Отметить прочитанным</button></form>{% endif %}</article>{% empty %}<p class="notification-card">Новых объявлений пока нет.</p>{% endfor %}
+<nav aria-label="Страницы объявлений">{% if links.news_prev %}<a href="{{ links.news_prev }}">← Назад</a>{% endif %} Страница {{ announcements.number }} из {{ announcements.paginator.num_pages }} {% if links.news_next %}<a href="{{ links.news_next }}">Далее →</a>{% endif %}</nav></section>
+{% endblock %}

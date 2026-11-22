@@ -1,0 +1,8 @@
+{
+  "returncode": 0,
+  "summary": "367 passed, 1 warning in 170.83s (0:02:50)",
+  "qa_connection_preflight": "SELECT 1 passed",
+  "host_psycopg_implementation": "binary (unchanged development dependency group)",
+  "logs": "private capture; only aggregate summary published",
+  "cleanup": "complete"
+}

@@ -1,0 +1,19 @@
+{% load tz %}{% timezone 'Europe/Moscow' %}
+<div class="lesson-move" role="group" aria-label="Перенос занятия">
+<div class="lesson-move-side"><strong class="lesson-move-label">Было</strong>
+<p class="lesson-move-date">{{ change.old_starts_at|date:'j E' }}</p>
+<p>{{ change.old_starts_at|date:'H:i' }}–{% if change.old_starts_at|date:'Y-m-d' != change.old_ends_at|date:'Y-m-d' %}{{ change.old_ends_at|date:'j E' }} {% endif %}{{ change.old_ends_at|date:'H:i' }}</p>
+<p>Аудитория: {{ change.old_room_label }}</p>
+{% if change.old_teacher_id != change.new_teacher_id %}<p>Преподаватель: {{ change.old_teacher_label }}</p>{% endif %}
+{% if change.old_status != change.new_status %}<p>{{ change.get_old_status_display }}</p>{% endif %}
+</div>
+<div class="lesson-move-side lesson-move-new"><strong class="lesson-move-label">Стало</strong>
+<p class="lesson-move-date">{{ change.new_starts_at|date:'j E' }}</p>
+<p>{{ change.new_starts_at|date:'H:i' }}–{% if change.new_starts_at|date:'Y-m-d' != change.new_ends_at|date:'Y-m-d' %}{{ change.new_ends_at|date:'j E' }} {% endif %}{{ change.new_ends_at|date:'H:i' }}</p>
+<p>Аудитория: {{ change.new_room_label }}</p>
+{% if change.old_teacher_id != change.new_teacher_id %}<p>Преподаватель: {{ change.new_teacher_label }}</p>{% endif %}
+{% if change.old_status != change.new_status %}<p>{{ change.get_new_status_display }}</p>{% endif %}
+</div>
+</div>
+{% if change.reason %}<details class="lesson-move-comment"><summary>Комментарий к переносу</summary><p>{{ change.reason }}</p></details>{% endif %}
+{% endtimezone %}

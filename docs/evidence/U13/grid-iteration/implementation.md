@@ -1,0 +1,7 @@
+# U13 — равномерный узор
+
+Прежний cat01/Sol-low, один writer безделегации. Прочитаны постановка/проектныеправила/ARCH§33U13/PLAN и актуальный Taste2.5.1. Kindsoftware, пользователь просит больше небольших фирменныхзнаков равномерно и безнарушения композиции; прежняяпалитра/система сохранены.
+
+Толькоworkspace.css иcompanion_marks.html:16одинаковыхemptyspan впрежнемaria-hiddenконтейнере. Вместоабсолютныхразрозненныхкоординат displaygrid4×4repeatminmax, place-itemscenter, padding6%/borderbox. Каждыйspanpositionstatic, widthclamp9px36%ячейки30px, aspectratio1, opacity.12; прежнийsmallPNG. Восемьспокойныхстатичныхуглов(-18/12/-8/20/8/-14/16/-10deg) повторяютсяциклом; nthchildзадаёттолькоtransform. Assistantмножитель.78сохранён(итог.0936). Контейнерabsoluteinset0/z0/clip/pointer-none; foregroundz1/сетка/размер/центрперсонажа/игрушки/поведение не менялись. Центральноймаски/пустогокольца нет: силуэтестественнозакрываетфон.
+
+Фактическийdiff23add21remove вдвухappфайлах, gitdiffcheckexit0. SourcefreezeдоrootQA/Taste. ИсполнительнеписалновыхCSSmirrorтестов, не запускалсвоюБД/сервер/suite/commit/push/deploy; ассеты/deps/JS/backend/прочиедокументы и пользовательскиефайлы/историческиеevidence нетронуты. Rootпроверит16элементов/равныецентры/единыедименсииopacity, actual360/1440/3характера/композицию/Taste и существующие2функциональныесценария. Доэтого непроверенныйPASS не заявляется; kitне менялся.

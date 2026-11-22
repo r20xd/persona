@@ -1,0 +1,8 @@
+FROM caddy:2.11.9-alpine@sha256:0bbb055bda6793c999bde78b1b5ce3e89f829fb031af2cf50056ea1246559fee
+RUN apk update && apk upgrade --no-cache \
+    && mkdir -p /usr/share/doc/deanery \
+    && date -u +%FT%TZ > /usr/share/doc/deanery/apk-updated-at.txt \
+    && sha256sum /lib/apk/db/installed > /usr/share/doc/deanery/apk-installed-sha256.txt
+COPY deploy/Caddyfile /etc/caddy/Caddyfile
+
+COPY docs/third-party/runtime-notices /usr/share/doc/deanery/third-party

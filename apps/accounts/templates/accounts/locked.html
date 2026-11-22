@@ -1,0 +1,9 @@
+{% extends 'accounts/base.html' %}
+{% block body %}
+<main id="main" tabindex="-1" class="account-main">
+<h1>Попробуйте позже</h1>
+<p>Слишком много попыток входа. Подождите 15 минут и повторите вход.</p>
+<a class="button button-primary" href="{% url 'login' %}">Вернуться ко входу</a>
+
+</main>
+{% endblock %}

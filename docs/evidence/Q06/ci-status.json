@@ -1,0 +1,8 @@
+{
+  "checked_at_utc": "2026-11-06T16:07:28.037640+00:00",
+  "head_sha": "архивная-версия",
+  "endpoint": "https://api.github.com/repos/r20xd/test_mgimo-vibe-coding/actions/runs?head_sha=архивная-версия&per_page=5",
+  "credentials_used": false,
+  "http_status": 403,
+  "status": "unverified; API unavailable to this unauthenticated request"
+}

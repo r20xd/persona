@@ -1,0 +1,156 @@
+consistency  /tmp/deanery-u05-b9qb89so/public/login.html
+--quick: not checked: scroll-linked (stepping), scroll-reveal (the reveal walk; IntersectionObserver reveals are read), hover-spill, hidden-visual, loop-pause, forms, reduced-motion, the dead-IntersectionObserver walk (hidden content is read with scripts off and under reduced motion), hover-move. Still told: IntersectionObserver reveals (scroll-reveal), held sections (pinned) and CSS scroll timelines (scroll-linked); faults inside held or [data-big-scene] sections are WARNs
+
+1440x900  2 screens  17 FAIL  10 WARN
+  FAIL hero-fill       main#main > section.login-panel  "С возвращением"
+       the next section shows on the first screen: it starts at 285px on a 900px screen (the hero ends at 900px)  [1440-01-hero-fill.jpg]
+       fix: let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load
+  FAIL no-visual       main#main > section.login-story  "Меньше поиска. Больше ясности."
+       no picture, effect or mock in this section; a feature section needs a visual  [1440-02-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL no-visual       main#main > section.login-panel  "С возвращением"
+       no picture, effect or mock in this section; a feature section needs a visual  [1440-03-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL cta             main#main > section.login-story
+       the hero has no button (the nav's does not count)  [1440-04-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  FAIL copy-fact       main#main > section.login-story > div > h1  "Меньше поиска. Больше ясности."
+       the first screen holds no number, price, date, place, platform or genre  [1440-05-copy-fact.jpg]
+       fix: put one hard fact from the brief on the first screen: a number, a price, a date, the place, the platforms it runs on or a game's genre; take it from the brief or remove the claim
+  FAIL empty-area      main#main > section.login-story  "Меньше поиска. Больше ясности."
+       61% of the section is empty: 432px of empty rows between its content, 8% beside content that covers under half the container, in its 810px of rows (WARN over 35%, FAIL over 50%)  [1440-06-empty-area.jpg]
+       fix: fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)
+  FAIL empty-area      main#main > section.login-panel  "С возвращением"
+       51% of the section is empty: 208px above its first content, 176px under its last (button.button.button-primary), 3% beside content that covers under half the container, in its 800px of rows (WARN over 35%, FAIL over 50%)  [1440-07-empty-area.jpg]
+       fix: fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)
+  FAIL focus-visible   main#main > section.login-story:nth-of-type(1) > a.brand  "к кампусЦифровой деканат"
+       Tab stop 2, a "к кампусЦифровой деканат": its focus change is faint: 2.82:1 against the ground, 3:1 needed  [1440-13-focus-visible.jpg]
+       fix: keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus
+  WARN copy-headline   main#main > section.login-story > div > h1  "Меньше поиска. Больше ясности."
+       "Меньше поиска. Больше ясности.": no category known to check it against (pass --category, or write the <title> as "Name: what it is for whom")  [1440-08-copy-headline.jpg]
+       fix: put the category noun in the h1 (and who it is for, or where), in 2 to 8 words
+  WARN copy-headline   main#main > section.login-story > div > h1  "Меньше поиска. Больше ясности."
+       the h1 has 0 words (2 to 8 read at a glance)  [1440-09-copy-headline.jpg]
+       fix: put the category noun in the h1 (and who it is for, or where), in 2 to 8 words
+  WARN copy-actions    (the page)
+       the main action "Войти в кабинет" does not read word for word the same in the nav or hero
+       fix: few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close
+  WARN section-gaps    main#main > section.login-story / main#main > section.login-panel
+       the sections overlap by 567px  [1440-10-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN links           main#main > section.login-story > a.brand  "к кампус Цифровой деканат"
+       "к кампус Цифровой деканат" goes to /, which does not exist here  [1440-11-links.jpg]
+       fix: point every link at a real section, page or file
+  WARN moment-none     (the page)
+       a software page (--type) deals no moment: every kind carries one, two on a long page (moments.md)
+       fix: deal one (moments.mjs pick --page software) and mount it in its own section
+  WARN skip-link       a.skip-link  "К содержимому"
+       the first Tab stop is "К содержимому", not a skip link: a keyboard user tabs through the whole nav on every visit
+       fix: add the starter's skip link as the header's first child: <a class="skip-link" href="#top">Skip to content</a>
+  WARN page-meta       head  "Кампус · Вход"
+       no <meta name="description">: a search result and a shared link show a scrap of the page instead
+       fix: write a <title> "Name: what it is for whom or where" and a one-sentence description in other words (starter.html)
+  WARN share-meta      head
+       the head lacks og:title, og:description, og:image, twitter:card, theme-color: a shared link shows no picture or title of its own
+       fix: copy the head block of starter.html: og tags, twitter:card, the icon and theme-color (references/system.md, Head)
+  WARN form-fields     main#main > section.login-panel:nth-of-type(2) > div.login-card > form.login-fields
+       the form has no status line (role="status"): sending, sent and errors are never read out  [1440-12-form-fields.jpg]
+       fix: give each field its type, autocomplete and inputmode, never block paste or disable the button before a submit, and add the status line (references/system.md, Forms)
+  FAIL hero-screen     main#main > section.login-panel  "С возвращением Войдите с демонстрационны"
+       900px of the next section shows on the first screen (from 0px on a 900px screen): nothing below the hero shows at load (SR-1)  [1440-rhythm-01-hero-screen.jpg]
+       fix: end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)
+  FAIL section-air     main#main > section.login-panel  "С возвращением Войдите с демонстрационны"
+       the content fills 39.9% of the section's height (360 of 900px): 55% or more (40% WARN) (SR-3)  [1440-rhythm-02-section-air.jpg]
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  FAIL one-section     h2#login-title  "С возвращением"
+       the screen at scroll 0px (stride 0) shows 900px of section 2 and the heading of section 2 whole and the content of 2 sections, over 24px each beside section 1: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)  [1440-rhythm-03-one-section.jpg]
+       fix: make each section exactly one screen or two, so a screen shows one section and no neighbour peeks
+  FAIL container-edges a.skip-link  "К содержимому"
+       a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges p.concept-notice  "Конкурсный концепт · Неофициальный серви"
+       a <p> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)  [1440-rhythm-04-container-edges.jpg]
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges main#main > section.login-story  "к кампусЦифровой деканат ТВОЙ УЧЕБНЫЙ ДЕ"
+       the section needs exactly one in-flow child .wrap (it has 3 in-flow children, 0 .wrap) (and 1 more like it: "С возвращением Войдите с") (SR-6)
+       fix: build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing
+  FAIL container-edges h2#login-title  "С возвращением"
+       4 text blocks start on a left line at x 900, 900px from the container's left: text starts on the container's left, or on one split line (x 610, 732, 854) (also "Войдите с демонстрационным аккау", "Логин", "Пароль") (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL container-edges h2#login-title  "С возвращением"
+       the h2 starts 900px right of the container's left: every h1 and h2 starts on it, 2px either way (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+  FAIL container-edges main#main > section.login-story > div > p.overline  "ТВОЙ УЧЕБНЫЙ ДЕНЬ — В ОДНОМ МЕСТЕ"
+       4 text blocks start on a left line at x 65, 65px from the container's left: text starts on the container's left, or on one split line (x 610, 732, 854) (also "Меньше поиска.Больше ясности.", "Начните с личного кабинета.", "Университет Северного города") (and 1 more like it: "Меньше поиска.Больше ясн") (SR-6)
+       fix: start the text on the container's left, or on the one split line every split shares
+
+360x780  2 screens  4 FAIL  0 WARN
+  FAIL hero-fill       main#main > section.login-panel  "С возвращением"
+       the next section shows on the first screen: it starts at 281px on a 780px screen (the hero ends at 281px)  [360-01-hero-fill.jpg]
+       fix: let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load
+  FAIL no-visual       main#main > section.login-story  "Меньше поиска. Больше ясности."
+       no picture, effect or mock in this section; a feature section needs a visual  [360-02-no-visual.jpg]
+       fix: give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits
+  FAIL text-only       main#main > section.login-panel  "С возвращением"
+       the closing section is only text: no picture, icon, mock or effect in it  [360-03-text-only.jpg]
+       fix: give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground
+  FAIL cta             main#main > section.login-story
+       the hero has no button (the nav's does not count)  [360-04-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+
+first screen at 1280, 1152, 1024, 896, 768  0 FAIL  0 WARN
+
+the page at 320x640, walked for what runs past the screen's edge  0 FAIL
+
+checks
+  PASS assets                 PASS shader-lint            PASS gl-fallback
+  PASS empty-visual           FAIL hero-fill              PASS flush
+  PASS placeholder            PASS sample-label           PASS caption
+  PASS credit-wall            PASS nav                    PASS nav-covers
+  PASS spill                  PASS off-viewport           PASS fold-card
+  SKIP hover-spill            PASS overlap-text           PASS collide
+  PASS tap-size               PASS row-gap                PASS cut-text
+  PASS fold-cut               PASS marquee                SKIP scroll-linked
+  SKIP scroll-reveal          PASS pinned                 SKIP loop-pause
+  SKIP reduced-motion         PASS hidden-content         PASS webgl
+  FAIL no-visual              FAIL text-only              PASS card-visual
+  SKIP hidden-visual          PASS card-family            PASS card-layout
+  PASS nesting                PASS effect-repeat          PASS ui-fit
+  PASS ui-centre              PASS dark-ground            PASS button-styles
+  PASS button-shape           PASS same-action            PASS button-picture
+  FAIL cta                    PASS pricing-tiers          WARN copy-headline
+  FAIL copy-fact              PASS copy-headings          PASS copy-buttons
+  WARN copy-actions           PASS heading-scale          PASS stagger
+  PASS top-stagger            PASS off-grid               PASS col-edge
+  PASS right-edge             PASS centre-axis            PASS tilt
+  PASS contrast               PASS text-contrast          PASS body-size
+  PASS busy-ground            WARN section-gaps           PASS proximity
+  PASS hole                   WARN links                  SKIP forms
+  PASS photo-upscale          PASS photo-set              PASS photo-credit
+  PASS nav-family             PASS nav-labels             PASS link-styles
+  PASS heading-align          PASS label-centre           PASS fake-button
+  PASS stranded-action        PASS orphan                 PASS unit-break
+  PASS tab-wrap               PASS effects-fit            PASS fade-cut
+  PASS photo-weight           PASS copy-length            PASS nav-current
+  PASS progress-bar           PASS photo-repeat           PASS button-contrast
+  PASS photo-print            PASS grounds                PASS split-align
+  PASS fact-agree             PASS fold-action            PASS action-count
+  PASS one-screen             SKIP hover                  SKIP hover-move
+  PASS product-shown          PASS same-object            PASS font-load
+  PASS visual-caption         PASS visual-empty           PASS effect-kind
+  PASS hero-enter             WARN moment-none            PASS street-number
+  PASS postcode               PASS coordinates            PASS company-number
+  PASS phone-number           FAIL hero-screen            PASS section-height
+  FAIL section-air            FAIL one-section            PASS one-heading
+  FAIL container-edges        PASS row-lines              PASS split-pair
+  PASS motion-layer           PASS count-text             PASS loop-cycle
+  PASS section-tile           FAIL empty-area             PASS a11y-name
+  PASS img-alt                PASS field-label            PASS heading-order
+  PASS tabindex               PASS focus-ring             FAIL focus-visible
+  PASS focus-hidden           WARN skip-link              PASS menu-toggle
+  PASS lang                   WARN page-meta              WARN share-meta
+  PASS action-repeat          PASS map-link               PASS open-now
+  PASS assumed                PASS run-on                 WARN form-fields
+  PASS form-send
+
+total  21 FAIL  10 WARN  (crops and report.json in /home/local-user/test_mgimo-vibe-coding/docs/evidence/U05/before-taste-login)

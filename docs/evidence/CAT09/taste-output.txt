@@ -1,0 +1,6 @@
+Command: .venv/lib/python3.13/site-packages/playwright/driver/node /Users/local-user/.codex/plugins/cache/taste-skill/taste-skill/2.5.1/skills/taste-skill/scripts/shoot.mjs --url /private/tmp/cat09-snapshot/rendered-cat.html --root /private/tmp/cat09-snapshot --w 360 --out docs/evidence/CAT09/taste-rendered-360.png --profile /private/tmp/cat09-chrome --port 5379
+Exit: 0
+saved docs/evidence/CAT09/taste-rendered-360.png (360x2915, 4 screens)
+tiles mobile: 3 sections, 3.74 screens, navH 0, tiles 5; heights 0.06 1.73 1.34
+
+Input is actual Django render with fictional cat, all4toys, review-only CSRF placeholder. Canonical /private/tmp path and root match. Snapshot proves rendering only, not authenticated POST behavior. Executor viewed result: new CAT08-style cat is visible, centered; all4toys and form fit. No gate PASS claimed, no kit edits.

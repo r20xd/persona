@@ -1,0 +1,49 @@
+{% extends 'accounts/base.html' %}{% load static %}
+{% block title %}Кот в рюкзаке · persōna{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/cat.css' %}">
+<main id="main" tabindex="-1" class="account-main cat-main">
+<p class="overline">МАЛЕНЬКИЙ ПЕРЕРЫВ МЕЖДУ ПАРАМИ</p><h1>Кот в рюкзаке</h1>
+<p class="account-intro">20 секунд, три вещи и один очень самостоятельный кот.</p>
+<div class="cat-layout">
+<section class="cat-companion" aria-labelledby="cat-name">
+{% include 'accounts/cat_portrait.html' with cat_animated=True %}
+<div class="cat-introduction"><p class="overline">ВАШ СПУТНИК · {{ cat.character_label }}</p><h2 id="cat-name">{{ cat.name }}</h2><p class="cat-quote" id="cat-speech" role="status">{{ cat.quote }}</p></div>
+<details class="cat-student-card"><summary>Студенческий котобилет</summary><dl><div><dt>Имя</dt><dd>{{ cat.name }}</dd></div><div><dt>Факультет</dt><dd>Мягких лап и важных дел</dd></div><div><dt>Любимый предмет</dt><dd>{{ cat.subject }}</dd></div><div><dt>Успешных сборов</dt><dd>{{ cat.completed }}</dd></div></dl></details>
+</section>
+<section class="cat-play" aria-labelledby="game-title" data-cat-game data-start-url="{% url 'cat-start' %}" data-finish-url="{% url 'cat-finish' %}">
+<div class="cat-game-heading"><div><p class="overline">СБОРЫ НА ПАРУ</p><h2 id="game-title">Что берём в рюкзак?</h2></div><span class="cat-clock" aria-label="Осталось секунд"><span data-clock>20</span> с</span></div>
+<p class="cat-game-help">Ловите вещи из списка. После первой находки кот один раз передумает. Тап, Enter или пробел — вещь в рюкзаке.</p>
+<ul class="cat-wishes" data-wishes aria-label="Пожелания кота"><li>Три пожелания появятся в начале</li></ul>
+<div class="cat-arena" data-arena aria-label="Вещи для рюкзака">
+<div class="cat-idle" data-idle><span class="cat-bag" aria-hidden="true">{% include 'accounts/icon.html' with name='book' %}</span><p>Кот уже собрался.<br>Осталось собрать рюкзак.</p></div>
+<div class="cat-targets" data-targets hidden>{% for item in cat_items %}<button type="button" class="cat-item cat-item-{{ item.id }}" data-item="{{ item.id }}" disabled><svg viewBox="0 0 64 52" aria-hidden="true"><use href="#item-{{ item.id }}"></use></svg><span>{{ item.name }}</span></button>{% endfor %}</div>
+<div class="cat-pause-cover" data-pause-cover hidden>Рюкзак подождёт.<br>Игра на паузе.</div>
+</div>
+<p class="cat-game-status" role="status" data-game-status>Соберите три вещи и откройте игрушку для кота.</p>
+<div class="cat-controls"><button type="button" class="button button-primary" data-start>Начать сборы</button><button type="button" class="button" data-pause hidden>Поставить на паузу</button><button type="button" class="button" data-retry hidden>Сохранить результат ещё раз</button><a class="button" data-reward-link href="{% url 'cat' %}#cat-wardrobe" hidden>Выбрать игрушку</a></div>
+<label class="cat-calm"><input type="checkbox" data-calm> Спокойный режим — вещи не двигаются</label>
+<p class="account-note">Без ежедневных заданий: кот рад вам в любой день. Не успели — просто начните ещё раз.</p>
+<noscript><p class="login-alert">Для игры включите JavaScript. Имя, характер и игрушки можно сохранить ниже без него.</p></noscript>
+</section></div>
+<section class="cat-wardrobe" id="cat-wardrobe" aria-labelledby="wardrobe-title"><div><p class="overline">ЛИЧНЫЕ КОШAЧЬИ ДЕЛА</p><h2 id="wardrobe-title">Имя, характер и игрушки</h2><p>Один успешный сбор открывает новую игрушку. Все игрушки остаются у кота.</p></div>
+<div class="cat-unlocks">{% for item in accessories %}<div class="cat-unlock {% if item.open %}is-open{% endif %}"><span class="cat-unlock-icon" aria-hidden="true"><img src="{% static 'images/cat-pixel48/toy-'|add:item.id|add:'.png' %}" alt="" width="32" height="32" loading="lazy"></span><strong>{{ item.name }}</strong><span>{% if item.open %}Открыто{% else %}После {{ item.needed }} сбор{% if item.needed == 1 %}а{% else %}ов{% endif %}{% endif %}</span></div>{% endfor %}</div>
+{% if cat_walk_preference %}<div class="cat-walk-setting" hidden><label><input type="checkbox" data-cat-walk-toggle checked> Разрешить коту гулять по кабинету</label><p class="account-note" data-walk-preference-status>Редкие появления на других вкладках. Настройка сохраняется в этом браузере.</p></div>{% endif %}
+<form method="post" class="cat-settings" novalidate>{% csrf_token %}{% if form.errors %}<div role="alert" data-error-summary tabindex="-1">Проверьте настройки кота. Заблокированную игрушку пока нельзя выбрать.</div>{% endif %}{% for field in form %}{% if field.name == 'toys' %}<fieldset class="cat-toy-choices"><legend>{{ field.label }}</legend><p class="account-note">Можно выбрать несколько. Снимите все отметки, чтобы убрать игрушки.</p>{{ field }}{{ field.errors }}{% if not field.field.choices %}<p>Первый успешный сбор откроет клубок.</p>{% endif %}</fieldset>{% else %}<div><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endif %}{% endfor %}<button class="button button-primary" type="submit">Сохранить кота</button></form>
+</section>
+{{ cat_items|json_script:'cat-items' }}
+<svg class="cat-item-library" aria-hidden="true"><defs>
+<symbol id="item-notebook" viewBox="0 0 64 52"><rect x="15" y="5" width="35" height="43" rx="5" fill="#c8d9e6"/><path d="M23 5v43M29 18h13M29 26h13M29 34h9M11 13h8M11 24h8M11 35h8"/></symbol>
+<symbol id="item-fish" viewBox="0 0 64 52"><path d="M46 26q-21-32-38 0 17 30 38 0l12-13v26Z" fill="#c8d9e6"/><circle cx="19" cy="23" r="2" fill="#2f4156"/><path d="m29 18-5 8 5 8"/></symbol>
+<symbol id="item-calculator" viewBox="0 0 64 52"><rect x="15" y="3" width="34" height="46" rx="5" fill="#c8d9e6"/><path d="M21 10h22v10H21Z" fill="#f5efeb"/><path d="M23 28h3m9 0h5m-17 8h3m9 0h5m-17 7h3m9 0h5" stroke-width="4"/></symbol>
+<symbol id="item-slipper" viewBox="0 0 64 52"><path d="M8 38q-3-13 14-25 10-9 19-2 12 9 14 22 6 15-21 14L9 45Z" fill="#c8d9e6"/><path d="M8 38q21 7 47-5M17 25q9-12 20-9l8 13q-17 8-28-4Z" fill="#f5efeb"/></symbol>
+<symbol id="item-diploma" viewBox="0 0 64 52"><path d="M12 7h38v35H12Z" fill="#f5efeb"/><path d="M20 15h22M20 22h19"/><circle cx="34" cy="34" r="8" fill="#c8d9e6"/><path d="m29 41-2 9 7-4 7 4-2-9" fill="#c8d9e6"/></symbol>
+<symbol id="item-pen" viewBox="0 0 64 52"><path d="m13 39 30-32 9 9-30 32-13 2Z" fill="#c8d9e6"/><path d="m13 39 9 9M39 11l9 9M9 50l4-11M46 5l8 9"/></symbol>
+<symbol id="item-sausage" viewBox="0 0 64 52"><path d="M13 14Q24 47 51 27" fill="none" stroke="#567c8d" stroke-width="18"/><path d="M13 14Q24 47 51 27" fill="none" stroke="#c8d9e6" stroke-width="13"/><path d="m9 7 9-1-5 8M52 27l5 10 5-8" fill="#c8d9e6"/><path d="m21 24-2 8M31 30l-1 9M42 29l3 7"/></symbol>
+<symbol id="item-headphones" viewBox="0 0 64 52"><path d="M13 29V24a19 19 0 0 1 38 0v5" stroke-width="6"/><rect x="8" y="25" width="13" height="21" rx="6" fill="#c8d9e6"/><rect x="43" y="25" width="13" height="21" rx="6" fill="#c8d9e6"/></symbol>
+<symbol id="item-key" viewBox="0 0 64 52"><circle cx="21" cy="20" r="13" fill="#c8d9e6"/><circle cx="21" cy="20" r="5" fill="#f5efeb"/><path d="m31 30 18 18 7-7-5-5-5 5-5-5 5-5-6-6" fill="#c8d9e6"/></symbol>
+<symbol id="item-tea" viewBox="0 0 64 52"><path d="M21 14h22v30q-11 9-22 0Z" fill="#c8d9e6"/><rect x="22" y="5" width="20" height="9" rx="3" fill="#f5efeb"/><path d="M21 21h22M27 29h10M27 35h10M27 1h10"/></symbol>
+<symbol id="item-alarm" viewBox="0 0 64 52"><circle cx="32" cy="29" r="18" fill="#c8d9e6"/><path d="M32 17v13l8 4M15 44l-5 6M49 44l5 6M9 14Q14-2 24 9M40 9q10-11 15 5M28 6h8"/><circle cx="32" cy="29" r="2" fill="#2f4156"/></symbol>
+<symbol id="item-yarn" viewBox="0 0 64 52"><circle cx="29" cy="25" r="20" fill="#c8d9e6"/><path d="M12 14q29-4 31 24M10 24q22-9 34 10M18 7q-3 25 24 36M27 5q-11 18-5 38M43 9q-19 6-27 29M46 34q13 1 8 11-3 6 7 3"/></symbol>
+</defs></svg>
+</main>{% endblock %}

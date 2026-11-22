@@ -1,0 +1,72 @@
+/* Student discovery: one identity per card, academic details on a shared baseline. */
+.directory-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
+.directory-heading h1 { margin: 10px 0 12px; }
+.directory-total { display: flex; align-items: center; gap: 12px; padding-bottom: 3px; flex: none; }
+.directory-total strong { font-size: 42px; line-height: 1; letter-spacing: -2px; font-weight: 500; }
+.directory-total > span { max-width: 100px; font-size: 12px; line-height: 1.4; }
+.directory-search { margin: 32px 0 24px; padding: 22px 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.directory-search label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+.directory-search-control { display: flex; align-items: center; gap: 12px; }
+.directory-search input { width: 100%; min-width: 0; min-height: 48px; border: 0; border-bottom: 1px solid var(--teal); background: transparent; padding: 10px 0; border-radius: 0; font-size: 18px; }
+.directory-search input::placeholder { color: var(--teal); opacity: 1; }
+.directory-search .button { min-width: 108px; min-height: 48px; }
+.directory-search-mark { width: 17px; height: 17px; border: 1.5px solid var(--teal); border-radius: 50%; position: relative; flex: none; margin: 0 4px 4px 0; }
+.directory-search-mark::after { content: ''; position: absolute; width: 7px; height: 1.5px; background: var(--teal); transform: rotate(45deg); right: -5px; bottom: -3px; }
+.directory-results { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.directory-count { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; }
+.directory-count span { display: grid; place-items: center; min-width: 26px; height: 26px; padding-inline: 6px; background: var(--line); border-radius: 7px; font-variant-numeric: tabular-nums; }
+.directory-reset { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+.directory-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.directory-card { position: relative; display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); overflow-wrap: anywhere; transition: transform .18s, border-color .18s, box-shadow .18s; }
+.directory-card:hover { transform: translateY(-2px); border-color: var(--teal); box-shadow: 0 8px 24px #2f415609; }
+.directory-card:focus-within { border-color: var(--ink); }
+.directory-card-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.directory-avatar { display: grid; place-items: center; width: 48px; height: 48px; background: var(--surface-soft); border-radius: 50%; font-size: 24px; font-family: Georgia,serif; }
+.directory-card:nth-child(4n+2) .directory-avatar,.directory-card:nth-child(4n+3) .directory-avatar { background: var(--paper); }
+.directory-group { font-size: 12px; font-weight: 500; text-align: right; }
+.directory-card h2 { font-size: 21px; letter-spacing: -.55px; line-height: 1.35; margin: 18px 0 16px; }
+.directory-card h2 a { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 44px; }
+.directory-card h2 a::after { content: ''; position: absolute; inset: 0; border-radius: 16px; }
+.directory-card h2 a:focus-visible { outline: none; }
+.directory-card h2 a:focus-visible::after { outline: 3px solid var(--focus); outline-offset: 3px; }
+.directory-card-arrow { font-size: 20px; font-weight: 400; flex: none; transition: transform .18s; }
+.directory-card:hover .directory-card-arrow { transform: translate(2px,-2px); }
+.directory-study { border-top: 1px solid var(--line); padding-top: 16px; margin-top: auto; }
+.directory-study p { font-size: 13px; line-height: 1.6; }
+.directory-study p+p { margin-top: 4px; }
+.directory-study p:last-child { color: var(--teal); font-size: 12px; }
+.directory-empty { grid-column: 1/-1; text-align: center; padding: 48px 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+.directory-empty-mark { display: block; font-size: 40px; color: var(--teal); line-height: 1; margin-bottom: 18px; }
+.directory-empty h2 { font-size: 22px; margin-bottom: 12px; }
+.directory-empty p { max-width: 390px; margin-inline: auto; font-size: 14px; }
+.directory-empty a { text-decoration: underline; text-underline-offset: 3px; }
+.directory-pagination { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 24px; font-size: 13px; }
+.directory-back { display: inline-flex; min-height: 44px; align-items: center; margin-bottom: 24px; font-size: 14px; }
+.directory-identity { display: flex; align-items: center; gap: 24px; }
+.directory-avatar-large { width: 88px; height: 88px; font-size: 42px; flex: none; background: var(--ink); color: var(--paper); }
+.directory-identity h1 { margin: 8px 0; max-width: 650px; font-size: clamp(28px,3vw,40px); overflow-wrap: anywhere; }
+.directory-details { display: grid; grid-template-columns: 100px 130px minmax(0,1fr) minmax(0,1fr); gap: 24px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 28px 0 0; overflow-wrap: anywhere; }
+.directory-details dt { font-size: 12px; margin-bottom: 8px; }
+.directory-details dd { margin: 0; font-weight: 500; font-size: 14px; line-height: 1.5; }
+@media(max-width:1100px) { .directory-details { grid-template-columns: 1fr 1fr; } }
+@media(max-width:600px) {
+ .directory-heading { align-items: flex-start; gap: 12px; }
+ .directory-heading .account-intro { max-width: 240px; }
+ .directory-total { display: none; }
+ .directory-grid { grid-template-columns: 1fr; gap: 12px; }
+ .directory-card { padding: 20px; }
+ .directory-search { margin-top: 24px; padding: 18px; }
+ .directory-search-control { gap: 10px; }
+ .directory-search-mark { display: none; }
+ .directory-search input { font-size: 16px; }
+ .directory-search .button { min-width: 74px; padding-inline: 14px; }
+ .directory-results { gap: 8px; }
+ .directory-reset { font-size: 12px; }
+ .directory-identity { gap: 16px; align-items: flex-start; }
+ .directory-avatar-large { width: 56px; height: 56px; font-size: 30px; }
+ .directory-identity h1 { font-size: 27px; letter-spacing: -.8px; }
+ .directory-identity .overline { font-size: 10px; }
+ .directory-details { gap: 24px 16px; margin-top: 24px; }
+ .directory-back { margin-bottom: 16px; }
+}
+@media(prefers-reduced-motion:reduce) { .directory-card,.directory-card-arrow { transition: none; } .directory-card:hover,.directory-card:hover .directory-card-arrow { transform: none; } }

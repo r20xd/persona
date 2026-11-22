@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "project": "deanery-d02-934be92d66524dbf99d552dc8e8ba5e3",
+  "cleanup": "complete",
+  "failure": null,
+  "checks": {
+    "tls_trusted_private_ca": true,
+    "http_redirect_csrf_body_headers": true,
+    "tls_browser_3roles_360_1440_persistence_isolation_static": true,
+    "readiness_db_stop_recovery": true,
+    "upstream_unavailable_502_app_health": true,
+    "deploy_check_hsts_pending": true,
+    "app_non_superuser": true,
+    "runtime": {
+      "python": "3.13.14",
+      "packages": [
+        "argon2-cffi",
+        "argon2-cffi-bindings",
+        "asgiref",
+        "cffi",
+        "django",
+        "django-axes",
+        "gunicorn",
+        "packaging",
+        "psycopg",
+        "psycopg-binary",
+        "pycparser",
+        "sqlparse",
+        "whitenoise"
+      ]
+    },
+    "runtime_nonroot_readonly_internal_no_dev": true,
+    "spoofed_client_headers_axes_key_unchanged": true,
+    "safe_logs_sentinel_bootstrap_secret_not_in_app": true
+  }
+}

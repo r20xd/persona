@@ -1,0 +1,8 @@
+{
+  "container": "deanery-q05-25856a9ba05e412785c6087aa48a3bc2",
+  "owner": "25856a9ba05e412785c6087aa48a3bc2",
+  "label": "deanery.q05.owner",
+  "port": 55432,
+  "database": "test_deanery",
+  "volume": "f4e6b14364a98f6fa3d3a071be6d259309964d93095efa3c648e41428d321325"
+}

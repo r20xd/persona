@@ -1,0 +1,12 @@
+{% load static %}<div class="cat-portrait pixel-portrait" data-character="{{ cat.character }}" data-toys="{{ cat.toys|join:',' }}">{% include 'accounts/companion_marks.html' %}<div class="cat-art pixel-scene">
+<div class="cat-base cat-sprite" data-cat-renderer data-character="{{ cat.character }}" data-pose="idle" data-frame="0"{% if cat_animated %} data-cat-animated{% endif %}>
+<img class="cat-fallback" src="{{ cat.renderer.source }}" width="48" height="48" alt="{{ cat.name }} — {{ cat.character_label }}">
+<canvas class="cat-canvas" width="48" height="48" role="img" aria-label="{{ cat.name }} — {{ cat.character_label }}" hidden></canvas>
+</div>
+{% for toy in cat.selected_toys %}<img class="cat-toy toy-{{ toy.id }}" src="{% static 'images/cat-pixel48/toy-'|add:toy.id|add:'.png' %}" width="32" height="32" alt="" aria-hidden="true" data-source="project-pixel-grid">{% endfor %}
+</div></div>
+{{ cat.renderer|json_script:"cat-renderer-config" }}
+{{ cat.sprite_frames|json_script:"cat-sprite-frames" }}
+{{ cat.sprite_timing|json_script:"cat-sprite-timing" }}
+<script src="{% static 'accounts/cat-renderer.js' %}" defer></script>
+<script src="{% static 'accounts/cat.js' %}" defer></script>
